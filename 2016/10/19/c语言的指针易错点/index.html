@@ -3,14 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2016/10 | 我们的征途是星辰大海</title>
+  <title>c语言的指针易错点 | 我们的征途是星辰大海</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="我们的征途是星辰大海">
-<meta property="og:url" content="http://yoursite.com/archives/2016/10/index.html">
+  <meta name="description" content="1.今天在做项目的时候被c语言的指针坑了很久。现在总结一下：**：划重点，c语言中没有引用，所有的参数传递都是值传递。这一点在函数传出值(改变函数外的变量)的时候特别明显，想传出一个值就要传入一个指针(它的地址)，然后通过这个它的地址来改变它的值。
+1234567891011void a;  //传出一个值func(&amp;amp;a);void func(void * ptr)&amp;#123;	*ptr=">
+<meta property="og:type" content="article">
+<meta property="og:title" content="c语言的指针易错点">
+<meta property="og:url" content="http://yoursite.com/2016/10/19/c语言的指针易错点/index.html">
 <meta property="og:site_name" content="我们的征途是星辰大海">
+<meta property="og:description" content="1.今天在做项目的时候被c语言的指针坑了很久。现在总结一下：**：划重点，c语言中没有引用，所有的参数传递都是值传递。这一点在函数传出值(改变函数外的变量)的时候特别明显，想传出一个值就要传入一个指针(它的地址)，然后通过这个它的地址来改变它的值。
+1234567891011void a;  //传出一个值func(&amp;amp;a);void func(void * ptr)&amp;#123;	*ptr=">
+<meta property="og:updated_time" content="2016-10-20T10:55:15.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我们的征途是星辰大海">
+<meta name="twitter:title" content="c语言的指针易错点">
+<meta name="twitter:description" content="1.今天在做项目的时候被c语言的指针坑了很久。现在总结一下：**：划重点，c语言中没有引用，所有的参数传递都是值传递。这一点在函数传出值(改变函数外的变量)的时候特别明显，想传出一个值就要传入一个指针(它的地址)，然后通过这个它的地址来改变它的值。
+1234567891011void a;  //传出一个值func(&amp;amp;a);void func(void * ptr)&amp;#123;	*ptr=">
   
     <link rel="alternate" href="/atom.xml" title="我们的征途是星辰大海" type="application/atom+xml">
   
@@ -59,134 +66,64 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/10/20/java语言基础，长期更新/" class="archive-article-date">
-  <time datetime="2016-10-20T12:30:57.000Z" itemprop="datePublished">Oct 20</time>
+        <section id="main"><article id="post-c语言的指针易错点" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/19/c语言的指针易错点/" class="article-date">
+  <time datetime="2016-10-19T08:33:06.000Z" itemprop="datePublished">2016-10-19</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/20/java语言基础，长期更新/">java语言基础，长期更新</a>
+    <h1 class="article-title" itemprop="name">
+      c语言的指针易错点
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/10/20/c语言基础，长期更新/" class="archive-article-date">
-  <time datetime="2016-10-20T12:27:11.000Z" itemprop="datePublished">Oct 20</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/20/c语言基础，长期更新/">c语言基础，长期更新</a>
-    </h1>
-  
+        <p>1.今天在做项目的时候被c语言的指针坑了很久。现在总结一下：<br>**：划重点，c语言中没有引用，所有的参数传递都是值传递。<br>这一点在函数传出值(改变函数外的变量)的时候特别明显，想传出一个值就要传入一个指针(它的地址)，然后通过这个它的地址来改变它的值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">void a;  //传出一个值</div><div class="line">func(&amp;a);</div><div class="line">void func(void * ptr)&#123;</div><div class="line">	*ptr=value;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void * a;  // 传出一个值(指针类型)</div><div class="line">func(&amp;a);</div><div class="line">void func(void** ptr)&#123;</div><div class="line">	*ptr=value;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/10/20/并行，并发和锁/" class="archive-article-date">
-  <time datetime="2016-10-20T12:15:25.000Z" itemprop="datePublished">Oct 20</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/20/并行，并发和锁/">并行，并发和锁</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/10/20/c++基础-长期更新/" class="archive-article-date">
-  <time datetime="2016-10-20T11:05:04.000Z" itemprop="datePublished">Oct 20</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/19/c语言的指针易错点/" data-id="ciuicg3oj000awrs68izs2bh8" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/20/c++基础-长期更新/">c++基础,长期更新</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/10/19/Hello-hexo/" class="archive-article-date">
-  <time datetime="2016-10-19T08:33:06.000Z" itemprop="datePublished">Oct 19</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/19/Hello-hexo/">Hello,hexo</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c-c/">c/c++</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/10/19/c语言的指针易错点/" class="archive-article-date">
-  <time datetime="2016-10-19T08:33:06.000Z" itemprop="datePublished">Oct 19</time>
-</a>
-      
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/19/c语言的指针易错点/">c语言的指针易错点</a>
-    </h1>
+    <a href="/2016/10/19/Hello-hexo/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello,hexo
+        
+      </div>
+    </a>
   
+  
+    <a href="/2016/04/11/Linux-Windows环境变量那些事/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Linux/Windows环境变量那些事</div>
+    </a>
+  
+</nav>
 
-    </header>
-  </div>
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         

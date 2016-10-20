@@ -3,14 +3,30 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2016/10 | 我们的征途是星辰大海</title>
+  <title>并行，并发和锁 | 我们的征途是星辰大海</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="我们的征途是星辰大海">
-<meta property="og:url" content="http://yoursite.com/archives/2016/10/index.html">
+  <meta name="description" content="并行：多个处理器，从硬件角度真正意义的同时进行多线程：只是逻辑上的并行，同一时刻还是只有一个线程发生并发：并行和多线程都叫并发
+关于锁：不管并发并行，只要存在共享内存，就要考虑加锁的问题。
+锁的实质：都是通过阻塞线程实现的(一个线程申请锁未释放，另一个锁再申请就会线程就会阻塞)，区别就是这个锁作用的范围，是否多个进程可以共享这个锁。
+几种锁的区别:（都是阻塞线程）   
+semphore:信号量，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="并行，并发和锁">
+<meta property="og:url" content="http://yoursite.com/2016/10/20/并行，并发和锁/index.html">
 <meta property="og:site_name" content="我们的征途是星辰大海">
+<meta property="og:description" content="并行：多个处理器，从硬件角度真正意义的同时进行多线程：只是逻辑上的并行，同一时刻还是只有一个线程发生并发：并行和多线程都叫并发
+关于锁：不管并发并行，只要存在共享内存，就要考虑加锁的问题。
+锁的实质：都是通过阻塞线程实现的(一个线程申请锁未释放，另一个锁再申请就会线程就会阻塞)，区别就是这个锁作用的范围，是否多个进程可以共享这个锁。
+几种锁的区别:（都是阻塞线程）   
+semphore:信号量，">
+<meta property="og:updated_time" content="2016-10-20T12:16:50.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我们的征途是星辰大海">
+<meta name="twitter:title" content="并行，并发和锁">
+<meta name="twitter:description" content="并行：多个处理器，从硬件角度真正意义的同时进行多线程：只是逻辑上的并行，同一时刻还是只有一个线程发生并发：并行和多线程都叫并发
+关于锁：不管并发并行，只要存在共享内存，就要考虑加锁的问题。
+锁的实质：都是通过阻塞线程实现的(一个线程申请锁未释放，另一个锁再申请就会线程就会阻塞)，区别就是这个锁作用的范围，是否多个进程可以共享这个锁。
+几种锁的区别:（都是阻塞线程）   
+semphore:信号量，">
   
     <link rel="alternate" href="/atom.xml" title="我们的征途是星辰大海" type="application/atom+xml">
   
@@ -59,134 +75,70 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/10/20/java语言基础，长期更新/" class="archive-article-date">
-  <time datetime="2016-10-20T12:30:57.000Z" itemprop="datePublished">Oct 20</time>
+        <section id="main"><article id="post-并行，并发和锁" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/20/并行，并发和锁/" class="article-date">
+  <time datetime="2016-10-20T12:15:25.000Z" itemprop="datePublished">2016-10-20</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/20/java语言基础，长期更新/">java语言基础，长期更新</a>
+    <h1 class="article-title" itemprop="name">
+      并行，并发和锁
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/10/20/c语言基础，长期更新/" class="archive-article-date">
-  <time datetime="2016-10-20T12:27:11.000Z" itemprop="datePublished">Oct 20</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/20/c语言基础，长期更新/">c语言基础，长期更新</a>
-    </h1>
-  
+        <p>并行：多个处理器，从硬件角度真正意义的同时进行<br>多线程：只是逻辑上的并行，同一时刻还是只有一个线程发生<br>并发：并行和多线程都叫并发</p>
+<p>关于锁：<br>不管并发并行，只要存在共享内存，就要考虑加锁的问题。</p>
+<p>锁的实质：都是通过阻塞线程实现的(一个线程申请锁未释放，另一个锁再申请就会线程就会阻塞)，区别就是这个锁作用的范围，是否多个进程可以共享这个锁。</p>
+<p>几种锁的区别:（都是阻塞线程）   </p>
+<p>semphore:信号量，多个进程之间也可以用，多用于共享内存 </p>
+<p>mutex: 互斥锁，多个进程之间不能用，阻塞的，由操作系统唤醒。</p>
+<p>自旋锁：和互斥锁相似，区别就是不是阻塞的，不是休眠然后被操作系统唤醒，而是自己占用cpu，一直查询锁是否被释放   </p>
+<p>dpdk自带的读写锁：<br>rte_write_lock:  该锁被申请后，其他线程不能读也不能写<br>rte_read_lock:  该锁被申请后，其他线程不能写<br>写时独占，读时共享  =&gt; 写的时候加写的锁，读的时候加读的锁。</p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/10/20/并行，并发和锁/" class="archive-article-date">
-  <time datetime="2016-10-20T12:15:25.000Z" itemprop="datePublished">Oct 20</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/20/并行，并发和锁/">并行，并发和锁</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/10/20/c++基础-长期更新/" class="archive-article-date">
-  <time datetime="2016-10-20T11:05:04.000Z" itemprop="datePublished">Oct 20</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/20/并行，并发和锁/" data-id="ciuicg3oo000gwrs6mvf8jn8n" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/20/c++基础-长期更新/">c++基础,长期更新</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/10/19/Hello-hexo/" class="archive-article-date">
-  <time datetime="2016-10-19T08:33:06.000Z" itemprop="datePublished">Oct 19</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/19/Hello-hexo/">Hello,hexo</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/操作系统/">操作系统</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/10/19/c语言的指针易错点/" class="archive-article-date">
-  <time datetime="2016-10-19T08:33:06.000Z" itemprop="datePublished">Oct 19</time>
-</a>
-      
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/19/c语言的指针易错点/">c语言的指针易错点</a>
-    </h1>
+    <a href="/2016/10/20/c语言基础，长期更新/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          c语言基础，长期更新
+        
+      </div>
+    </a>
   
+  
+    <a href="/2016/10/20/c++基础-长期更新/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">c++基础,长期更新</div>
+    </a>
+  
+</nav>
 
-    </header>
-  </div>
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         

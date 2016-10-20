@@ -3,14 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2016/10 | 我们的征途是星辰大海</title>
+  <title>中文编码那些事 | 我们的征途是星辰大海</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="我们的征途是星辰大海">
-<meta property="og:url" content="http://yoursite.com/archives/2016/10/index.html">
+  <meta name="description" content="今天终于搞清楚了各种编码的关系，以后不要再纠结这些东西了。ANSI:   Americal   National   Standard  Institute,泛指这种编码方式：       char 型 0-255，Ascii 码 0-127，       在ANSI编码中，ASCLL码还是一个字节，用两个字节表示非ASCLL 码，如中文，韩文等，特点是首字节是 128-255。       如‘">
+<meta property="og:type" content="article">
+<meta property="og:title" content="中文编码那些事">
+<meta property="og:url" content="http://yoursite.com/2015/10/15/中文编码那些事/index.html">
 <meta property="og:site_name" content="我们的征途是星辰大海">
+<meta property="og:description" content="今天终于搞清楚了各种编码的关系，以后不要再纠结这些东西了。ANSI:   Americal   National   Standard  Institute,泛指这种编码方式：       char 型 0-255，Ascii 码 0-127，       在ANSI编码中，ASCLL码还是一个字节，用两个字节表示非ASCLL 码，如中文，韩文等，特点是首字节是 128-255。       如‘">
+<meta property="og:image" content="http://img.blog.csdn.net/20151018142052606">
+<meta property="og:updated_time" content="2016-10-20T12:35:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我们的征途是星辰大海">
+<meta name="twitter:title" content="中文编码那些事">
+<meta name="twitter:description" content="今天终于搞清楚了各种编码的关系，以后不要再纠结这些东西了。ANSI:   Americal   National   Standard  Institute,泛指这种编码方式：       char 型 0-255，Ascii 码 0-127，       在ANSI编码中，ASCLL码还是一个字节，用两个字节表示非ASCLL 码，如中文，韩文等，特点是首字节是 128-255。       如‘">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20151018142052606">
   
     <link rel="alternate" href="/atom.xml" title="我们的征途是星辰大海" type="application/atom+xml">
   
@@ -59,134 +65,68 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/10/20/java语言基础，长期更新/" class="archive-article-date">
-  <time datetime="2016-10-20T12:30:57.000Z" itemprop="datePublished">Oct 20</time>
+        <section id="main"><article id="post-中文编码那些事" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/10/15/中文编码那些事/" class="article-date">
+  <time datetime="2015-10-15T12:32:36.000Z" itemprop="datePublished">2015-10-15</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/20/java语言基础，长期更新/">java语言基础，长期更新</a>
+    <h1 class="article-title" itemprop="name">
+      中文编码那些事
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/10/20/c语言基础，长期更新/" class="archive-article-date">
-  <time datetime="2016-10-20T12:27:11.000Z" itemprop="datePublished">Oct 20</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/20/c语言基础，长期更新/">c语言基础，长期更新</a>
-    </h1>
-  
+        <p>今天终于搞清楚了各种编码的关系，以后不要再纠结这些东西了。<br>ANSI:   Americal   National   Standard  Institute,泛指这种编码方式：<br>       char 型 0-255，Ascii 码 0-127，<br>       在ANSI编码中，ASCLL码还是一个字节，用两个字节表示非ASCLL 码，如中文，韩文等，特点是首字节是 128-255。       如‘啊’在GB2312-80中表示为 176，161.<br>       GB2312-80:  首字节 128-255，第二字节 128- 255<br>       GBK:             首字节 128-255，第二字节  64-255<br>       GB18030：   两个或四个字节          首字节 128-255 ，第二，四字节反正可以区分开</p>
+<p>Unicode: 一种编码方式。包含了全世界所有的字符。</p>
+<p>Ucs:   universal   character   set, 分为UCS-2和UCS-4.分别表示 16位和 32 位。基本跟unicode 没有分别，只是属于两个不同的机构推出来的。</p>
+<p>UTF8：unicode  translation  format ,只是unicode 码的一种实现方式，为了避免浪费空间。<br><img src="http://img.blog.csdn.net/20151018142052606" alt="test"></p>
+<p>具体来说，vc用的还是GB<br>java,python 都支持unicode，不是utf-8</p>
+<p> 通常所说的编码 uincode和utf-8,其中unicode 是指两个字节的定长编码（官方的），utf-8是变长编码。</p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/10/20/并行，并发和锁/" class="archive-article-date">
-  <time datetime="2016-10-20T12:15:25.000Z" itemprop="datePublished">Oct 20</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/20/并行，并发和锁/">并行，并发和锁</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/10/20/c++基础-长期更新/" class="archive-article-date">
-  <time datetime="2016-10-20T11:05:04.000Z" itemprop="datePublished">Oct 20</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/10/15/中文编码那些事/" data-id="ciuicg3ol000bwrs6bv9gwc1z" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/20/c++基础-长期更新/">c++基础,长期更新</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/10/19/Hello-hexo/" class="archive-article-date">
-  <time datetime="2016-10-19T08:33:06.000Z" itemprop="datePublished">Oct 19</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/19/Hello-hexo/">Hello,hexo</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计算机基础/">计算机基础</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/10/19/c语言的指针易错点/" class="archive-article-date">
-  <time datetime="2016-10-19T08:33:06.000Z" itemprop="datePublished">Oct 19</time>
-</a>
-      
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/19/c语言的指针易错点/">c语言的指针易错点</a>
-    </h1>
+    <a href="/2015/11/03/计算机组成原理基础/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          计算机组成原理基础
+        
+      </div>
+    </a>
   
+  
+    <a href="/2015/10/10/编译过程/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">编译过程</div>
+    </a>
+  
+</nav>
 
-    </header>
-  </div>
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         

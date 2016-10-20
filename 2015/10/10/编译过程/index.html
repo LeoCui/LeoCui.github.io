@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>编译过程 | 我们的征途是星辰大海</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="我的理解：
+预处理：处理带#的，如将include的文件内容全部包含进来，处理end if 等.
+编译：词法分析，生成汇编代码，编译后没有变量名概念，编译同时对代码进行优化。
+汇编：将汇编代码生成机器代码。
+连接：现在一个工程比如有很多文件，分开编译后会形成很多个机器代码文件，链接就是就是将这些文件组合起来。分为静态，动态。静态链接(库)：比如把函数调用部分换成对应的机器代码，将很多的机器代码直接">
+<meta property="og:type" content="article">
+<meta property="og:title" content="编译过程">
+<meta property="og:url" content="http://yoursite.com/2015/10/10/编译过程/index.html">
+<meta property="og:site_name" content="我们的征途是星辰大海">
+<meta property="og:description" content="我的理解：
+预处理：处理带#的，如将include的文件内容全部包含进来，处理end if 等.
+编译：词法分析，生成汇编代码，编译后没有变量名概念，编译同时对代码进行优化。
+汇编：将汇编代码生成机器代码。
+连接：现在一个工程比如有很多文件，分开编译后会形成很多个机器代码文件，链接就是就是将这些文件组合起来。分为静态，动态。静态链接(库)：比如把函数调用部分换成对应的机器代码，将很多的机器代码直接">
+<meta property="og:updated_time" content="2016-10-20T12:41:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="编译过程">
+<meta name="twitter:description" content="我的理解：
+预处理：处理带#的，如将include的文件内容全部包含进来，处理end if 等.
+编译：词法分析，生成汇编代码，编译后没有变量名概念，编译同时对代码进行优化。
+汇编：将汇编代码生成机器代码。
+连接：现在一个工程比如有很多文件，分开编译后会形成很多个机器代码文件，链接就是就是将这些文件组合起来。分为静态，动态。静态链接(库)：比如把函数调用部分换成对应的机器代码，将很多的机器代码直接">
+  
+    <link rel="alternate" href="/atom.xml" title="我们的征途是星辰大海" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">我们的征途是星辰大海</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-编译过程" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/10/10/编译过程/" class="article-date">
+  <time datetime="2015-10-10T12:39:51.000Z" itemprop="datePublished">2015-10-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      编译过程
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我的理解：</p>
+<p>预处理：处理带#的，如将include的文件内容全部包含进来，处理end if 等.</p>
+<p>编译：词法分析，生成汇编代码，编译后没有变量名概念，编译同时对代码进行优化。</p>
+<p>汇编：将汇编代码生成机器代码。</p>
+<p>连接：现在一个工程比如有很多文件，分开编译后会形成很多个机器代码文件，链接就是就是将这些文件组合起来。分为静态，动态。<br>静态链接(库)：比如把函数调用部分换成对应的机器代码，将很多的机器代码直接拼在一起形成一个exe文件。<br>动态链接（库）：比如把函数调用部分换成对应的机器代码的地址，运行的时候在去加载对应的机器代码。这些机器代码都存在.dll 文件中。</p>
+<p>机器代码：    Cpu能够直接执行的指令。与机器有关，理论上机器换了，可能机器代码就不能执行了。但是现在 的cpu，intel,AMD,都用的是相同的指令集。所以由于硬件的<br>原因基本不存在了。剩下的就是操作系统的问题。</p>
+<p>c,c++等都不是跨平台的，exe 文件不能在linux 下运行：<br>原因：  1.文件格式不同, exe文件不止有机器指令等信息，还有其他内容<br>             2.可能要加载系统的dll文件。</p>
+<p>但是可以说c.c++是源代码跨平台的，因为不同平台，不同的编译器之后，是同样的结果。（使用标准库的情况下），如果使用MFC等windows  api的话，代码移植到linux下就不行了。因为缺少对应的系统类库的支持。<br>但是也可以说c++ 不是跨平台的，比如不同的操作系统，int 的字节长度就不同。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/10/10/编译过程/" data-id="ciuicg3oq000jwrs6wok6bvjs" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/10/15/中文编码那些事/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          中文编码那些事
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/05/19/变量的声明和定义/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">变量的声明和定义</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/c-c/">c/c++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机基础/">计算机基础</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/c-c/" style="font-size: 20px;">c/c++</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/操作系统/" style="font-size: 15px;">操作系统</a> <a href="/tags/计算机基础/" style="font-size: 15px;">计算机基础</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/10/20/java语言基础，长期更新/">java语言基础，长期更新</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/20/c语言基础，长期更新/">c语言基础，长期更新</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/20/并行，并发和锁/">并行，并发和锁</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/20/c++基础-长期更新/">c++基础,长期更新</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/19/Hello-hexo/">Hello,hexo</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 LeoCui<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

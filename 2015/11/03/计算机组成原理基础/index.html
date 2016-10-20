@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>计算机组成原理基础 | 我们的征途是星辰大海</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="寄存器： 在CPU中地址总线： 传送地址，在内存中找到相应的地址。只能是从CPU—地址总线： 传送数据，从CPU到外面，或者从外面到CPU举例：   mov   [BX]，AXcpu先计算出物理地址，再通过地址总线（AB）找到内存中的地址（数电讲过，16根线可以1，0找到2^16个地址）然后将AX中的值通过数据总线（DB）写到该内存。（怎么实现的就是硬件的问题了）。
+1.所以处理器的位数一般指的是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机组成原理基础">
+<meta property="og:url" content="http://yoursite.com/2015/11/03/计算机组成原理基础/index.html">
+<meta property="og:site_name" content="我们的征途是星辰大海">
+<meta property="og:description" content="寄存器： 在CPU中地址总线： 传送地址，在内存中找到相应的地址。只能是从CPU—地址总线： 传送数据，从CPU到外面，或者从外面到CPU举例：   mov   [BX]，AXcpu先计算出物理地址，再通过地址总线（AB）找到内存中的地址（数电讲过，16根线可以1，0找到2^16个地址）然后将AX中的值通过数据总线（DB）写到该内存。（怎么实现的就是硬件的问题了）。
+1.所以处理器的位数一般指的是">
+<meta property="og:updated_time" content="2016-10-20T12:38:54.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="计算机组成原理基础">
+<meta name="twitter:description" content="寄存器： 在CPU中地址总线： 传送地址，在内存中找到相应的地址。只能是从CPU—地址总线： 传送数据，从CPU到外面，或者从外面到CPU举例：   mov   [BX]，AXcpu先计算出物理地址，再通过地址总线（AB）找到内存中的地址（数电讲过，16根线可以1，0找到2^16个地址）然后将AX中的值通过数据总线（DB）写到该内存。（怎么实现的就是硬件的问题了）。
+1.所以处理器的位数一般指的是">
+  
+    <link rel="alternate" href="/atom.xml" title="我们的征途是星辰大海" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">我们的征途是星辰大海</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-计算机组成原理基础" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/11/03/计算机组成原理基础/" class="article-date">
+  <time datetime="2015-11-03T12:37:11.000Z" itemprop="datePublished">2015-11-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      计算机组成原理基础
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>寄存器： 在CPU中<br>地址总线： 传送地址，在内存中找到相应的地址。只能是从CPU—<br>地址总线： 传送数据，从CPU到外面，或者从外面到CPU<br>举例：   mov   [BX]，AX<br>cpu先计算出物理地址，再通过地址总线（AB）找到内存中的地址（数电讲过，16根线可以1，0找到2^16个地址）<br>然后将AX中的值通过数据总线（DB）写到该内存。（怎么实现的就是硬件的问题了）。</p>
+<p>1.所以处理器的位数一般指的是 通用寄存器的位数。跟总线根数没有直接关系。寄存器越大，计算能力就越快，因为运算都是通过寄存器进行的。</p>
+<p>2.寻址能力与地址总线根数有关系。32根总线寻址空间就是2^32=4G</p>
+<p>3.关于操作系统位数和CPU 位数，其实没有什么区别，64位只有配合64 位的操作系统和64 位的软件才能发挥最大效能。64 CPU从硬件上提供了<br>支持，如地址总线变大，寄存器变大，但是如果采用32 的系统，就相当于给你提供了 FAX（假设，64位）但是你的程序不用。</p>
+<p>4.64位程序只能64位系统，比如可能寻址超过4G,32位系统就跟不上，但是64位却可以。</p>
+<p>64位系统必须64位CPU，因为64位系统就是为64位的处理器设计的，处理器变了，操作系统肯定也需要变，因为毕竟操作系统<br>在软件执行时很重要。举个例子，存储器管理，可能32位系统最多设计的就是分配4G内存，但是现在64位寻址能力更强，系统<br>就应该相应的分配更大内存。</p>
+<p>总结都是向下兼容：硬件升级—–操作系统升级—–软件升级<br>硬件兼容旧操作系统。<br>操作系统兼容旧软件。<br>反之就不兼容。</p>
+<p>5.程序向下兼容问题：<br>机器码跟平台有很大关系：<br>linux,window 就不说了，文件格式，DLL什么都不一样。<br>都是windows,系统升级了有时软件不兼容，因为dll之类的要重新做，可能就不兼容了.<br>源代码级别的，跟平台关系：<br>java 完全跨平台。所有类型都是定的。<br>c常常说是源代码级别跨平台的，但是不严谨。因为c并没有规定 int 的字长，字长是编译器根据操作系统来决定的。所以可能申请内存扩平台会错误，<br>但是写成 sizeof(int )一般就没有问题了。</p>
+<p>比如为了兼容DOS程序引入DOS系统和实模式。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/11/03/计算机组成原理基础/" data-id="ciuicg3os000lwrs6whgojm8c" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计算机基础/">计算机基础</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/04/10/c语言时间函数全攻略/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          c语言时间函数全攻略
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/10/15/中文编码那些事/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">中文编码那些事</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/c-c/">c/c++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机基础/">计算机基础</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/c-c/" style="font-size: 20px;">c/c++</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/操作系统/" style="font-size: 15px;">操作系统</a> <a href="/tags/计算机基础/" style="font-size: 15px;">计算机基础</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/10/20/java语言基础，长期更新/">java语言基础，长期更新</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/20/c语言基础，长期更新/">c语言基础，长期更新</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/20/并行，并发和锁/">并行，并发和锁</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/20/c++基础-长期更新/">c++基础,长期更新</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/19/Hello-hexo/">Hello,hexo</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 LeoCui<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Windows/Linux进程控制实验 | 我们的征途是星辰大海</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="最近做了操作系统的实验，进程控制，踩了不少坑。现在总结下。Liunx：先放代码
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748#include&amp;lt;iostream&amp;gt;#include&amp;lt;cstdlib&amp;gt;     //sleep()#include&amp;lt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Windows/Linux进程控制实验">
+<meta property="og:url" content="http://yoursite.com/2016/04/11/Windows-Linux进程控制实验/index.html">
+<meta property="og:site_name" content="我们的征途是星辰大海">
+<meta property="og:description" content="最近做了操作系统的实验，进程控制，踩了不少坑。现在总结下。Liunx：先放代码
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748#include&amp;lt;iostream&amp;gt;#include&amp;lt;cstdlib&amp;gt;     //sleep()#include&amp;lt;">
+<meta property="og:updated_time" content="2016-10-20T12:14:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Windows/Linux进程控制实验">
+<meta name="twitter:description" content="最近做了操作系统的实验，进程控制，踩了不少坑。现在总结下。Liunx：先放代码
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748#include&amp;lt;iostream&amp;gt;#include&amp;lt;cstdlib&amp;gt;     //sleep()#include&amp;lt;">
+  
+    <link rel="alternate" href="/atom.xml" title="我们的征途是星辰大海" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">我们的征途是星辰大海</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Windows-Linux进程控制实验" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/11/Windows-Linux进程控制实验/" class="article-date">
+  <time datetime="2016-04-11T12:11:16.000Z" itemprop="datePublished">2016-04-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Windows/Linux进程控制实验
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近做了操作系统的实验，进程控制，踩了不少坑。现在总结下。<br>Liunx：先放代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">#include&lt;iostream&gt;</div><div class="line">#include&lt;cstdlib&gt;     //sleep()</div><div class="line">#include&lt;unistd.h&gt;    //fork</div><div class="line">#include&lt;sys/time.h&gt;  //gettimeofday</div><div class="line">#include&lt;sys/wait.h&gt;  //wait</div><div class="line">#include&lt;ctime&gt;       //localtime</div><div class="line">void outputTime(struct tm*time,int ms);</div><div class="line">using namespace std;</div><div class="line">int main(int argc,char*argv[])</div><div class="line">&#123;</div><div class="line">    struct timeval startTime;</div><div class="line">    struct timeval endTime;</div><div class="line">    struct timezone zone;</div><div class="line">    time_t startTime_t;</div><div class="line">    time_t endTime_t;</div><div class="line">    struct tm *startTime_tm;</div><div class="line">    struct tm *endTime_tm;</div><div class="line">    int pid=fork();</div><div class="line">    if(pid&lt;0)&#123;</div><div class="line">        cout&lt;&lt;&quot;error&quot;&lt;&lt;endl;</div><div class="line">        exit(0);</div><div class="line">    &#125;</div><div class="line">    if(pid==0)&#123;   //子进程</div><div class="line">        execvp(argv[1],NULL); </div><div class="line">	cout&lt;&lt;&quot;execv error!&quot;&lt;&lt;endl;</div><div class="line">	exit(0);</div><div class="line">    &#125;</div><div class="line">    if(pid&gt;0)&#123;    //父进程</div><div class="line">        gettimeofday(&amp;startTime,&amp;zone);</div><div class="line">        wait(0);   //等待子进程结束</div><div class="line">        gettimeofday(&amp;endTime, &amp;zone);</div><div class="line">        long long int durtion=(endTime.tv_sec-startTime.tv_sec)*1000+endTime.tv_usec-startTime.tv_usec;</div><div class="line">        startTime_t=(time_t)startTime.tv_sec;  //转换成time_t格式</div><div class="line">        endTime_t=(time_t)endTime.tv_sec;</div><div class="line">        startTime_tm=localtime(&amp;startTime_t);  //转换成struct tm格式</div><div class="line">        endTime_tm=localtime(&amp;endTime_t);</div><div class="line">        cout&lt;&lt;&quot;The start time is:  &quot;;</div><div class="line">        outputTime(startTime_tm,startTime.tv_usec/1000);</div><div class="line">        cout&lt;&lt;&quot;The end time is:    &quot;;</div><div class="line">        outputTime(endTime_tm,endTime.tv_usec/1000);</div><div class="line">        cout&lt;&lt;&quot;the durtion is &quot;&lt;&lt;durtion&lt;&lt;&quot;ms&quot;&lt;&lt;endl;</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void outputTime(struct tm*time,int ms)&#123;</div><div class="line">    cout&lt;&lt;(*time).tm_year+1900&lt;&lt;&quot;/&quot;&lt;&lt;(*time).tm_mon+1&lt;&lt;&quot;/&quot;&lt;&lt;(*time).tm_mday&lt;&lt;&quot;  &quot;&lt;&lt;(*time).tm_hour&lt;&lt;&quot;:&quot;&lt;&lt;(*time).tm_min&lt;&lt;&quot;:&quot;&lt;&lt;(*time).tm_sec&lt;&lt;&quot;:&quot;&lt;&lt;ms&lt;&lt;endl;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>几个坑：<br>1.之前一直不知道主函数要什么参数，这下知道了。主要是在命令行运行中可能需要传入参数。比如启动一个子进程。     </p>
+<ol>
+<li>每个函数对应的头文件要搞清楚。<br>3.execvp: exec类的函数都是杀死现有进程，用新进程代替，进程号不变。但是execvp()，可以识别环境变量，其他不可以。换句话说：如果传入参数是有环境变量的，而且用的是execvp()，那么只传函数名是可以的。两个条件缺一不可。<br>4.wait(0)可以，wait(NULL)本来应该是可以的，但是不知道为什么在linux中不可以。</li>
+</ol>
+<p>windows:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">#include&lt;iostream&gt;</div><div class="line">#include&lt;string&gt;</div><div class="line">#include&lt;windows.h&gt;</div><div class="line">using namespace std;</div><div class="line">void  outputTime(SYSTEMTIME&amp;time);</div><div class="line">int getDurtion(SYSTEMTIME&amp;startTime, SYSTEMTIME&amp;endTime);</div><div class="line">int main(int argc, char* argv[]) &#123;               //L表示unicode编码，c++和java不同，内部可能有几种编码，烦。。</div><div class="line">	SYSTEMTIME startTime;   //LP表示指针的意思</div><div class="line">	SYSTEMTIME endTime;     </div><div class="line">	GetSystemTime(&amp;startTime);</div><div class="line">	STARTUPINFOA si;  //后面有A表示char,否则是wchar</div><div class="line">	PROCESS_INFORMATION pi;</div><div class="line">	memset(&amp;si,0, sizeof(si));         </div><div class="line">	si.cb = sizeof(STARTUPINFO);</div><div class="line">	si.dwFlags = STARTF_USESHOWWINDOW;  // dwflags参数表明子进程是否用wshowWindow这个参数</div><div class="line">	si.wShowWindow = TRUE;           // 当创建一个进程，wshowWindows作为参数传递给main函数,true 表示显示子进程的窗口</div><div class="line">	bool flag=CreateProcessA(NULL,argv[1], NULL, NULL, FALSE, CREATE_NEW_CONSOLE, NULL, NULL, &amp;si, &amp;pi);</div><div class="line">	if (flag) &#123;                  //createProcessA表示第二个参数是char[],createProcess表示wchar[](unicode)</div><div class="line">		GetLocalTime(&amp;startTime);</div><div class="line">		WaitForSingleObject(pi.hProcess, INFINITE);  //等待子进程结束</div><div class="line">		GetLocalTime(&amp;endTime);</div><div class="line">		int durtion = getDurtion(startTime, endTime);</div><div class="line">		cout &lt;&lt; &quot;The start time is: &quot;;</div><div class="line">		outputTime(startTime);</div><div class="line">		cout &lt;&lt; &quot;The end time is:   &quot;;</div><div class="line">		outputTime(endTime);</div><div class="line">		cout &lt;&lt; &quot;The durtion is &quot; &lt;&lt; durtion &lt;&lt; &quot;ms&quot; &lt;&lt; endl;</div><div class="line">	&#125;</div><div class="line">	else &#123;</div><div class="line">		cout &lt;&lt; &quot;The chiidProcess failed to be created!!&quot;;</div><div class="line">	&#125;</div><div class="line">	getchar();</div><div class="line">&#125;</div><div class="line">void  outputTime(SYSTEMTIME&amp;time)&#123;</div><div class="line">	cout &lt;&lt; time.wYear &lt;&lt; &quot;/&quot; &lt;&lt; time.wMonth &lt;&lt; &quot;/&quot; &lt;&lt; time.wDay &lt;&lt; &quot;  &quot; &lt;&lt; time.wHour &lt;&lt; &quot;:&quot; &lt;&lt; time.wMinute &lt;&lt;</div><div class="line">		&quot;:&quot; &lt;&lt; time.wSecond &lt;&lt; &quot;:&quot; &lt;&lt; time.wMilliseconds&lt;&lt;endl;</div><div class="line">&#125;</div><div class="line">int getDurtion(SYSTEMTIME&amp;startTime, SYSTEMTIME&amp;endTime) &#123;</div><div class="line">	int tempHour = endTime.wHour - startTime.wHour;</div><div class="line">	int tempMinute = endTime.wMinute - startTime.wMinute;</div><div class="line">	int tempSecond = endTime.wSecond - startTime.wSecond;</div><div class="line">	int tempMillSecond = endTime.wMilliseconds - startTime.wMilliseconds;</div><div class="line">	int duration = ((tempHour * 60 + tempMinute) * 60 + tempSecond) * 1000 + tempMillSecond;</div><div class="line">	return duration;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>几个坑：<br>1.编码：c++ 编码是乱的，没有一个统一的编码，有char,wchar 涉及到中文的时候就很容易出错。<br>解决方法：createProcessA(),STARTUPINFOA,这样就都是char,路径也别设成中文就可以。  </p>
+<ol>
+<li>配环境的时候，经常缺头文件，需要找到头文件的目录，然后将其添加到path 中就可以。<br>lib: 库文件，具体实现<br>include: 头文件，声明和定义<br>3.手动编译：cl  test.cpp<br>编译命令：<br>gcc,g++: 是linux<br>microsoft: cl</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/04/11/Windows-Linux进程控制实验/" data-id="ciuicg3o00001wrs6qffldi7v" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/操作系统/">操作系统</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/04/11/Linux-Windows环境变量那些事/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Linux/Windows环境变量那些事
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/04/10/c语言时间函数全攻略/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">c语言时间函数全攻略</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/c-c/">c/c++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机基础/">计算机基础</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/c-c/" style="font-size: 20px;">c/c++</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/操作系统/" style="font-size: 15px;">操作系统</a> <a href="/tags/计算机基础/" style="font-size: 15px;">计算机基础</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/10/20/java语言基础，长期更新/">java语言基础，长期更新</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/20/c语言基础，长期更新/">c语言基础，长期更新</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/20/并行，并发和锁/">并行，并发和锁</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/20/c++基础-长期更新/">c++基础,长期更新</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/19/Hello-hexo/">Hello,hexo</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 LeoCui<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

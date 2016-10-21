@@ -38,7 +38,7 @@
     e.stopPropagation();
 
     var $this = $(this),
-      url = $this.attr('data-url'),
+      url = 'leocui.github.io',
       encodedUrl = encodeURIComponent(url),
       id = 'article-share-box-' + $this.attr('data-id'),
       offset = $this.offset();

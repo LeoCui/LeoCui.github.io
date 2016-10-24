@@ -15,7 +15,7 @@
 <meta property="og:description" content="今天在写操作系统的作业，发现c++的很多基本语法都忘了，现在自己把基本语法总结一遍。方便以后复习。
    1.构造函数：     父类构造函数 -&amp;gt; 类成员的构造函数 -&amp;gt; 自己的构造函数
    2.初始化列表：     这里有个博客挺好       http://www.cnblogs.com/graphics/archive/2010/07/04/1770900.html">
-<meta property="og:updated_time" content="2016-10-21T05:56:47.000Z">
+<meta property="og:updated_time" content="2016-10-24T07:29:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="c++基础,长期更新">
 <meta name="twitter:description" content="今天在写操作系统的作业，发现c++的很多基本语法都忘了，现在自己把基本语法总结一遍。方便以后复习。
@@ -102,7 +102,7 @@
 <p>   1.构造函数：<br>     父类构造函数 -&gt; 类成员的构造函数 -&gt; 自己的构造函数</p>
 <p>   2.初始化列表：<br>     这里有个博客挺好       <a href="http://www.cnblogs.com/graphics/archive/2010/07/04/1770900.html" target="_blank" rel="external">http://www.cnblogs.com/graphics/archive/2010/07/04/1770900.html</a></p>
 <p>   我的总结：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Test1 test1 ;</div><div class="line">    Test2(Test1 &amp;t1):test1(t1)&#123;&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Test1 test1 ;</div><div class="line">    Test2(Test1 &amp;t1):test1(t1)&#123;&#125;</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Test1 test1 ;</div><div class="line">   Test2(Test1 &amp;t1)</div><div class="line">   &#123;</div><div class="line">       test1 = t1 ;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
 <p>第2种test1需要执行一次默认构造函数+一次赋值操作<br>第1种test1只需要执行一次拷贝构造函数</p>
 <p>特别的：下面情况只能用初始化列表</p>

@@ -4,6 +4,43 @@
 
     
   <url>
+    <loc>http://leocui.github.io/2016/10/24/linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2016-10-24T06:26:22.000Z</lastmod>
+    <data>
+        <display>
+        <title>linux学习笔记</title>
+        <pubTime>2016-10-24T06:26:22.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://leocui.github.io/2016/10/24/%E8%AE%A1%E7%BD%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2016-10-24T06:14:32.000Z</lastmod>
+    <data>
+        <display>
+        <title>计网学习笔记</title>
+        <pubTime>2016-10-24T03:28:41.000Z</pubTime>
+        
+        <tag>arp</tag>
+         
+        <tag>网络</tag>
+         
+         
+           
+             
+              <breadCrumb title="计算机网络" url="http://leocui.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://leocui.github.io/2016/10/24/markdown%E8%AF%AD%E6%B3%95-%E9%95%BF%E6%9C%9F%E6%9B%B4%E6%96%B0/</loc>
     <lastmod>2016-10-24T02:30:25.000Z</lastmod>
     <data>
@@ -251,9 +288,9 @@
         
         <tag>Linux</tag>
          
-        <tag>c语言</tag>
-         
         <tag>时间函数</tag>
+         
+        <tag>c语言</tag>
          
          
            

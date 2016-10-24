@@ -64,6 +64,53 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Linux-Windows环境变量那些事" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/11/Linux-Windows环境变量那些事/" class="article-date">
+  <time datetime="2016-04-11T12:17:39.000Z" itemprop="datePublished">2016-04-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/操作系统/">操作系统<span class="article-category-count">3</span></a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/11/Linux-Windows环境变量那些事/">Linux/Windows环境变量那些事</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>变量：相当于别名，举个例子：linux 中，HOME就是一个变量，它一般指的是/home/leo,leo是我的用户名。<br>变量名不能单独出现,必须加上 “美元符”(linux)<br>或%%(windows)表示引用它的值。<br>在linux中:   可以通过echo $HOME查看变量的值<br>在windows中： echo %HOME%</p>
+<p>环境变量：path ,path实质上是一种特殊的变量。它等于一系列路径（windows用;隔开,linux用：隔开）。<br>Linux的命令实质上就是在执行程序，执行程序时，系统会到当前目录寻找程序路径，找不到就到环境变量对应的路径中去寻找<br>环境变量的作用是当执行或者链接某个程序的时候，不需要切换到具体的目录下在执行。</p>
+<p>顺便说一下：命令行中执行某个程序，只要写出路径即可，之前我还一直以为./是执行的意思呢，真是too young!!<br>update:今天才发现要想执行某程序：<br>1.输入完整路径 如/home/leo/test<br>2.输入当前目录 ./test ,在当前目录下只输入test 是不行的。<br>3.只输入文件名，这种要求必须设置环境变量</p>
+<p>那么怎么设置环境变量呢？<br>windows:  直接搜索“环境变量”，在path路径下添加要添加的目录(不要忘记;)<br>linux下，在/etc下找到profile文件，用gedit 打开，export PATH=自己路径：$PATH，保存</p>
+<p>linux还有一个命令：alias<br>alias看起来仿佛跟变量很像，其实是不同的。alias可以看成是一种批处理，它可以将一个或多个命令重命名为一个命令。<br>alias:  查看alias内容<br>alias  test=”cd /home;ls;” ，可以将一系列命令命名成一个。(临时命名，当前窗口有效)<br>如果想永远命名：在home/leo中找到.bashrc文件，然后找到alias部分，添加自定义命名，如alias  test=”cd /home;ls;”<br>那么可能有人问？怎么在windows中实现alias呢，可以通过批处理实现。举个例子，在windows中想用ls,就可以创建ls.bat,内容为dir. 然后ls就可以用了。<br>tips:  alias 后面可以跟参数。<br>bat文件后面好像不可以跟参数。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://leocui.github.io/2016/04/11/Linux-Windows环境变量那些事/" data-id="ciunok7o60004sls6206z95j1" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a><span class="article-tag-list-count">3</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/环境变量/">环境变量</a><span class="article-tag-list-count">1</span></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Windows-Linux进程控制实验" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/04/11/Windows-Linux进程控制实验/" class="article-date">
@@ -106,7 +153,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2016/04/11/Windows-Linux进程控制实验/" data-id="ciuno6p6p0006p4s6x9qn1sen" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2016/04/11/Windows-Linux进程控制实验/" data-id="ciunok7od0007sls69rl9jsf1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a><span class="article-tag-list-count">3</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/操作系统/">操作系统</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/进程控制/">进程控制</a><span class="article-tag-list-count">1</span></li></ul>
@@ -173,7 +220,7 @@ windows下：
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2016/04/10/c语言时间函数全攻略/" data-id="ciuno6p6y000cp4s67fvnwhi1" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2016/04/10/c语言时间函数全攻略/" data-id="ciunok7op000dsls6zedf4hhq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a><span class="article-tag-list-count">3</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c语言/">c语言</a><span class="article-tag-list-count">2</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/时间函数/">时间函数</a><span class="article-tag-list-count">1</span></li></ul>
@@ -224,7 +271,7 @@ windows下：
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2015/11/03/计算机组成原理基础/" data-id="ciuno6p7n0010p4s66a0d2j99" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2015/11/03/计算机组成原理基础/" data-id="ciunok7pn0014sls66w12q29o" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cpu位数/">cpu位数</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/总线/">总线</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计算机组成原理/">计算机组成原理</a><span class="article-tag-list-count">1</span></li></ul>
@@ -272,7 +319,7 @@ windows下：
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2015/10/15/中文编码那些事/" data-id="ciuno6p79000mp4s6pq8attf3" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2015/10/15/中文编码那些事/" data-id="ciunok7p9000usls68rvrlfa5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GB2312/">GB2312</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/unicode/">unicode</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/utf-8/">utf-8</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编码/">编码</a><span class="article-tag-list-count">1</span></li></ul>
@@ -322,7 +369,7 @@ windows下：
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2015/10/10/编译过程/" data-id="ciuno6p7l000xp4s6ubap5ajg" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2015/10/10/编译过程/" data-id="ciunok7pl0011sls6j0l1w6gp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编译原理/">编译原理</a><span class="article-tag-list-count">1</span></li></ul>
@@ -376,7 +423,7 @@ windows下：
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2015/05/19/变量的声明和定义/" data-id="ciuno6p7b000op4s6sr1ulv20" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2015/05/19/变量的声明和定义/" data-id="ciunok7pj000ysls6w6nwjewc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c-c/">c/c++</a><span class="article-tag-list-count">3</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/声明和定义/">声明和定义</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/外部变量/">外部变量</a><span class="article-tag-list-count">1</span></li></ul>
@@ -420,7 +467,7 @@ windows下：
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -431,6 +478,10 @@ windows下：
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/10/24/linux学习笔记/">linux学习笔记</a>
+          </li>
         
           <li>
             <a href="/2016/10/24/计网学习笔记/">计网学习笔记</a>
@@ -446,10 +497,6 @@ windows下：
         
           <li>
             <a href="/2016/10/20/java语言基础，长期更新/">java语言基础，长期更新</a>
-          </li>
-        
-          <li>
-            <a href="/2016/10/20/c语言基础，长期更新/">c语言基础，长期更新</a>
           </li>
         
       </ul>

@@ -64,12 +64,16 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-linux学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-gdb命令总结" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/10/24/linux学习笔记/" class="article-date">
-  <time datetime="2016-10-24T06:26:22.000Z" itemprop="datePublished">2016-10-24</time>
+    <a href="/2016/11/03/gdb命令总结/" class="article-date">
+  <time datetime="2016-11-03T10:35:50.000Z" itemprop="datePublished">2016-11-03</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux<span class="article-category-count">2</span></a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -78,7 +82,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/24/linux学习笔记/">linux学习笔记</a>
+      <a class="article-title" href="/2016/11/03/gdb命令总结/">gdb命令总结</a>
     </h1>
   
 
@@ -86,13 +90,179 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <ul>
+<li>list+行号(函数名)：查看某一行(函数)的代码</li>
+<li>break+行号: 设置断点</li>
+<li>start: 停在main函数第一条</li>
+<li>run:   停在断点处</li>
+<li>next(n): 单步执行</li>
+<li>info :  查看变量</li>
+<li>step(s): 进入函数</li>
+<li>quit(q): 退出gdb</li>
+<li>info threads: 显示所有线程信息</li>
+<li>thread </li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2016/10/24/linux学习笔记/" data-id="ciunok7p1000nsls6z0l6cr9c" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2016/11/03/gdb命令总结/" data-id="civ28bues000n66s6t9cr5m5f" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gdb命令/">gdb命令</a><span class="article-tag-list-count">1</span></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-c-常用的STL" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/03/c-常用的STL/" class="article-date">
+  <time datetime="2016-11-03T10:22:42.000Z" itemprop="datePublished">2016-11-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/c-c/">c/c++<span class="article-category-count">7</span></a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/03/c-常用的STL/">c++常用的STL</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>earse的删除操作:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">for(iter=vector.begin();iter!=vector.end();)&#123;</div><div class="line">	if(*iter==val)&#123;</div><div class="line">		iter=iter.erase();</div><div class="line">		//erase返回被删除元素后一个或者vector.end()</div><div class="line">	&#125;</div><div class="line">	else&#123;</div><div class="line">		iter++;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>erase的sort()</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sort(vector.begin(),vertor.end(),cmp);</div><div class="line">bool cmp(type a,type b)&#123;</div><div class="line">	</div><div class="line">&#125; //cmp函数的意义：如果返回true,就保持a,b这样的顺序</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://leocui.github.io/2016/11/03/c-常用的STL/" data-id="civ28bueh000d66s660orjfpw" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/STL/">STL</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c-c/">c/c++</a><span class="article-tag-list-count">4</span></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-c语言gets和scanf的区别" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/03/c语言gets和scanf的区别/" class="article-date">
+  <time datetime="2016-11-03T09:04:43.000Z" itemprop="datePublished">2016-11-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/c-c/">c/c++<span class="article-category-count">7</span></a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/03/c语言gets和scanf的区别/">c语言gets和scanf的区别</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="今天在写项目的时候遇到了读入不定字符串的问题，涉及到scanf和gets的区别，之前在这个问题上一直没有彻底弄懂，现在总结下。"><a href="#今天在写项目的时候遇到了读入不定字符串的问题，涉及到scanf和gets的区别，之前在这个问题上一直没有彻底弄懂，现在总结下。" class="headerlink" title="今天在写项目的时候遇到了读入不定字符串的问题，涉及到scanf和gets的区别，之前在这个问题上一直没有彻底弄懂，现在总结下。"></a>今天在写项目的时候遇到了读入不定字符串的问题，涉及到scanf和gets的区别，之前在这个问题上一直没有彻底弄懂，现在总结下。</h3><ul>
+<li><p>二者在读入字符串时都会在后面加上\0</p>
+</li>
+<li><p>scanf在遇到空格，回车，tab的时候停止输入，并且将这些（空格，回车，tab）留在输入缓冲区中。</p>
+</li>
+<li>gets遇到回车会停止输入，并且清空输入缓冲区</li>
+<li>scanf发现缓冲区有空格，tab,回车会跳过这些继续等待输入</li>
+<li>gets,getchar等遇到缓冲区有空格，tab，回车会读入，然后清空缓冲区。</li>
+<li>值得一提的是，二者都是不安全的，容易读入恶意代码被攻击。<h3 id="然后在具体的应用中，比如读入未知个数的int-string等-ctrl-z结束（linux下ctrl-d）"><a href="#然后在具体的应用中，比如读入未知个数的int-string等-ctrl-z结束（linux下ctrl-d）" class="headerlink" title="然后在具体的应用中，比如读入未知个数的int,string等,ctrl+z结束（linux下ctrl+d）"></a>然后在具体的应用中，比如读入未知个数的int,string等,ctrl+z结束（linux下ctrl+d）</h3></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">while(scanf(&quot;%s&quot;))&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">--------------------------</div><div class="line">while(gets(str))&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">---------------------------</div><div class="line"></div><div class="line">scnaf(&quot;%d&quot;,&amp;a);</div><div class="line">getchar(); //读入缓冲区遗留的回车</div><div class="line">gets(str);</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://leocui.github.io/2016/11/03/c语言gets和scanf的区别/" data-id="civ28buee000966s6cf4hjusr" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c语言/">c语言</a><span class="article-tag-list-count">3</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gets/">gets</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/scanf/">scanf</a><span class="article-tag-list-count">1</span></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/24/linux学习笔记/" class="article-date">
+  <time datetime="2016-10-24T06:26:22.000Z" itemprop="datePublished">2016-10-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux<span class="article-category-count">2</span></a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/24/linux学习笔记/">linux命令</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="查用法：-man-命令"><a href="#查用法：-man-命令" class="headerlink" title="查用法： man+命令"></a>查用法： man+命令</h3><h5 id="grep-golbal-search-regular-expression-and-print"><a href="#grep-golbal-search-regular-expression-and-print" class="headerlink" title="grep: golbal search regular expression and print"></a>grep: golbal search regular expression and print</h5><ul>
+<li>删除文件夹   rm -rf      </li>
+<li>建立文件夹   mkdir</li>
+<li>复制文件夹   copy -r</li>
+<li>查看端口占用情况  netstat -antp | grep 8080</li>
+<li>杀死某进程   kill -9 pid</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://leocui.github.io/2016/10/24/linux学习笔记/" data-id="civ28buf1000v66s6ebn9qrc8" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux命令/">linux命令</a><span class="article-tag-list-count">1</span></li></ul>
+
     </footer>
   </div>
   
@@ -140,7 +310,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2016/10/24/计网学习笔记/" data-id="ciunok7pp0018sls6eycpocyo" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2016/10/24/计网学习笔记/" data-id="civ28bufe001e66s63bv2outs" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/arp/">arp</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网络/">网络</a><span class="article-tag-list-count">1</span></li></ul>
@@ -190,7 +360,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2016/10/24/markdown语法-长期更新/" data-id="ciunok7p5000psls646bj6k77" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2016/10/24/markdown语法-长期更新/" data-id="civ28buf8001366s6jjr7li8y" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a><span class="article-tag-list-count">1</span></li></ul>
@@ -247,7 +417,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2016/10/24/git教程/" data-id="ciunok7ow000isls6s35dzlf0" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2016/10/24/git教程/" data-id="civ28bueu000p66s6581ktp7t" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a><span class="article-tag-list-count">1</span></li></ul>
@@ -296,7 +466,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2016/10/20/java语言基础，长期更新/" data-id="ciunok7ox000jsls66g1thdol" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2016/10/20/java语言基础，长期更新/" data-id="civ28buex000u66s6bh41cd3w" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a><span class="article-tag-list-count">1</span></li></ul>
@@ -315,7 +485,7 @@
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/c-c/">c/c++<span class="article-category-count">5</span></a>
+    <a class="article-category-link" href="/categories/c-c/">c/c++<span class="article-category-count">7</span></a>
   </div>
 
   </div>
@@ -334,17 +504,28 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ol>
-<li>include”    “ 的话编译器环境首先会在你当前所在的目录来找寻头文件，当所在目录没有的话，它就会到标准头文件库来找，找不到就报错，<br>&lt;&gt;的话它一开始就到标准头文件库来找，找不到就报错！</li>
-</ol>
+        <ul>
+<li><p>include”    “ 的话编译器环境首先会在你当前所在的目录来找寻头文件，当所在目录没有的话，它就会到标准头文件库来找，找不到就报错，<br>&lt;&gt;的话它一开始就到标准头文件库来找，找不到就报错！</p>
+</li>
+<li><p>典型错误</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">if(ret=fun()!=0) </div><div class="line">//典型的错误做法，因为赋值优先级最低，正确写法是</div><div class="line">if((ret=fun())!=0)</div></pre></td></tr></table></figure>
+<ul>
+<li>strlen和sizeof区别     </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">char str[16]=&quot;abcd&quot;</div><div class="line">sizeof(str)=16;    //运算符</div><div class="line">strlen(str)=4;     //函数</div></pre></td></tr></table></figure>
+<ul>
+<li></li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2016/10/20/c语言基础，长期更新/" data-id="ciunok7ok0009sls6d4160lcf" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2016/10/20/c语言基础，长期更新/" data-id="civ28buek000f66s6p98shlrk" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c-c/">c/c++</a><span class="article-tag-list-count">3</span></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c-c/">c/c++</a><span class="article-tag-list-count">4</span></li></ul>
 
     </footer>
   </div>
@@ -391,161 +572,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2016/10/20/并行，并发和锁/" data-id="ciunok7pe000vsls651fe2sl9" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2016/10/20/并行，并发和锁/" data-id="civ28bufa001666s6cqmkeory" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/多线程/">多线程</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/并发/">并发</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/锁/">锁</a><span class="article-tag-list-count">1</span></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-c++基础-长期更新" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/10/20/c++基础-长期更新/" class="article-date">
-  <time datetime="2016-10-20T11:05:04.000Z" itemprop="datePublished">2016-10-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/c-c/">c/c++<span class="article-category-count">5</span></a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/20/c++基础-长期更新/">c++基础,长期更新</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>   今天在写操作系统的作业，发现c++的很多基本语法都忘了，现在自己把基本语法总结一遍。方便以后复习。</p>
-<p>   1.构造函数：<br>     父类构造函数 -&gt; 类成员的构造函数 -&gt; 自己的构造函数</p>
-<p>   2.初始化列表：<br>     这里有个博客挺好       <a href="http://www.cnblogs.com/graphics/archive/2010/07/04/1770900.html" target="_blank" rel="external">http://www.cnblogs.com/graphics/archive/2010/07/04/1770900.html</a></p>
-<p>   我的总结：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Test1 test1 ;</div><div class="line">    Test2(Test1 &amp;t1):test1(t1)&#123;&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Test1 test1 ;</div><div class="line">   Test2(Test1 &amp;t1)</div><div class="line">   &#123;</div><div class="line">       test1 = t1 ;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
-<p>第2种test1需要执行一次默认构造函数+一次赋值操作<br>第1种test1只需要执行一次拷贝构造函数</p>
-<p>特别的：下面情况只能用初始化列表</p>
-<ul>
-<li>类成员没有默认构造函数</li>
-<li>类成员是引用类型（只能初始化，不能赋值）</li>
-<li>类成员是常量（只能初始化，不能赋值）</li>
-<li>多个初始化列表，不是按初始化列表顺序，而是按声明顺序</li>
-</ul>
-<p>结论： 尽可能用初始化列表</p>
-<p>初始化列表顺序和声明顺序一致</p>
-<p>3.extern 外部的，extern 只是起一个declare作用，可以用来修饰变量和函数，表示该函数的定义在其他模块中，也就是说，如果你在a.cpp文件中定义a=1;在b.cpp文件中声明extern  a;则可以引用a.cpp中的a。</p>
-<p>4.#ifdef表示条件编译</p>
-<p>5.#define 和 typedef的区别：<br>define预处理，无脑替换<br>typedef是别名，不一样。<br>define  INT  int<em><br>typedef  int</em>  INT<br>则 INT  a,b:<br>typedef:   int<em> a,b:  a,b都是int</em><br>define:   int<em>a,b  : a是int</em>，b是int</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2016/10/20/c++基础-长期更新/" data-id="ciunok7og0008sls64l18zs6u" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c-c/">c/c++</a><span class="article-tag-list-count">3</span></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Hello-hexo" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/10/19/Hello-hexo/" class="article-date">
-  <time datetime="2016-10-19T08:33:06.000Z" itemprop="datePublished">2016-10-19</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/hexo/">hexo<span class="article-category-count">2</span></a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/19/Hello-hexo/">Hello,hexo</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>听实验室的师兄说，面试的时候如果有自己的博客或者github，是很好的加分项。我想起了被我丢弃很久的csdn博客，可是csdn还是太乱了，加上自己一直就想自己搭建个自己的博客，然后这几天也没有什么事情，所以就花了一天的时间来利用hexo+github弄了个自己的博客。<br>以后要坚持写博客，恩，一定。</p>
-<p>几个坑：<br>1.hexo new 等命令要在hexo_blog目录下进行<br>2.文件命名的时候要加上后缀，否则引用文件的时候找不到  </p>
-<p>参考的博客：<a href="http://maoxiangyu.com/Hexo/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97-Next/" target="_blank" rel="external">http://maoxiangyu.com/Hexo/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97-Next/</a></p>
-<p>hexo官网：<a href="https://hexo.io/zh-cn/docs/writing.html" target="_blank" rel="external">https://hexo.io/zh-cn/docs/writing.html</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2016/10/19/Hello-hexo/" data-id="ciunok7o00002sls6aea82tig" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hello-hexo/">hello hexo</a><span class="article-tag-list-count">1</span></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-c语言的指针易错点" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/10/19/c语言的指针易错点/" class="article-date">
-  <time datetime="2016-10-19T08:33:06.000Z" itemprop="datePublished">2016-10-19</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/c-c/">c/c++<span class="article-category-count">5</span></a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/19/c语言的指针易错点/">c语言的指针易错点</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1.今天在做项目的时候被c语言的指针坑了很久。现在总结一下：<br>**：划重点，c语言中没有引用，所有的参数传递都是值传递。<br>这一点在函数传出值(改变函数外的变量)的时候特别明显，想传出一个值就要传入一个指针(它的地址)，然后通过这个它的地址来改变它的值。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">void a;  //传出一个值</div><div class="line">func(&amp;a);</div><div class="line">void func(void * ptr)&#123;</div><div class="line">	*ptr=value;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void * a;  // 传出一个值(指针类型)</div><div class="line">func(&amp;a);</div><div class="line">void func(void** ptr)&#123;</div><div class="line">	*ptr=value;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2016/10/19/c语言的指针易错点/" data-id="ciunok7ot000fsls69y7g8blq" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c语言/">c语言</a><span class="article-tag-list-count">2</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/指针/">指针</a><span class="article-tag-list-count">1</span></li></ul>
 
     </footer>
   </div>
@@ -567,7 +597,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/c-c/">c/c++</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机网络/">计算机网络</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/c-c/">c/c++</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机网络/">计算机网络</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -577,7 +607,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/GB2312/" style="font-size: 10px;">GB2312</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/arp/" style="font-size: 10px;">arp</a> <a href="/tags/c-c/" style="font-size: 20px;">c/c++</a> <a href="/tags/cpu位数/" style="font-size: 10px;">cpu位数</a> <a href="/tags/c语言/" style="font-size: 15px;">c语言</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hello-hexo/" style="font-size: 10px;">hello hexo</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/unicode/" style="font-size: 10px;">unicode</a> <a href="/tags/utf-8/" style="font-size: 10px;">utf-8</a> <a href="/tags/声明和定义/" style="font-size: 10px;">声明和定义</a> <a href="/tags/外部变量/" style="font-size: 10px;">外部变量</a> <a href="/tags/多线程/" style="font-size: 10px;">多线程</a> <a href="/tags/并发/" style="font-size: 10px;">并发</a> <a href="/tags/总线/" style="font-size: 10px;">总线</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/操作系统/" style="font-size: 10px;">操作系统</a> <a href="/tags/时间函数/" style="font-size: 10px;">时间函数</a> <a href="/tags/环境变量/" style="font-size: 10px;">环境变量</a> <a href="/tags/编码/" style="font-size: 10px;">编码</a> <a href="/tags/编译原理/" style="font-size: 10px;">编译原理</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a> <a href="/tags/计算机组成原理/" style="font-size: 10px;">计算机组成原理</a> <a href="/tags/进程控制/" style="font-size: 10px;">进程控制</a> <a href="/tags/锁/" style="font-size: 10px;">锁</a>
+      <a href="/tags/GB2312/" style="font-size: 10px;">GB2312</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/STL/" style="font-size: 10px;">STL</a> <a href="/tags/arp/" style="font-size: 10px;">arp</a> <a href="/tags/c-c/" style="font-size: 20px;">c/c++</a> <a href="/tags/cpu位数/" style="font-size: 10px;">cpu位数</a> <a href="/tags/c语言/" style="font-size: 15px;">c语言</a> <a href="/tags/gdb命令/" style="font-size: 10px;">gdb命令</a> <a href="/tags/gets/" style="font-size: 10px;">gets</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hello-hexo/" style="font-size: 10px;">hello hexo</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/linux命令/" style="font-size: 10px;">linux命令</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/scanf/" style="font-size: 10px;">scanf</a> <a href="/tags/unicode/" style="font-size: 10px;">unicode</a> <a href="/tags/utf-8/" style="font-size: 10px;">utf-8</a> <a href="/tags/声明和定义/" style="font-size: 10px;">声明和定义</a> <a href="/tags/外部变量/" style="font-size: 10px;">外部变量</a> <a href="/tags/多线程/" style="font-size: 10px;">多线程</a> <a href="/tags/并发/" style="font-size: 10px;">并发</a> <a href="/tags/总线/" style="font-size: 10px;">总线</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/操作系统/" style="font-size: 10px;">操作系统</a> <a href="/tags/时间函数/" style="font-size: 10px;">时间函数</a> <a href="/tags/环境变量/" style="font-size: 10px;">环境变量</a> <a href="/tags/编码/" style="font-size: 10px;">编码</a> <a href="/tags/编译原理/" style="font-size: 10px;">编译原理</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a> <a href="/tags/计算机组成原理/" style="font-size: 10px;">计算机组成原理</a> <a href="/tags/进程控制/" style="font-size: 10px;">进程控制</a> <a href="/tags/锁/" style="font-size: 10px;">锁</a>
     </div>
   </div>
 
@@ -586,7 +616,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -599,23 +629,23 @@
       <ul>
         
           <li>
-            <a href="/2016/10/24/linux学习笔记/">linux学习笔记</a>
+            <a href="/2016/11/03/gdb命令总结/">gdb命令总结</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/03/c-常用的STL/">c++常用的STL</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/03/c语言gets和scanf的区别/">c语言gets和scanf的区别</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/24/linux学习笔记/">linux命令</a>
           </li>
         
           <li>
             <a href="/2016/10/24/计网学习笔记/">计网学习笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2016/10/24/markdown语法-长期更新/">markdown语法,长期更新</a>
-          </li>
-        
-          <li>
-            <a href="/2016/10/24/git教程/">git教程</a>
-          </li>
-        
-          <li>
-            <a href="/2016/10/20/java语言基础，长期更新/">java语言基础，长期更新</a>
           </li>
         
       </ul>

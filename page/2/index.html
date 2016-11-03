@@ -64,6 +64,157 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-c++基础-长期更新" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/20/c++基础-长期更新/" class="article-date">
+  <time datetime="2016-10-20T11:05:04.000Z" itemprop="datePublished">2016-10-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/c-c/">c/c++<span class="article-category-count">7</span></a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/20/c++基础-长期更新/">c++基础,长期更新</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>   今天在写操作系统的作业，发现c++的很多基本语法都忘了，现在自己把基本语法总结一遍。方便以后复习。</p>
+<p>   1.构造函数：<br>     父类构造函数 -&gt; 类成员的构造函数 -&gt; 自己的构造函数</p>
+<p>   2.初始化列表：<br>     这里有个博客挺好       <a href="http://www.cnblogs.com/graphics/archive/2010/07/04/1770900.html" target="_blank" rel="external">http://www.cnblogs.com/graphics/archive/2010/07/04/1770900.html</a></p>
+<p>   我的总结：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Test1 test1 ;</div><div class="line">    Test2(Test1 &amp;t1):test1(t1)&#123;&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Test1 test1 ;</div><div class="line">   Test2(Test1 &amp;t1)</div><div class="line">   &#123;</div><div class="line">       test1 = t1 ;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<p>第2种test1需要执行一次默认构造函数+一次赋值操作<br>第1种test1只需要执行一次拷贝构造函数</p>
+<p>特别的：下面情况只能用初始化列表</p>
+<ul>
+<li>类成员没有默认构造函数</li>
+<li>类成员是引用类型（只能初始化，不能赋值）</li>
+<li>类成员是常量（只能初始化，不能赋值）</li>
+<li>多个初始化列表，不是按初始化列表顺序，而是按声明顺序</li>
+</ul>
+<p>结论： 尽可能用初始化列表</p>
+<p>初始化列表顺序和声明顺序一致</p>
+<p>3.extern 外部的，extern 只是起一个declare作用，可以用来修饰变量和函数，表示该函数的定义在其他模块中，也就是说，如果你在a.cpp文件中定义a=1;在b.cpp文件中声明extern  a;则可以引用a.cpp中的a。</p>
+<p>4.#ifdef表示条件编译</p>
+<p>5.#define 和 typedef的区别：<br>define预处理，无脑替换<br>typedef是别名，不一样。<br>define  INT  int<em><br>typedef  int</em>  INT<br>则 INT  a,b:<br>typedef:   int<em> a,b:  a,b都是int</em><br>define:   int<em>a,b  : a是int</em>，b是int</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://leocui.github.io/2016/10/20/c++基础-长期更新/" data-id="civ28buea000866s61ed1nhpa" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c-c/">c/c++</a><span class="article-tag-list-count">4</span></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Hello-hexo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/19/Hello-hexo/" class="article-date">
+  <time datetime="2016-10-19T08:33:06.000Z" itemprop="datePublished">2016-10-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/hexo/">hexo<span class="article-category-count">2</span></a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/19/Hello-hexo/">Hello,hexo</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>听实验室的师兄说，面试的时候如果有自己的博客或者github，是很好的加分项。我想起了被我丢弃很久的csdn博客，可是csdn还是太乱了，加上自己一直就想自己搭建个自己的博客，然后这几天也没有什么事情，所以就花了一天的时间来利用hexo+github弄了个自己的博客。<br>以后要坚持写博客，恩，一定。</p>
+<p>几个坑：<br>1.hexo new 等命令要在hexo_blog目录下进行<br>2.文件命名的时候要加上后缀，否则引用文件的时候找不到  </p>
+<p>参考的博客：<a href="http://maoxiangyu.com/Hexo/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97-Next/" target="_blank" rel="external">http://maoxiangyu.com/Hexo/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97-Next/</a></p>
+<p>hexo官网：<a href="https://hexo.io/zh-cn/docs/writing.html" target="_blank" rel="external">https://hexo.io/zh-cn/docs/writing.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://leocui.github.io/2016/10/19/Hello-hexo/" data-id="civ28budw000266s6mjws75mf" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hello-hexo/">hello hexo</a><span class="article-tag-list-count">1</span></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-c语言的指针易错点" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/19/c语言的指针易错点/" class="article-date">
+  <time datetime="2016-10-19T08:33:06.000Z" itemprop="datePublished">2016-10-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/c-c/">c/c++<span class="article-category-count">7</span></a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/19/c语言的指针易错点/">c语言的指针易错点</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.今天在做项目的时候被c语言的指针坑了很久。现在总结一下：<br>**：划重点，c语言中没有引用，所有的参数传递都是值传递。<br>这一点在函数传出值(改变函数外的变量)的时候特别明显，想传出一个值就要传入一个指针(它的地址)，然后通过这个它的地址来改变它的值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">void a;  //传出一个值</div><div class="line">func(&amp;a);</div><div class="line">void func(void * ptr)&#123;</div><div class="line">	*ptr=value;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void * a;  // 传出一个值(指针类型)</div><div class="line">func(&amp;a);</div><div class="line">void func(void** ptr)&#123;</div><div class="line">	*ptr=value;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://leocui.github.io/2016/10/19/c语言的指针易错点/" data-id="civ28bueq000j66s6cxun4h29" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c语言/">c语言</a><span class="article-tag-list-count">3</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/指针/">指针</a><span class="article-tag-list-count">1</span></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Linux-Windows环境变量那些事" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/04/11/Linux-Windows环境变量那些事/" class="article-date">
@@ -99,7 +250,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2016/04/11/Linux-Windows环境变量那些事/" data-id="ciunok7o60004sls6206z95j1" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2016/04/11/Linux-Windows环境变量那些事/" data-id="civ28bue3000466s6tqqbx4ue" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a><span class="article-tag-list-count">3</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/环境变量/">环境变量</a><span class="article-tag-list-count">1</span></li></ul>
@@ -153,7 +304,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2016/04/11/Windows-Linux进程控制实验/" data-id="ciunok7od0007sls69rl9jsf1" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2016/04/11/Windows-Linux进程控制实验/" data-id="civ28bue8000766s6bgd8r4hp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a><span class="article-tag-list-count">3</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/操作系统/">操作系统</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/进程控制/">进程控制</a><span class="article-tag-list-count">1</span></li></ul>
@@ -172,7 +323,7 @@
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/c-c/">c/c++<span class="article-category-count">5</span></a>
+    <a class="article-category-link" href="/categories/c-c/">c/c++<span class="article-category-count">7</span></a>
   </div>
 
   </div>
@@ -220,10 +371,10 @@ windows下：
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2016/04/10/c语言时间函数全攻略/" data-id="ciunok7op000dsls6zedf4hhq" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2016/04/10/c语言时间函数全攻略/" data-id="civ28buen000i66s6n98nsgb1" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a><span class="article-tag-list-count">3</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c语言/">c语言</a><span class="article-tag-list-count">2</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/时间函数/">时间函数</a><span class="article-tag-list-count">1</span></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a><span class="article-tag-list-count">3</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c语言/">c语言</a><span class="article-tag-list-count">3</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/时间函数/">时间函数</a><span class="article-tag-list-count">1</span></li></ul>
 
     </footer>
   </div>
@@ -258,20 +409,32 @@ windows下：
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>寄存器： 在CPU中<br>地址总线： 传送地址，在内存中找到相应的地址。只能是从CPU—<br>地址总线： 传送数据，从CPU到外面，或者从外面到CPU<br>举例：   mov   [BX]，AX<br>cpu先计算出物理地址，再通过地址总线（AB）找到内存中的地址（数电讲过，16根线可以1，0找到2^16个地址）<br>然后将AX中的值通过数据总线（DB）写到该内存。（怎么实现的就是硬件的问题了）。</p>
-<p>1.所以处理器的位数一般指的是 通用寄存器的位数。跟总线根数没有直接关系。寄存器越大，计算能力就越快，因为运算都是通过寄存器进行的。</p>
-<p>2.寻址能力与地址总线根数有关系。32根总线寻址空间就是2^32=4G</p>
-<p>3.关于操作系统位数和CPU 位数，其实没有什么区别，64位只有配合64 位的操作系统和64 位的软件才能发挥最大效能。64 CPU从硬件上提供了<br>支持，如地址总线变大，寄存器变大，但是如果采用32 的系统，就相当于给你提供了 FAX（假设，64位）但是你的程序不用。</p>
-<p>4.64位程序只能64位系统，比如可能寻址超过4G,32位系统就跟不上，但是64位却可以。</p>
-<p>64位系统必须64位CPU，因为64位系统就是为64位的处理器设计的，处理器变了，操作系统肯定也需要变，因为毕竟操作系统<br>在软件执行时很重要。举个例子，存储器管理，可能32位系统最多设计的就是分配4G内存，但是现在64位寻址能力更强，系统<br>就应该相应的分配更大内存。</p>
-<p>总结都是向下兼容：硬件升级—–操作系统升级—–软件升级<br>硬件兼容旧操作系统。<br>操作系统兼容旧软件。<br>反之就不兼容。</p>
-<p>5.程序向下兼容问题：<br>机器码跟平台有很大关系：<br>linux,window 就不说了，文件格式，DLL什么都不一样。<br>都是windows,系统升级了有时软件不兼容，因为dll之类的要重新做，可能就不兼容了.<br>源代码级别的，跟平台关系：<br>java 完全跨平台。所有类型都是定的。<br>c常常说是源代码级别跨平台的，但是不严谨。因为c并没有规定 int 的字长，字长是编译器根据操作系统来决定的。所以可能申请内存扩平台会错误，<br>但是写成 sizeof(int )一般就没有问题了。</p>
-<p>比如为了兼容DOS程序引入DOS系统和实模式。</p>
+        <ul>
+<li><p>寄存器： 在CPU中<br>地址总线： 传送地址，在内存中找到相应的地址。只能是从CPU—<br>地址总线： 传送数据，从CPU到外面，或者从外面到CPU<br>举例：   mov   [BX]，AX<br>cpu先计算出物理地址，再通过地址总线（AB）找到内存中的地址（数电讲过，16根线可以1，0找到2^16个地址）<br>然后将AX中的值通过数据总线（DB）写到该内存。（怎么实现的就是硬件的问题了）。</p>
+</li>
+<li><p>所以处理器的位数一般指的是 通用寄存器的位数。跟总线根数没有直接关系。寄存器越大，计算能力就越快，因为运算都是通过寄存器进行的。</p>
+</li>
+<li><p>寻址能力与地址总线根数有关系。32根总线寻址空间就是2^32=4G</p>
+</li>
+<li><p>关于操作系统位数和CPU 位数，其实没有什么区别，64位只有配合64 位的操作系统和64 位的软件才能发挥最大效能。64 CPU从硬件上提供了<br>支持，如地址总线变大，寄存器变大，但是如果采用32 的系统，就相当于给你提供了 FAX（假设，64位）但是你的程序不用。</p>
+</li>
+<li><p>64位程序只能64位系统，比如可能寻址超过4G,32位系统就跟不上，但是64位却可以。</p>
+</li>
+<li><p>64位系统必须64位CPU，因为64位系统就是为64位的处理器设计的，处理器变了，操作系统肯定也需要变，因为毕竟操作系统<br>在软件执行时很重要。举个例子，存储器管理，可能32位系统最多设计的就是分配4G内存，但是现在64位寻址能力更强，系统<br>就应该相应的分配更大内存。</p>
+</li>
+</ul>
+<p>###总结：都是向下兼容：硬件升级—–操作系统升级—–软件升级硬件兼容旧操作系统。操作系统兼容旧软件。反之就不兼容。</p>
+<ul>
+<li><p>程序向下兼容问题：<br>机器码跟平台有很大关系：<br>linux,window 就不说了，文件格式，DLL什么都不一样。<br>都是windows,系统升级了有时软件不兼容，因为dll之类的要重新做，可能就不兼容了.<br>源代码级别的，跟平台关系：<br>java 完全跨平台。所有类型都是定的。<br>c常常说是源代码级别跨平台的，但是不严谨。因为c并没有规定 int 的字长，字长是编译器根据操作系统来决定的。所以可能申请内存扩平台会错误，<br>但是写成 sizeof(int )一般就没有问题了。比如为了兼容DOS程序引入DOS系统和实模式。</p>
+</li>
+<li><p>大端和小端： 小端：低字节在低地址，高字节在高字节，大端：低字节在高地址，高字节在低地址</p>
+</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2015/11/03/计算机组成原理基础/" data-id="ciunok7pn0014sls66w12q29o" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2015/11/03/计算机组成原理基础/" data-id="civ28bufi001i66s6shzcax5j" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cpu位数/">cpu位数</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/总线/">总线</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计算机组成原理/">计算机组成原理</a><span class="article-tag-list-count">1</span></li></ul>
@@ -319,7 +482,7 @@ windows下：
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2015/10/15/中文编码那些事/" data-id="ciunok7p9000usls68rvrlfa5" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2015/10/15/中文编码那些事/" data-id="civ28buf4000y66s6v759bgzz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GB2312/">GB2312</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/unicode/">unicode</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/utf-8/">utf-8</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编码/">编码</a><span class="article-tag-list-count">1</span></li></ul>
@@ -369,7 +532,7 @@ windows下：
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2015/10/10/编译过程/" data-id="ciunok7pl0011sls6j0l1w6gp" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2015/10/10/编译过程/" data-id="civ28bufc001a66s693zjz0v6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编译原理/">编译原理</a><span class="article-tag-list-count">1</span></li></ul>
@@ -388,7 +551,7 @@ windows下：
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/c-c/">c/c++<span class="article-category-count">5</span></a>
+    <a class="article-category-link" href="/categories/c-c/">c/c++<span class="article-category-count">7</span></a>
   </div>
 
   </div>
@@ -423,10 +586,10 @@ windows下：
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2015/05/19/变量的声明和定义/" data-id="ciunok7pj000ysls6w6nwjewc" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2015/05/19/变量的声明和定义/" data-id="civ28buf6001066s65vy4mdle" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c-c/">c/c++</a><span class="article-tag-list-count">3</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/声明和定义/">声明和定义</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/外部变量/">外部变量</a><span class="article-tag-list-count">1</span></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c-c/">c/c++</a><span class="article-tag-list-count">4</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/声明和定义/">声明和定义</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/外部变量/">外部变量</a><span class="article-tag-list-count">1</span></li></ul>
 
     </footer>
   </div>
@@ -448,7 +611,7 @@ windows下：
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/c-c/">c/c++</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机网络/">计算机网络</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/c-c/">c/c++</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机网络/">计算机网络</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -458,7 +621,7 @@ windows下：
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/GB2312/" style="font-size: 10px;">GB2312</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/arp/" style="font-size: 10px;">arp</a> <a href="/tags/c-c/" style="font-size: 20px;">c/c++</a> <a href="/tags/cpu位数/" style="font-size: 10px;">cpu位数</a> <a href="/tags/c语言/" style="font-size: 15px;">c语言</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hello-hexo/" style="font-size: 10px;">hello hexo</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/unicode/" style="font-size: 10px;">unicode</a> <a href="/tags/utf-8/" style="font-size: 10px;">utf-8</a> <a href="/tags/声明和定义/" style="font-size: 10px;">声明和定义</a> <a href="/tags/外部变量/" style="font-size: 10px;">外部变量</a> <a href="/tags/多线程/" style="font-size: 10px;">多线程</a> <a href="/tags/并发/" style="font-size: 10px;">并发</a> <a href="/tags/总线/" style="font-size: 10px;">总线</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/操作系统/" style="font-size: 10px;">操作系统</a> <a href="/tags/时间函数/" style="font-size: 10px;">时间函数</a> <a href="/tags/环境变量/" style="font-size: 10px;">环境变量</a> <a href="/tags/编码/" style="font-size: 10px;">编码</a> <a href="/tags/编译原理/" style="font-size: 10px;">编译原理</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a> <a href="/tags/计算机组成原理/" style="font-size: 10px;">计算机组成原理</a> <a href="/tags/进程控制/" style="font-size: 10px;">进程控制</a> <a href="/tags/锁/" style="font-size: 10px;">锁</a>
+      <a href="/tags/GB2312/" style="font-size: 10px;">GB2312</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/STL/" style="font-size: 10px;">STL</a> <a href="/tags/arp/" style="font-size: 10px;">arp</a> <a href="/tags/c-c/" style="font-size: 20px;">c/c++</a> <a href="/tags/cpu位数/" style="font-size: 10px;">cpu位数</a> <a href="/tags/c语言/" style="font-size: 15px;">c语言</a> <a href="/tags/gdb命令/" style="font-size: 10px;">gdb命令</a> <a href="/tags/gets/" style="font-size: 10px;">gets</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hello-hexo/" style="font-size: 10px;">hello hexo</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/linux命令/" style="font-size: 10px;">linux命令</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/scanf/" style="font-size: 10px;">scanf</a> <a href="/tags/unicode/" style="font-size: 10px;">unicode</a> <a href="/tags/utf-8/" style="font-size: 10px;">utf-8</a> <a href="/tags/声明和定义/" style="font-size: 10px;">声明和定义</a> <a href="/tags/外部变量/" style="font-size: 10px;">外部变量</a> <a href="/tags/多线程/" style="font-size: 10px;">多线程</a> <a href="/tags/并发/" style="font-size: 10px;">并发</a> <a href="/tags/总线/" style="font-size: 10px;">总线</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/操作系统/" style="font-size: 10px;">操作系统</a> <a href="/tags/时间函数/" style="font-size: 10px;">时间函数</a> <a href="/tags/环境变量/" style="font-size: 10px;">环境变量</a> <a href="/tags/编码/" style="font-size: 10px;">编码</a> <a href="/tags/编译原理/" style="font-size: 10px;">编译原理</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a> <a href="/tags/计算机组成原理/" style="font-size: 10px;">计算机组成原理</a> <a href="/tags/进程控制/" style="font-size: 10px;">进程控制</a> <a href="/tags/锁/" style="font-size: 10px;">锁</a>
     </div>
   </div>
 
@@ -467,7 +630,7 @@ windows下：
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -480,23 +643,23 @@ windows下：
       <ul>
         
           <li>
-            <a href="/2016/10/24/linux学习笔记/">linux学习笔记</a>
+            <a href="/2016/11/03/gdb命令总结/">gdb命令总结</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/03/c-常用的STL/">c++常用的STL</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/03/c语言gets和scanf的区别/">c语言gets和scanf的区别</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/24/linux学习笔记/">linux命令</a>
           </li>
         
           <li>
             <a href="/2016/10/24/计网学习笔记/">计网学习笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2016/10/24/markdown语法-长期更新/">markdown语法,长期更新</a>
-          </li>
-        
-          <li>
-            <a href="/2016/10/24/git教程/">git教程</a>
-          </li>
-        
-          <li>
-            <a href="/2016/10/20/java语言基础，长期更新/">java语言基础，长期更新</a>
           </li>
         
       </ul>

@@ -3,14 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Category: hexo | 仰望星空</title>
+  <title>linux基础知识 | 仰望星空</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="仰望星空">
-<meta property="og:url" content="http://leocui.github.io/categories/hexo/index.html">
+  <meta name="description" content=".o 二进制文件, .a很多二进制文件合起来， .so动态链接库
+linux可执行文件结构: elf, windows:PE ,macos: mach-o(值得注意的是，压缩文件在mac上先解压在压缩后在linux下再解压就打不开了,所以copy一般都是tar.gz文件)
+有时程序显示无法load  .so 文件,跟环境变量无关，系统加载环境变量一般在/usr/lib中找，如果要改的话1.将so">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux基础知识">
+<meta property="og:url" content="http://leocui.github.io/2016/11/14/linux基础知识/index.html">
 <meta property="og:site_name" content="仰望星空">
+<meta property="og:description" content=".o 二进制文件, .a很多二进制文件合起来， .so动态链接库
+linux可执行文件结构: elf, windows:PE ,macos: mach-o(值得注意的是，压缩文件在mac上先解压在压缩后在linux下再解压就打不开了,所以copy一般都是tar.gz文件)
+有时程序显示无法load  .so 文件,跟环境变量无关，系统加载环境变量一般在/usr/lib中找，如果要改的话1.将so">
+<meta property="og:updated_time" content="2016-11-14T12:53:04.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="仰望星空">
+<meta name="twitter:title" content="linux基础知识">
+<meta name="twitter:description" content=".o 二进制文件, .a很多二进制文件合起来， .so动态链接库
+linux可执行文件结构: elf, windows:PE ,macos: mach-o(值得注意的是，压缩文件在mac上先解压在压缩后在linux下再解压就打不开了,所以copy一般都是tar.gz文件)
+有时程序显示无法load  .so 文件,跟环境变量无关，系统加载环境变量一般在/usr/lib中找，如果要改的话1.将so">
   
   
     <link rel="icon" href="/favicon.png">
@@ -62,58 +72,63 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/10/24/markdown语法-长期更新/" class="archive-article-date">
-  <time datetime="2016-10-24T02:27:17.000Z" itemprop="datePublished">Oct 24</time>
+        <section id="main"><article id="post-linux基础知识" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/14/linux基础知识/" class="article-date">
+  <time datetime="2016-11-14T12:39:07.000Z" itemprop="datePublished">2016-11-14</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux<span class="article-category-count">1</span></a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/24/markdown语法-长期更新/">markdown语法,长期更新</a>
+    <h1 class="article-title" itemprop="name">
+      linux基础知识
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/10/19/Hello-hexo/" class="archive-article-date">
-  <time datetime="2016-10-19T08:33:06.000Z" itemprop="datePublished">Oct 19</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/19/Hello-hexo/">Hello,hexo</a>
-    </h1>
-  
+        <ul>
+<li>.o 二进制文件, .a很多二进制文件合起来， .so动态链接库</li>
+<li>linux可执行文件结构: elf, windows:PE ,macos: mach-o<br>(值得注意的是，压缩文件在mac上先解压在压缩后在linux下再解压就打不开了,所以copy一般都是tar.gz文件)</li>
+<li>有时程序显示无法load  .so 文件,跟环境变量无关，系统加载环境变量一般在/usr/lib中找，如果要改的话<br>1.将so文件移到/usr/lib中。<br>2.设置软链接，链接到/usr/lib中<br>3.修改/etc/ld.so.conf文件，加入自己的路径</li>
+<li></li>
+</ul>
 
-    </header>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://leocui.github.io/2016/11/14/linux基础知识/" data-id="civi2mc9s0010gos634ynkqz7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a><span class="article-tag-list-count">1</span></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/11/03/gdb命令总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">gdb命令总结</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         

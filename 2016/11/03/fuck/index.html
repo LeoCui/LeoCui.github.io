@@ -3,14 +3,30 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: scanf | 仰望星空</title>
+  <title>Leetcode常用技巧 | 仰望星空</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="仰望星空">
-<meta property="og:url" content="http://leocui.github.io/tags/scanf/index.html">
+  <meta name="description" content="earse的删除操作:
+
+123456789for(iter=vector.begin();iter!=vector.end();)&amp;#123;	if(*iter==val)&amp;#123;		iter=iter.erase();		//erase返回被删除元素后一个或者vector.end()	&amp;#125;	else&amp;#123;		iter++;	&amp;#125;&amp;#125;
+
+erase的sort(">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Leetcode常用技巧">
+<meta property="og:url" content="http://leocui.github.io/2016/11/03/fuck/index.html">
 <meta property="og:site_name" content="仰望星空">
+<meta property="og:description" content="earse的删除操作:
+
+123456789for(iter=vector.begin();iter!=vector.end();)&amp;#123;	if(*iter==val)&amp;#123;		iter=iter.erase();		//erase返回被删除元素后一个或者vector.end()	&amp;#125;	else&amp;#123;		iter++;	&amp;#125;&amp;#125;
+
+erase的sort(">
+<meta property="og:updated_time" content="2016-11-22T12:44:15.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="仰望星空">
+<meta name="twitter:title" content="Leetcode常用技巧">
+<meta name="twitter:description" content="earse的删除操作:
+
+123456789for(iter=vector.begin();iter!=vector.end();)&amp;#123;	if(*iter==val)&amp;#123;		iter=iter.erase();		//erase返回被删除元素后一个或者vector.end()	&amp;#125;	else&amp;#123;		iter++;	&amp;#125;&amp;#125;
+
+erase的sort(">
   
   
     <link rel="icon" href="/favicon.png">
@@ -62,39 +78,81 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/11/03/c语言gets和scanf的区别/" class="archive-article-date">
-  <time datetime="2016-11-03T09:04:43.000Z" itemprop="datePublished">Nov 3</time>
+        <section id="main"><article id="post-fuck" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/03/fuck/" class="article-date">
+  <time datetime="2016-11-03T10:22:42.000Z" itemprop="datePublished">2016-11-03</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/c-c/">c/c++<span class="article-category-count">8</span></a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/03/c语言gets和scanf的区别/">c语言gets和scanf的区别</a>
+    <h1 class="article-title" itemprop="name">
+      Leetcode常用技巧
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>earse的删除操作:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">for(iter=vector.begin();iter!=vector.end();)&#123;</div><div class="line">	if(*iter==val)&#123;</div><div class="line">		iter=iter.erase();</div><div class="line">		//erase返回被删除元素后一个或者vector.end()</div><div class="line">	&#125;</div><div class="line">	else&#123;</div><div class="line">		iter++;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>erase的sort()</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sort(vector.begin(),vertor.end(),cmp);</div><div class="line">bool cmp(type a,type b)&#123;</div><div class="line">	</div><div class="line">&#125; //cmp函数的意义：如果返回true,就保持a,b这样的顺序</div></pre></td></tr></table></figure>
+<ul>
+<li>在处理一些边界条件不好处理时，比如处理矩阵时要看四周，这时对于边界情况就不好处理，常见的方法是在周围加一圈，但是现在有更好的办法。   <ul>
+<li>在边界时不成立： （j不在边界）&amp;&amp;（）—-在边界为0，后面不用算</li>
+<li>在边界时成立：（j在边界）||（）—在边界时直接为1</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://leocui.github.io/2016/11/03/fuck/" data-id="civti1gpk000kvcs6uef9qmfa" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a><span class="article-tag-list-count">2</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/stl/">stl</a><span class="article-tag-list-count">2</span></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/11/03/Leetcode常见技巧/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Leetcode常用技巧
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/11/03/c语言gets和scanf的区别/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">c语言gets和scanf的区别</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         

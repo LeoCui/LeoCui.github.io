@@ -19,8 +19,8 @@ arp表，存在电脑中，是当前局域网内ip和mac地址的">
 在arp协议解析的时候，主机和路由器地位是等价的，主机(路由器)发送广播，ip符合条件的主机(路由器)接收消息，发送个回应，从而让发送方确定目的地址的mac地址。所以在硬件层面，不管是主机还是路由器，都是通过mac地址发送的。
 
 arp表，存在电脑中，是当前局域网内ip和mac地址的">
-<meta property="og:image" content="http://leocui.github.io/../pictures/计网学习笔记1.jpg">
-<meta property="og:updated_time" content="2016-11-23T04:27:51.000Z">
+<meta property="og:image" content="http://leocui.github.io/Users/Leo/Documents/hexo_blog/source/pictures/计网学习笔记1.jpg">
+<meta property="og:updated_time" content="2016-11-23T04:44:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计网学习笔记">
 <meta name="twitter:description" content="七层协议中，上一层对下一次是封装好的，比如tcp头，ip头对数据链路层来说都是一样的，都当成普通的报文来处理。
@@ -28,7 +28,7 @@ arp表，存在电脑中，是当前局域网内ip和mac地址的">
 在arp协议解析的时候，主机和路由器地位是等价的，主机(路由器)发送广播，ip符合条件的主机(路由器)接收消息，发送个回应，从而让发送方确定目的地址的mac地址。所以在硬件层面，不管是主机还是路由器，都是通过mac地址发送的。
 
 arp表，存在电脑中，是当前局域网内ip和mac地址的">
-<meta name="twitter:image" content="http://leocui.github.io/../pictures/计网学习笔记1.jpg">
+<meta name="twitter:image" content="http://leocui.github.io/Users/Leo/Documents/hexo_blog/source/pictures/计网学习笔记1.jpg">
   
   
     <link rel="icon" href="/favicon.png">
@@ -115,7 +115,7 @@ arp表，存在电脑中，是当前局域网内ip和mac地址的">
 </li>
 <li><p>内网，外网，一般来说ipconfig查到的都是内网ip，转换成外网ip要<br>经过NAT地址转换,判断内网ip的方法是：<br>10.xxx.xxx.xxx<br>192.168.xxx.xxx<br>172.16.0.0-172.31.255.255</p>
 </li>
-<li><p>主机或者路由器在转发的时候先查route表，再查arp表<br><img src="../pictures/计网学习笔记1.jpg" alt=""><br>先把目的ip和mask做&amp;，然后选择路由<br>eg1: 10.0.6.86, 符合第三条，Flags没有G，就是没有网关(属于同一局域网)，从eth0(网卡接口，一台计算机可能有多个网卡)出;然后再查arp表，找到了就直接发走，找不到发送广播(从eth0口)找到目的主机，再发出去。<br>eg2: 10.0.6.203，这个比较特殊(localhost优先级高)通过lo发到本地环回<br>eg3: 匹配不到，选择default网关，从eth0口出，然后网关再负责转发，网关就是局域网的出口。</p>
+<li><p>主机或者路由器在转发的时候先查route表，再查arp表<br><img src="/Users/Leo/Documents/hexo_blog/source/pictures/计网学习笔记1.jpg" alt=""><br>先把目的ip和mask做&amp;，然后选择路由<br>eg1: 10.0.6.86, 符合第三条，Flags没有G，就是没有网关(属于同一局域网)，从eth0(网卡接口，一台计算机可能有多个网卡)出;然后再查arp表，找到了就直接发走，找不到发送广播(从eth0口)找到目的主机，再发出去。<br>eg2: 10.0.6.203，这个比较特殊(localhost优先级高)通过lo发到本地环回<br>eg3: 匹配不到，选择default网关，从eth0口出，然后网关再负责转发，网关就是局域网的出口。</p>
 </li>
 </ul>
 

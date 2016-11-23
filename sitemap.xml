@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://leocui.github.io/2016/10/24/%E8%AE%A1%E7%BD%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    
+    <lastmod>2016-11-23T03:41:37.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://leocui.github.io/2016/10/24/git%E6%95%99%E7%A8%8B/</loc>
+    
+    <lastmod>2016-11-23T03:39:37.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://leocui.github.io/2016/11/03/Leetcode%E5%B8%B8%E8%A7%81%E6%8A%80%E5%B7%A7/</loc>
     
     <lastmod>2016-11-22T12:50:11.000Z</lastmod>
@@ -19,13 +33,6 @@
     <loc>http://leocui.github.io/2016/10/20/c++%E5%9F%BA%E7%A1%80-%E9%95%BF%E6%9C%9F%E6%9B%B4%E6%96%B0/</loc>
     
     <lastmod>2016-11-18T09:10:10.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://leocui.github.io/2016/10/24/%E8%AE%A1%E7%BD%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    
-    <lastmod>2016-11-14T12:32:14.000Z</lastmod>
     
   </url>
   
@@ -82,13 +89,6 @@
     <loc>http://leocui.github.io/2016/10/19/Hello-hexo/</loc>
     
     <lastmod>2016-10-24T02:26:44.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://leocui.github.io/2016/10/24/git%E6%95%99%E7%A8%8B/</loc>
-    
-    <lastmod>2016-10-24T02:19:22.000Z</lastmod>
     
   </url>
   

@@ -374,7 +374,7 @@
 </li>
 <li><p>内网，外网，一般来说ipconfig查到的都是内网ip，转换成外网ip要<br>经过NAT地址转换,判断内网ip的方法是：<br>10.xxx.xxx.xxx<br>192.168.xxx.xxx<br>172.16.0.0-172.31.255.255</p>
 </li>
-<li><p>主机或者路由器在转发的时候先查route表，再查arp表<br><img src="../pictures/3.jpg" alt=""><br>先把目的ip和mask做&amp;，然后选择路由<br>eg1: 10.0.6.86, 符合第三条，Flags没有G，就是没有网关(属于同一局域网)，从eth0(网卡接口，一台计算机可能有多个网卡)出;然后再查arp表，找到了就直接发走，找不到发送广播(从eth0口)找到目的主机，再发出去。<br>eg2: 10.0.6.203，这个比较特殊(localhost优先级高)通过lo发到本地环回<br>eg3: 匹配不到，选择default网关，从eth0口出，然后网关再负责转发，网关就是局域网的出口。</p>
+<li><p>主机或者路由器在转发的时候先查route表，再查arp表<br><img src="../pictures/1.jpg" alt=""><br>先把目的ip和mask做&amp;，然后选择路由<br>eg1: 10.0.6.86, 符合第三条，Flags没有G，就是没有网关(属于同一局域网)，从eth0(网卡接口，一台计算机可能有多个网卡)出;然后再查arp表，找到了就直接发走，找不到发送广播(从eth0口)找到目的主机，再发出去。<br>eg2: 10.0.6.203，这个比较特殊(localhost优先级高)通过lo发到本地环回<br>eg3: 匹配不到，选择default网关，从eth0口出，然后网关再负责转发，网关就是局域网的出口。</p>
 </li>
 </ul>
 
@@ -477,9 +477,9 @@
 <li>远程git</li>
 </ul>
 <p>建立本地仓库—&gt;修改本地文件—&gt;commit到本地git—&gt;sync到远程git</p>
-<p><img src="../pictures/2.png" alt=""></p>
+<p><img src="../pictures/2.jpg" alt=""></p>
 <p>commit: 提交到本地git仓库<br>sync(push):   同步到远端git仓库<br>pull request(pr): 将自己的分支merge到另一个分支<br>fork: 复制别人的仓库并创建一个branch(分支)<br>pull: 将你fork的仓库中的同步到本地git中<br>clone: 将自己远端git的项目(fork或自己建的)复制到本地git上</p>
-<p><img src="../pictures/1.png" alt=""><br>注意：</p>
+<p><img src="../pictures/3.png" alt=""><br>注意：</p>
 <ul>
 <li>commit 之后要sync</li>
 <li>多人共同修改某个项目，为了避免冲突，最好先pull，同步一下最新的版本再提交自己的代码</li>

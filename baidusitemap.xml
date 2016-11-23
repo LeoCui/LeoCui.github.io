@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://leocui.github.io/2016/10/19/Hello-hexo/</loc>
+    <lastmod>2016-11-23T05:22:57.000Z</lastmod>
+    <data>
+        <display>
+        <title>Hello,hexo</title>
+        <pubTime>2016-10-19T08:33:06.000Z</pubTime>
+        
+        <tag>hello hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="hexo" url="http://leocui.github.io/categories/hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://leocui.github.io/2016/10/24/%E8%AE%A1%E7%BD%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2016-11-23T04:50:00.000Z</lastmod>
     <data>
@@ -246,26 +266,6 @@
         <pubTime>2016-10-24T02:27:17.000Z</pubTime>
         
         <tag>markdown</tag>
-         
-         
-           
-             
-              <breadCrumb title="hexo" url="http://leocui.github.io/categories/hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://leocui.github.io/2016/10/19/Hello-hexo/</loc>
-    <lastmod>2016-10-24T02:26:44.000Z</lastmod>
-    <data>
-        <display>
-        <title>Hello,hexo</title>
-        <pubTime>2016-10-19T08:33:06.000Z</pubTime>
-        
-        <tag>hello hexo</tag>
          
          
            

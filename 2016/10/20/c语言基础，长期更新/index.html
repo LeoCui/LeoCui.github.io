@@ -29,7 +29,7 @@ strlen和sizeof区别
 strlen和sizeof区别     
 
 1">
-<meta property="og:updated_time" content="2016-11-14T11:55:24.000Z">
+<meta property="og:updated_time" content="2016-11-25T10:37:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="c语言基础，长期更新">
 <meta name="twitter:description" content="include”    “ 的话编译器环境首先会在你当前所在的目录来找寻头文件，当所在目录没有的话，它就会到标准头文件库来找，找不到就报错，&amp;lt;&amp;gt;的话它一开始就到标准头文件库来找，找不到就报错！
@@ -131,13 +131,18 @@ strlen和sizeof区别
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">char str[16]=&quot;abcd&quot;</div><div class="line">sizeof(str)=16;    //运算符</div><div class="line">strlen(str)=4;     //函数</div></pre></td></tr></table></figure>
 <ul>
-<li>int main(int argc,char** argv),其中argv[0]是程序完整路径，所以argc总是比实际输入的参数多1</li>
+<li><p>int main(int argc,char** argv),其中argv[0]是程序完整路径，所以argc总是比实际输入的参数多1</p>
+</li>
+<li><p>多个if特别容易出错，要注意。加个else养成习惯</p>
+</li>
 </ul>
+<p>```<br>if(temp&gt;min){<br>    min=temp;<br>}<br>if(temp==min){  //典型错误，第二个if不该执行</p>
+<p>}</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2016/10/20/c语言基础，长期更新/" data-id="civti1gpg000fvcs6c6401znr" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2016/10/20/c语言基础，长期更新/" data-id="civxnn45s0008pcs6ed7b8ozw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c-c/">c/c++</a><span class="article-tag-list-count">3</span></li></ul>
@@ -195,7 +200,7 @@ strlen和sizeof区别
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -206,6 +211,10 @@ strlen和sizeof区别
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/11/25/牛客网编程题/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2016/11/14/linux基础知识/">linux基础知识</a>
@@ -221,10 +230,6 @@ strlen和sizeof区别
         
           <li>
             <a href="/2016/11/03/c语言gets和scanf的区别/">c语言gets和scanf的区别</a>
-          </li>
-        
-          <li>
-            <a href="/2016/10/24/linux命令/">linux命令</a>
           </li>
         
       </ul>

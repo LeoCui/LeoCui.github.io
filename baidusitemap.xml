@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://leocui.github.io/2016/11/14/linux%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</loc>
+    <lastmod>2016-12-05T08:51:03.000Z</lastmod>
+    <data>
+        <display>
+        <title>linux基础知识</title>
+        <pubTime>2016-11-14T12:39:07.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="Linux" url="http://leocui.github.io/categories/Linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://leocui.github.io/2016/11/03/Leetcode%E5%B8%B8%E8%A7%81%E6%8A%80%E5%B7%A7/</loc>
     <lastmod>2016-12-04T06:27:58.000Z</lastmod>
     <data>
@@ -127,26 +147,6 @@
            
              
               <breadCrumb title="计算机基础" url="http://leocui.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://leocui.github.io/2016/11/14/linux%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</loc>
-    <lastmod>2016-11-21T08:21:31.000Z</lastmod>
-    <data>
-        <display>
-        <title>linux基础知识</title>
-        <pubTime>2016-11-14T12:39:07.000Z</pubTime>
-        
-        <tag>linux</tag>
-         
-         
-           
-             
-              <breadCrumb title="Linux" url="http://leocui.github.io/categories/Linux/"/>
           
         </display>
     </data>

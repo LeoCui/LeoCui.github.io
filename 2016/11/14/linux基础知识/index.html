@@ -5,22 +5,16 @@
   
   <title>linux基础知识 | 仰望星空</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content=".o 二进制文件, .a很多二进制文件合起来， .so动态链接库
-linux可执行文件结构: elf, windows:PE ,macos: mach-o(值得注意的是，压缩文件在mac上先解压在压缩后在linux下再解压就打不开了,所以copy一般都是tar.gz文件)
-有时程序显示无法load  .so 文件,跟环境变量无关，系统加载环境变量一般在/usr/lib中找，如果要改的话1.将so">
+  <meta name="description" content="123456文件类型                 liunx             windows目标文件(2进制)            .o				   .obj静态链接库（目标文件集合)    .a                .lib动态链接库	              .so		        .dll可执行文件	              .out">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux基础知识">
 <meta property="og:url" content="http://leocui.github.io/2016/11/14/linux基础知识/index.html">
 <meta property="og:site_name" content="仰望星空">
-<meta property="og:description" content=".o 二进制文件, .a很多二进制文件合起来， .so动态链接库
-linux可执行文件结构: elf, windows:PE ,macos: mach-o(值得注意的是，压缩文件在mac上先解压在压缩后在linux下再解压就打不开了,所以copy一般都是tar.gz文件)
-有时程序显示无法load  .so 文件,跟环境变量无关，系统加载环境变量一般在/usr/lib中找，如果要改的话1.将so">
-<meta property="og:updated_time" content="2016-11-21T08:21:31.000Z">
+<meta property="og:description" content="123456文件类型                 liunx             windows目标文件(2进制)            .o				   .obj静态链接库（目标文件集合)    .a                .lib动态链接库	              .so		        .dll可执行文件	              .out">
+<meta property="og:updated_time" content="2016-12-05T08:51:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux基础知识">
-<meta name="twitter:description" content=".o 二进制文件, .a很多二进制文件合起来， .so动态链接库
-linux可执行文件结构: elf, windows:PE ,macos: mach-o(值得注意的是，压缩文件在mac上先解压在压缩后在linux下再解压就打不开了,所以copy一般都是tar.gz文件)
-有时程序显示无法load  .so 文件,跟环境变量无关，系统加载环境变量一般在/usr/lib中找，如果要改的话1.将so">
+<meta name="twitter:description" content="123456文件类型                 liunx             windows目标文件(2进制)            .o				   .obj静态链接库（目标文件集合)    .a                .lib动态链接库	              .so		        .dll可执行文件	              .out">
   
   
     <link rel="icon" href="/favicon.png">
@@ -99,8 +93,10 @@ linux可执行文件结构: elf, windows:PE ,macos: mach-o(值得注意的是，
     <div class="article-entry" itemprop="articleBody">
       
         <ul>
-<li>.o 二进制文件, .a很多二进制文件合起来， .so动态链接库</li>
-<li>linux可执行文件结构: elf, windows:PE ,macos: mach-o<br>(值得注意的是，压缩文件在mac上先解压在压缩后在linux下再解压就打不开了,所以copy一般都是tar.gz文件)</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">文件类型                 liunx             windows</div><div class="line">目标文件(2进制)            .o				   .obj</div><div class="line">静态链接库（目标文件集合)    .a                .lib</div><div class="line">动态链接库	              .so		        .dll</div><div class="line">可执行文件	              .out              .exe</div><div class="line">文件格式                   ELF			      PE</div></pre></td></tr></table></figure>
+</li>
+<li><p>linux可执行文件结构: elf, windows:PE ,macos: mach-o<br>(值得注意的是，压缩文件在mac上先解压在压缩后在linux下再解压就打不开了,所以copy一般都是tar.gz文件)</p>
+</li>
 <li>有时程序显示无法load  .so 文件,跟环境变量无关，系统加载环境变量一般在/usr/lib中找，如果要改的话<br>1.将so文件移到/usr/lib中。<br>2.设置软链接，链接到/usr/lib中<br>3.修改/etc/ld.so.conf文件，加入自己的路径</li>
 <li></li>
 </ul>

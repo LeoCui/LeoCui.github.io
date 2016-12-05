@@ -93,10 +93,9 @@
         <ul>
 <li><p>Q：给定一个字符串，删去几个字符，使其成为回文串，求最少要删去几个字符</p>
 <p>A：reverse字符串，求两个字符串的最长公共子序列为len,总长度减去len就是结果</p>
-<ul>
-<li>Q: 求最长回文串<br>A: reverse字符串，求两个串的最长公共子序列</li>
-</ul>
 </li>
+<li>Q: 求最长回文子序列<br>A: reverse字符串，求两个串的最长公共子序列</li>
+<li>Q:最长回文子串<br>A:以一点为中心向外拓展法</li>
 </ul>
 
       
@@ -262,6 +261,10 @@
 <li>二分法的时候：常用mid=left+(right-left)/2,我之前一直以为和mid=(left+right)/2一样。今天才发现不是这样的：   </li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">left=1;</div><div class="line">right=INT_MAX;</div><div class="line">while(left&lt;=right)&#123;</div><div class="line">	mid=(left+right)/2;  //错误，整数溢出了，mid算成负数了</div><div class="line">	mid=left+(right-left)/2;  //正确</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>子串：必须连续<br>子序列：不必连续</li>
+</ul>
+
       
     </div>
     <footer class="article-footer">

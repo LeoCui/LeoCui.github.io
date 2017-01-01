@@ -64,6 +64,54 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-中文编码那些事" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/10/15/中文编码那些事/" class="article-date">
+  <time datetime="2015-10-15T12:32:36.000Z" itemprop="datePublished">2015-10-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/计算机基础/">计算机基础<span class="article-category-count">4</span></a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/15/中文编码那些事/">中文编码那些事</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天终于搞清楚了各种编码的关系，以后不要再纠结这些东西了。<br>ANSI:   Americal   National   Standard  Institute,泛指这种编码方式：<br>       char 型 0-255，Ascii 码 0-127，<br>       在ANSI编码中，ASCLL码还是一个字节，用两个字节表示非ASCLL 码，如中文，韩文等，特点是首字节是 128-255。       如‘啊’在GB2312-80中表示为 176，161.<br>       GB2312-80:  首字节 128-255，第二字节 128- 255<br>       GBK:             首字节 128-255，第二字节  64-255<br>       GB18030：   两个或四个字节          首字节 128-255 ，第二，四字节反正可以区分开</p>
+<p>Unicode: 一种编码方式。包含了全世界所有的字符。</p>
+<p>Ucs:   universal   character   set, 分为UCS-2和UCS-4.分别表示 16位和 32 位。基本跟unicode 没有分别，只是属于两个不同的机构推出来的。</p>
+<p>UTF8：unicode  translation  format ,只是unicode 码的一种实现方式，为了避免浪费空间。<br><img src="http://img.blog.csdn.net/20151018142052606" alt="test"></p>
+<p>具体来说，vc用的还是GB<br>java,python 都支持unicode，不是utf-8</p>
+<p> 通常所说的编码 uincode和utf-8,其中unicode 是指两个字节的定长编码（官方的），utf-8是变长编码。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://leocui.github.io/2015/10/15/中文编码那些事/" data-id="cixenn01g001ak66i17m9t164" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GB2312/">GB2312</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/unicode/">unicode</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/utf-8/">utf-8</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编码/">编码</a><span class="article-tag-list-count">1</span></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-编译过程" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/10/10/编译过程/" class="article-date">
@@ -102,7 +150,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2015/10/10/编译过程/" data-id="civxnn46y001jpcs6nbekqiti" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2015/10/10/编译过程/" data-id="cixenn02t003tk66ib9yfti1k" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编译原理/">编译原理</a><span class="article-tag-list-count">1</span></li></ul>
@@ -156,7 +204,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2015/05/19/变量的声明和定义/" data-id="civxnn46r0018pcs6mc5794gx" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2015/05/19/变量的声明和定义/" data-id="cixenn01j001dk66iynolna97" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c-c/">c/c++</a><span class="article-tag-list-count">3</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/声明和定义/">声明和定义</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/外部变量/">外部变量</a><span class="article-tag-list-count">1</span></li></ul>
@@ -181,7 +229,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/c-c/">c/c++</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机网络/">计算机网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/面试题/">面试题</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vim/">Vim</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/c-c/">c/c++</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机网络/">计算机网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/面试题/">面试题</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -191,7 +239,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/GB2312/" style="font-size: 10px;">GB2312</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/arp/" style="font-size: 10px;">arp</a> <a href="/tags/c-c/" style="font-size: 20px;">c/c++</a> <a href="/tags/cpu位数/" style="font-size: 10px;">cpu位数</a> <a href="/tags/c语言/" style="font-size: 20px;">c语言</a> <a href="/tags/gdb命令/" style="font-size: 10px;">gdb命令</a> <a href="/tags/gets/" style="font-size: 10px;">gets</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hello-hexo/" style="font-size: 10px;">hello hexo</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/linux命令/" style="font-size: 10px;">linux命令</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/scanf/" style="font-size: 10px;">scanf</a> <a href="/tags/stl/" style="font-size: 10px;">stl</a> <a href="/tags/unicode/" style="font-size: 10px;">unicode</a> <a href="/tags/utf-8/" style="font-size: 10px;">utf-8</a> <a href="/tags/声明和定义/" style="font-size: 10px;">声明和定义</a> <a href="/tags/外部变量/" style="font-size: 10px;">外部变量</a> <a href="/tags/多线程/" style="font-size: 10px;">多线程</a> <a href="/tags/并发/" style="font-size: 10px;">并发</a> <a href="/tags/总线/" style="font-size: 10px;">总线</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/操作系统/" style="font-size: 10px;">操作系统</a> <a href="/tags/时间函数/" style="font-size: 10px;">时间函数</a> <a href="/tags/牛客网/" style="font-size: 10px;">牛客网</a> <a href="/tags/环境变量/" style="font-size: 10px;">环境变量</a> <a href="/tags/编码/" style="font-size: 10px;">编码</a> <a href="/tags/编程题/" style="font-size: 10px;">编程题</a> <a href="/tags/编译原理/" style="font-size: 10px;">编译原理</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a> <a href="/tags/计算机组成原理/" style="font-size: 10px;">计算机组成原理</a> <a href="/tags/进程控制/" style="font-size: 10px;">进程控制</a> <a href="/tags/锁/" style="font-size: 10px;">锁</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+      <a href="/tags/GB2312/" style="font-size: 10px;">GB2312</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/arp/" style="font-size: 10px;">arp</a> <a href="/tags/c-c/" style="font-size: 20px;">c/c++</a> <a href="/tags/cpu位数/" style="font-size: 10px;">cpu位数</a> <a href="/tags/c语言/" style="font-size: 20px;">c语言</a> <a href="/tags/gdb命令/" style="font-size: 10px;">gdb命令</a> <a href="/tags/gets/" style="font-size: 10px;">gets</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hello-hexo/" style="font-size: 10px;">hello hexo</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/linux命令/" style="font-size: 10px;">linux命令</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/scanf/" style="font-size: 10px;">scanf</a> <a href="/tags/stl/" style="font-size: 10px;">stl</a> <a href="/tags/unicode/" style="font-size: 10px;">unicode</a> <a href="/tags/utf-8/" style="font-size: 10px;">utf-8</a> <a href="/tags/声明和定义/" style="font-size: 10px;">声明和定义</a> <a href="/tags/外部变量/" style="font-size: 10px;">外部变量</a> <a href="/tags/多线程/" style="font-size: 10px;">多线程</a> <a href="/tags/并发/" style="font-size: 10px;">并发</a> <a href="/tags/总线/" style="font-size: 10px;">总线</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/操作系统/" style="font-size: 10px;">操作系统</a> <a href="/tags/时间函数/" style="font-size: 10px;">时间函数</a> <a href="/tags/牛客网/" style="font-size: 10px;">牛客网</a> <a href="/tags/环境变量/" style="font-size: 10px;">环境变量</a> <a href="/tags/编码/" style="font-size: 10px;">编码</a> <a href="/tags/编程题/" style="font-size: 10px;">编程题</a> <a href="/tags/编译原理/" style="font-size: 10px;">编译原理</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a> <a href="/tags/计算机组成原理/" style="font-size: 10px;">计算机组成原理</a> <a href="/tags/进程控制/" style="font-size: 10px;">进程控制</a> <a href="/tags/锁/" style="font-size: 10px;">锁</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
     </div>
   </div>
 
@@ -200,7 +248,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -211,6 +259,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/01/01/Vim中的常见操作/">Vim中的常见操作</a>
+          </li>
         
           <li>
             <a href="/2016/11/25/牛客网编程题/">牛客网编程题</a>
@@ -228,10 +280,6 @@
             <a href="/2016/11/03/Leetcode常见技巧/">Leetcode常用技巧</a>
           </li>
         
-          <li>
-            <a href="/2016/11/03/c语言gets和scanf的区别/">c语言gets和scanf的区别</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -244,7 +292,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2016 LeoCui<br>
+      &copy; 2017 LeoCui<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

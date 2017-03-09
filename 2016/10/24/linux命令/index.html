@@ -25,7 +25,7 @@ grep: golbal search regular expression and print
 /表示根目录，~表示HOME目录
 删除文件夹：   rm -rf      
 建立文件夹 ：  m">
-<meta property="og:updated_time" content="2017-01-01T14:21:09.000Z">
+<meta property="og:updated_time" content="2017-03-09T06:20:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux命令">
 <meta name="twitter:description" content="查用法： man+命令(man中搜索用/,vim同)
@@ -133,6 +133,11 @@ grep: golbal search regular expression and print
 <li>捕获包：tcpdump</li>
 <li>搜索历史命令： ctrl+r</li>
 <li>搜索指文件夹中的字符串： grep -rn keyword ./   表示递归搜索当前目录下的所有文件</li>
+<li>远程传送文件：scp  -P port file root@ip:/home/</li>
+<li>远程登录： ssh root@ip -p port,如果不想每次都输入密码，可以配置一下公钥登录，<a href="http://chenlb.iteye.com/blog/211809" target="_blank" rel="external">具体教程</a></li>
+<li>退出ssh：exit</li>
+<li>追加文件：cat file1&gt;&gt;file2  将file1追加到file2</li>
+<li>构造自己的命令：alias str=’command1;command2’,多条命令依次执行的时候，&amp;&amp;遇到错误会停止，;遇到错误会跳过</li>
 </ul>
 
       

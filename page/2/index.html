@@ -163,6 +163,11 @@
 <li>捕获包：tcpdump</li>
 <li>搜索历史命令： ctrl+r</li>
 <li>搜索指文件夹中的字符串： grep -rn keyword ./   表示递归搜索当前目录下的所有文件</li>
+<li>远程传送文件：scp  -P port file root@ip:/home/</li>
+<li>远程登录： ssh root@ip -p port,如果不想每次都输入密码，可以配置一下公钥登录，<a href="http://chenlb.iteye.com/blog/211809" target="_blank" rel="external">具体教程</a></li>
+<li>退出ssh：exit</li>
+<li>追加文件：cat file1&gt;&gt;file2  将file1追加到file2</li>
+<li>构造自己的命令：alias str=’command1;command2’,多条命令依次执行的时候，&amp;&amp;遇到错误会停止，;遇到错误会跳过</li>
 </ul>
 
       
@@ -442,7 +447,9 @@
 <li>编译头文件的时候：头文件经常包含其他头文件，用的是相对路径，那么当前路径指的就是该头文件所在的路径。</li>
 </ul>
 </li>
-<li>在网络编程中经常遇到字节序和网络序的问题（大端，小端），有些还有位域的问题。<br>从程序员的角度来说：其实不用管具体的原理，对于多字节来说，发送和接收用htonl(),nltoh()就行，位域的问题，只要定义了大小端之后就按照正常的结构体成员来用就行。<br>具体的原理可以参考：<br>![<a href="http://m.blog.csdn.net/article/details?id=45420455" target="_blank" rel="external">http://m.blog.csdn.net/article/details?id=45420455</a>]</li>
+<li>在网络编程中经常遇到字节序和网络序的问题（大端，小端），有些还有位域的问题。<br>从程序员的角度来说：其实不用管具体的原理，对于多字节来说，发送和接收用htonl(),nltoh()就行，位域的问题，只要定义了大小端之后就按照正常的结构体成员来用就行。<br>具体的原理可以参考：<br><a href="http://m.blog.csdn.net/article/details?id=45420455" target="_blank" rel="external">点我查看原理</a></li>
+<li>C 语言文件操作写入文件时，有时程序意外终止，文件并没有写入，这是因为读写缓冲区的存在。解决方法：每次fprintf之后，fflush清空缓冲区，立即写入。</li>
+<li>linux下经常遇到很多格式的数不知道输出格式，如u_int32_t这种，可以用IntTypes.h这个头文件。</li>
 </ul>
 
       

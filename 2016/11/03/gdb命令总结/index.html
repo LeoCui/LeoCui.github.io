@@ -11,10 +11,10 @@ start: 停在main函数第一条
 run(r):   开始运行，停在断点处
 continue(c): 继续运行，停在下一个断点
 next(n): 单步执行
+until+行号: 继续运行，直到某一行停止
 p :  查看变量
 step(s): 进入函数
-quit(q): 退出gdb
-info threads:">
+quit(q">
 <meta property="og:type" content="article">
 <meta property="og:title" content="gdb命令总结">
 <meta property="og:url" content="http://leocui.github.io/2016/11/03/gdb命令总结/index.html">
@@ -25,11 +25,11 @@ start: 停在main函数第一条
 run(r):   开始运行，停在断点处
 continue(c): 继续运行，停在下一个断点
 next(n): 单步执行
+until+行号: 继续运行，直到某一行停止
 p :  查看变量
 step(s): 进入函数
-quit(q): 退出gdb
-info threads:">
-<meta property="og:updated_time" content="2017-01-13T03:46:58.000Z">
+quit(q">
+<meta property="og:updated_time" content="2017-03-13T12:02:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="gdb命令总结">
 <meta name="twitter:description" content="list+行号(函数名)：查看某一行(函数)的代码
@@ -38,10 +38,10 @@ start: 停在main函数第一条
 run(r):   开始运行，停在断点处
 continue(c): 继续运行，停在下一个断点
 next(n): 单步执行
+until+行号: 继续运行，直到某一行停止
 p :  查看变量
 step(s): 进入函数
-quit(q): 退出gdb
-info threads:">
+quit(q">
   
   
     <link rel="icon" href="/favicon.png">
@@ -126,12 +126,14 @@ info threads:">
 <li>run(r):   开始运行，停在断点处</li>
 <li>continue(c): 继续运行，停在下一个断点</li>
 <li>next(n): 单步执行</li>
+<li>until+行号: 继续运行，直到某一行停止</li>
 <li>p :  查看变量</li>
 <li>step(s): 进入函数</li>
 <li>quit(q): 退出gdb</li>
 <li>info threads: 显示所有线程信息</li>
 <li>gdb调试带参数的程序如main： gdb main ，r a b c ，abc为参数</li>
 <li>bt: backtrace,打印当前的函数调用栈信息</li>
+<li>ctrl+a+x: 上方显示源代码，下方gdb调试</li>
 </ul>
 
       

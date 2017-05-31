@@ -31,7 +31,7 @@ commit: 提交到本地git仓库sync(push):   同步到远端git仓库pull reque
 commit: 提交到本地git仓库sync(push):   同步到远端git仓库pull request(pr): 将自己的分支merge到另一个分支fork: 复制别人的仓库并创建">
 <meta property="og:image" content="http://leocui.github.io/../pictures/git教程1.jpg">
 <meta property="og:image" content="http://leocui.github.io/../pictures/git教程2.jpg">
-<meta property="og:updated_time" content="2017-05-29T15:26:33.000Z">
+<meta property="og:updated_time" content="2017-05-31T07:40:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git教程">
 <meta name="twitter:description" content="git分为四个部分：
@@ -144,10 +144,16 @@ commit: 提交到本地git仓库sync(push):   同步到远端git仓库pull reque
 <li>git branch -a: 查看所有分支，本地和远程</li>
 <li>git fetch: 取回所有分支的更新</li>
 <li>git branch –track 本地分支  远程分支：建立追踪关系，如果不在track的不是当前分支</li>
-<li>git branch –track 远程分支：如果追踪的是当前分支</li>
+<li>git branch –track 远程分支：如果追踪的是当前分支,设置track是为了方便git pull</li>
 <li>git branch -d 本地分支：删除本地分支</li>
 <li>git difftool 分支1 分支2：用ksdiff查看diff</li>
-<li>git stash: 不提交本地的改变</li>
+<li><p>git stash: 暂存不提交本地的改变</p>
+</li>
+<li><p>git checkout -b 本地分支:新建一个本地分支并切换</p>
+</li>
+<li>git commit -a -m ‘fix bugs’</li>
+<li>git push 远程主机名  本地分支: refs/for/远程分支名(百度内refs/for表示评审)</li>
+<li>git push -u 远程主机名 本地分支 ：-u 建立追踪关系，以后只要git push 就行</li>
 </ul>
 
       

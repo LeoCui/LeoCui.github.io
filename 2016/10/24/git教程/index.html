@@ -31,7 +31,7 @@ commit: 提交到本地git仓库sync(push):   同步到远端git仓库pull reque
 commit: 提交到本地git仓库sync(push):   同步到远端git仓库pull request(pr): 将自己的分支merge到另一个分支fork: 复制别人的仓库并创建">
 <meta property="og:image" content="http://leocui.github.io/../pictures/git教程1.jpg">
 <meta property="og:image" content="http://leocui.github.io/../pictures/git教程2.jpg">
-<meta property="og:updated_time" content="2017-05-31T07:40:16.000Z">
+<meta property="og:updated_time" content="2017-06-04T03:54:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git教程">
 <meta name="twitter:description" content="git分为四个部分：
@@ -154,6 +154,9 @@ commit: 提交到本地git仓库sync(push):   同步到远端git仓库pull reque
 <li>git commit -a -m ‘fix bugs’</li>
 <li>git push 远程主机名  本地分支: refs/for/远程分支名(百度内refs/for表示评审)</li>
 <li>git push -u 远程主机名 本地分支 ：-u 建立追踪关系，以后只要git push 就行</li>
+</ul>
+<ul>
+<li>git 的暂存区只有一个，也就是我们平时看到的文件，它里面的内容是新添加的文件+当前分支的文件，也就是说，当我们改动某个文件时，切换分支时会提示让你提交，否则切换分支后暂存区内容就变了，但是当我们添加一个文件时，切换分支后该文件 还在。</li>
 </ul>
 
       

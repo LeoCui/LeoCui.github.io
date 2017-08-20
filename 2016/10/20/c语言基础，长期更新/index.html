@@ -29,7 +29,7 @@ strlen和sizeof区别
 strlen和sizeof区别     
 
 1">
-<meta property="og:updated_time" content="2017-03-09T06:26:37.000Z">
+<meta property="og:updated_time" content="2017-08-20T14:24:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="c语言基础，长期更新">
 <meta name="twitter:description" content="include”    “ 的话编译器环境首先会在你当前所在的目录来找寻头文件，当所在目录没有的话，它就会到标准头文件库来找，找不到就报错，&amp;lt;&amp;gt;的话它一开始就到标准头文件库来找，找不到就报错！
@@ -131,6 +131,25 @@ strlen和sizeof区别
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">char str[16]=&quot;abcd&quot;</div><div class="line">sizeof(str)=16;    //运算符</div><div class="line">strlen(str)=4;     //函数</div></pre></td></tr></table></figure>
 <ul>
+<li><p>static 和extern的用法</p>
+<ul>
+<li>static<ul>
+<li>位置在内存的全局变量区</li>
+<li>static + 全局变量表示该变量只能在该文件中用，其他文件中即使加了extern也不好使。</li>
+<li>static + 函数表示该函数只能在该文件中用</li>
+<li>static + 局部变量，变量作用域不变，但是生存周期直到程序结束，所以变量实际只有一份。</li>
+</ul>
+</li>
+<li><p>extern</p>
+<ul>
+<li>extern + 全局变量，该变量在该文件中并没有定义，只是告诉编译器链接的时候去其他文件中去找。</li>
+<li><p>举个例子:    errno的原理就是这样</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">extern int errno; //只是声明, 在&lt;errno.h&gt;中</div><div class="line">strerror(errno);// errno在其他文件中定义</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li><p>int main(int argc,char** argv),其中argv[0]是程序完整路径，所以argc总是比实际输入的参数多1</p>
 </li>
 <li><p>多个if特别容易出错，要注意。加个else养成习惯</p>

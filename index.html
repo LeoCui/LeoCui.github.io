@@ -64,6 +64,73 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-入组培训code-review总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/21/入组培训code-review总结/" class="article-date">
+  <time datetime="2017-08-21T05:29:01.000Z" itemprop="datePublished">2017-08-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/c-c/">c/c++<span class="article-category-count">8</span></a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/21/入组培训code-review总结/">入组培训code review总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>今天入组培训又被超哥吊打了，code review给我挑了很多毛病，对此我是服气的，感谢超哥和佳哥。下面具体说说：<ul>
+<li>文件的组织：<ul>
+<li>src: .c makefile</li>
+<li>bin: .so .inf makefile</li>
+<li>conf: .conf</li>
+<li>值得一提的是，bin中的makefile是假的makefile，他的作用就是</li>
+</ul>
+</li>
+<li>不要重复造轮子，读配置文件可以用MESA load prof这个公共库。写日志可以用MESA handle logger这个库(下划线打不出来)。</li>
+<li>用CJSON,比较专业。</li>
+<li>另外，自己写读配置文件的时候，要写的优雅一点，每需要一个配置就去扫描整个配置文件一遍，这样虽然效率低，但是很整齐。</li>
+<li>不要随便拆成两个文件，完全不相关的函数才拆成两个文件。</li>
+<li>超过20行的字符串处理就要考虑glic中自带的库。具体见<a href="https://leocui.github.io/2016/10/20/c%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80%EF%BC%8C%E9%95%BF%E6%9C%9F%E6%9B%B4%E6%96%B0/">c语言基础,长期更新</a></li>
+<li>输出错误信息时要输出具体的系统的错误(errno, strerror(errno))</li>
+<li>malloc和free最好成对出现，即在同一个函数中</li>
+<li>每个.c都对应一个头文件，不是所有的声明都要放到头文件中。放到头文件中是要给别人用的，也就是说如果某个函数只有本文件用，那么就不用放到头文件中。</li>
+<li>cpp代码要给c用的时候，用extern ‘C’，具体见<a href="https://leocui.github.io/2016/10/20/c%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80%EF%BC%8C%E9%95%BF%E6%9C%9F%E6%9B%B4%E6%96%B0/">c语言基础,长期更新</a></li>
+<li>多用assert，表示你很确定这个情况不会发生，出现就死。</li>
+<li>free后要把指针置为NULL,养成习惯。</li>
+<li>同一个全局变量不用在两个文件中重复声明，加一个extern就行了。具体见<a href="https://leocui.github.io/2016/10/20/c%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80%EF%BC%8C%E9%95%BF%E6%9C%9F%E6%9B%B4%E6%96%B0/">c语言基础,长期更新</a></li>
+<li></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://leocui.github.io/2017/08/21/入组培训code-review总结/" data-id="cj6lq4lc1001li86iuyw97rgb" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CR/">CR</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c-c/">c/c++</a><span class="article-tag-list-count">4</span></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-百度实习体验" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/07/10/百度实习体验/" class="article-date">
@@ -134,7 +201,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2017/07/10/百度实习体验/" data-id="cj6ku7wle0029j86isury0hn5" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2017/07/10/百度实习体验/" data-id="cj6lq4lcn002ci86izo41emy8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/实习/">实习</a><span class="article-tag-list-count">2</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/百度/">百度</a><span class="article-tag-list-count">2</span></li></ul>
@@ -184,7 +251,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2017/05/29/mysql数据导入导出/" data-id="cj6ku7wk8001cj86i14uffsxf" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2017/05/29/mysql数据导入导出/" data-id="cj6lq4lbt001ci86i64f0mqfd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a><span class="article-tag-list-count">1</span></li></ul>
@@ -252,7 +319,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2017/03/03/百度地图交通路线部门实习面试/" data-id="cj6ku7wlb0026j86in0ng9xjy" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2017/03/03/百度地图交通路线部门实习面试/" data-id="cj6lq4lch0025i86ioe8sinrz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/百度地图-实习生-面试/">百度地图  实习生  面试</a><span class="article-tag-list-count">1</span></li></ul>
@@ -333,7 +400,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2017/03/01/百度内容生态质量部测试实习面试/" data-id="cj6ku7wkt001yj86iiwo1fval" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2017/03/01/百度内容生态质量部测试实习面试/" data-id="cj6lq4lck0029i86ia8jgcma5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/内容生态质量部/">内容生态质量部</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/实习/">实习</a><span class="article-tag-list-count">2</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/测试开发/">测试开发</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/百度/">百度</a><span class="article-tag-list-count">2</span></li></ul>
@@ -386,7 +453,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2017/01/11/今天我又把服务器搞挂了/" data-id="cj6ku7wkf001jj86imqvqg3qv" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2017/01/11/今天我又把服务器搞挂了/" data-id="cj6lq4lby001ji86icr7g0vek" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a><span class="article-tag-list-count">4</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/教训/">教训</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务器/">服务器</a><span class="article-tag-list-count">1</span></li></ul>
@@ -436,7 +503,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2017/01/01/图片像素和分辨率的一些知识/" data-id="cj6ku7wkl001pj86iu4e894m5" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2017/01/01/图片像素和分辨率的一些知识/" data-id="cj6lq4lc7001ri86i0jvr4ysd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/像素/">像素</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/分辨率/">分辨率</a><span class="article-tag-list-count">1</span></li></ul>
@@ -501,7 +568,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2017/01/01/尝试用AE做年会视频/" data-id="cj6ku7wkw0021j86i1p7xchau" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2017/01/01/尝试用AE做年会视频/" data-id="cj6lq4lc9001ui86inzqgzxln" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AE/">AE</a><span class="article-tag-list-count">1</span></li></ul>
@@ -571,7 +638,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2017/01/01/Vim中的常见操作/" data-id="cj6ku7wiz0008j86inemb3t3n" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2017/01/01/Vim中的常见操作/" data-id="cj6lq4lan0008i86iucssrkv2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vim/">Vim</a><span class="article-tag-list-count">1</span></li></ul>
@@ -633,7 +700,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2016/11/25/牛客网编程题/" data-id="cj6ku7wkr001vj86iijplsksa" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2016/11/25/牛客网编程题/" data-id="cj6lq4lce0021i86i7ntig4to" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编程题/">编程题</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面试/">面试</a><span class="article-tag-list-count">1</span></li></ul>
@@ -645,70 +712,10 @@
 
 
   
-    <article id="post-linux基础知识" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/11/14/linux基础知识/" class="article-date">
-  <time datetime="2016-11-14T12:39:07.000Z" itemprop="datePublished">2016-11-14</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux<span class="article-category-count">5</span></a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/14/linux基础知识/">linux基础知识</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">文件的类型					linux				windows</div><div class="line"></div><div class="line">二进制文件					.o  				.obj</div><div class="line">静态链接库					.a  				.lib</div><div class="line">动态链接库					.so 				.dll</div><div class="line">可执行文件					.out				.exe</div><div class="line">文件的格式					ELF 				PE</div><div class="line"></div><div class="line">//二进制文件有叫目标文件，每个.c文件编译后产生的</div><div class="line">//静态链接库是很多目标文件的集合</div></pre></td></tr></table></figure>
-<ul>
-<li>linux可执行文件结构: elf, windows:PE ,macos: mach-o<br>(值得注意的是，压缩文件在mac上先解压在压缩后在linux下再解压就打不开了,所以copy一般都是tar.gz文件)</li>
-<li><p>有时程序显示无法load  .so 文件,跟环境变量无关，系统加载环境变量一般在/usr/lib中找，如果要改的话<br>1.将so文件移到/usr/lib中。<br>2.设置软链接，链接到/usr/lib中<br>3.修改/etc/ld.so.conf文件，加入自己的路径</p>
-</li>
-<li><p>gcc编译命令：</p>
-<ul>
-<li>-c 只编译，不链接，一般生成.o</li>
-<li>-o 生成目标文件(可执行)，要加-lpthread这些链接文件,.so,.a,.out都是目标文件。</li>
-<li>-fPIC 一般都加上</li>
-<li>生成.o:  gcc -c test.c</li>
-<li>生成.so: gcc -shared -o test.so test.c</li>
-<li>生成.a: gcc -o test.a test.c</li>
-<li>生成.out: gcc -o test.out test.c</li>
-<li>调用动态库：-lpthread -ldnet(glic的库），gcc test.c ./test1.so 直接一起编译</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2016/11/14/linux基础知识/" data-id="cj6ku7wk20015j86ijokjqqxf" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a><span class="article-tag-list-count">1</span></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
   </nav>
 </section>
         
@@ -718,7 +725,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vim/">Vim</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/c-c/">c/c++</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/其他/">其他</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/实习/">实习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机网络/">计算机网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/面试题/">面试题</a><span class="category-list-count">3</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vim/">Vim</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/c-c/">c/c++</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/其他/">其他</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/实习/">实习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机网络/">计算机网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/面试题/">面试题</a><span class="category-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -728,7 +735,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/AE/" style="font-size: 10px;">AE</a> <a href="/tags/GB2312/" style="font-size: 10px;">GB2312</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/arp/" style="font-size: 10px;">arp</a> <a href="/tags/c-c/" style="font-size: 16.67px;">c/c++</a> <a href="/tags/cpu位数/" style="font-size: 10px;">cpu位数</a> <a href="/tags/c语言/" style="font-size: 16.67px;">c语言</a> <a href="/tags/gdb命令/" style="font-size: 10px;">gdb命令</a> <a href="/tags/gets/" style="font-size: 10px;">gets</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hello-hexo/" style="font-size: 10px;">hello hexo</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/linux命令/" style="font-size: 10px;">linux命令</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/scanf/" style="font-size: 10px;">scanf</a> <a href="/tags/stl/" style="font-size: 10px;">stl</a> <a href="/tags/unicode/" style="font-size: 10px;">unicode</a> <a href="/tags/utf-8/" style="font-size: 10px;">utf-8</a> <a href="/tags/像素/" style="font-size: 10px;">像素</a> <a href="/tags/内容生态质量部/" style="font-size: 10px;">内容生态质量部</a> <a href="/tags/分辨率/" style="font-size: 10px;">分辨率</a> <a href="/tags/声明和定义/" style="font-size: 10px;">声明和定义</a> <a href="/tags/外部变量/" style="font-size: 10px;">外部变量</a> <a href="/tags/多线程/" style="font-size: 10px;">多线程</a> <a href="/tags/实习/" style="font-size: 13.33px;">实习</a> <a href="/tags/并发/" style="font-size: 10px;">并发</a> <a href="/tags/总线/" style="font-size: 10px;">总线</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/操作系统/" style="font-size: 10px;">操作系统</a> <a href="/tags/教训/" style="font-size: 10px;">教训</a> <a href="/tags/时间函数/" style="font-size: 10px;">时间函数</a> <a href="/tags/服务器/" style="font-size: 10px;">服务器</a> <a href="/tags/测试开发/" style="font-size: 10px;">测试开发</a> <a href="/tags/环境变量/" style="font-size: 10px;">环境变量</a> <a href="/tags/百度/" style="font-size: 13.33px;">百度</a> <a href="/tags/百度地图-实习生-面试/" style="font-size: 10px;">百度地图  实习生  面试</a> <a href="/tags/编码/" style="font-size: 10px;">编码</a> <a href="/tags/编程题/" style="font-size: 10px;">编程题</a> <a href="/tags/编译原理/" style="font-size: 10px;">编译原理</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a> <a href="/tags/计算机组成原理/" style="font-size: 10px;">计算机组成原理</a> <a href="/tags/进程控制/" style="font-size: 10px;">进程控制</a> <a href="/tags/锁/" style="font-size: 10px;">锁</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+      <a href="/tags/AE/" style="font-size: 10px;">AE</a> <a href="/tags/CR/" style="font-size: 10px;">CR</a> <a href="/tags/GB2312/" style="font-size: 10px;">GB2312</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/arp/" style="font-size: 10px;">arp</a> <a href="/tags/c-c/" style="font-size: 20px;">c/c++</a> <a href="/tags/cpu位数/" style="font-size: 10px;">cpu位数</a> <a href="/tags/c语言/" style="font-size: 16.67px;">c语言</a> <a href="/tags/gdb命令/" style="font-size: 10px;">gdb命令</a> <a href="/tags/gets/" style="font-size: 10px;">gets</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hello-hexo/" style="font-size: 10px;">hello hexo</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/linux命令/" style="font-size: 10px;">linux命令</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/scanf/" style="font-size: 10px;">scanf</a> <a href="/tags/stl/" style="font-size: 10px;">stl</a> <a href="/tags/unicode/" style="font-size: 10px;">unicode</a> <a href="/tags/utf-8/" style="font-size: 10px;">utf-8</a> <a href="/tags/像素/" style="font-size: 10px;">像素</a> <a href="/tags/内容生态质量部/" style="font-size: 10px;">内容生态质量部</a> <a href="/tags/分辨率/" style="font-size: 10px;">分辨率</a> <a href="/tags/声明和定义/" style="font-size: 10px;">声明和定义</a> <a href="/tags/外部变量/" style="font-size: 10px;">外部变量</a> <a href="/tags/多线程/" style="font-size: 10px;">多线程</a> <a href="/tags/实习/" style="font-size: 13.33px;">实习</a> <a href="/tags/并发/" style="font-size: 10px;">并发</a> <a href="/tags/总线/" style="font-size: 10px;">总线</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/操作系统/" style="font-size: 10px;">操作系统</a> <a href="/tags/教训/" style="font-size: 10px;">教训</a> <a href="/tags/时间函数/" style="font-size: 10px;">时间函数</a> <a href="/tags/服务器/" style="font-size: 10px;">服务器</a> <a href="/tags/测试开发/" style="font-size: 10px;">测试开发</a> <a href="/tags/环境变量/" style="font-size: 10px;">环境变量</a> <a href="/tags/百度/" style="font-size: 13.33px;">百度</a> <a href="/tags/百度地图-实习生-面试/" style="font-size: 10px;">百度地图  实习生  面试</a> <a href="/tags/编码/" style="font-size: 10px;">编码</a> <a href="/tags/编程题/" style="font-size: 10px;">编程题</a> <a href="/tags/编译原理/" style="font-size: 10px;">编译原理</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a> <a href="/tags/计算机组成原理/" style="font-size: 10px;">计算机组成原理</a> <a href="/tags/进程控制/" style="font-size: 10px;">进程控制</a> <a href="/tags/锁/" style="font-size: 10px;">锁</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
     </div>
   </div>
 
@@ -737,7 +744,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -748,6 +755,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/08/21/入组培训code-review总结/">入组培训code review总结</a>
+          </li>
         
           <li>
             <a href="/2017/07/10/百度实习体验/">百度实习体验</a>
@@ -763,10 +774,6 @@
         
           <li>
             <a href="/2017/03/01/百度内容生态质量部测试实习面试/">百度内容生态质量部测试实习面试</a>
-          </li>
-        
-          <li>
-            <a href="/2017/01/11/今天我又把服务器搞挂了/">今天我又把服务器搞挂了</a>
           </li>
         
       </ul>

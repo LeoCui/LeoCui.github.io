@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>仰望星空</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="仰望星空">
+<meta property="og:url" content="http://leocui.github.io/page/4/index.html">
+<meta property="og:site_name" content="仰望星空">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="仰望星空">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">仰望星空</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Keep your eyes on stars and feet on the ground</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">Aboat</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://leocui.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-变量的声明和定义" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/05/19/变量的声明和定义/" class="article-date">
+  <time datetime="2015-05-19T12:42:58.000Z" itemprop="datePublished">2015-05-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/c-c/">c/c++<span class="article-category-count">8</span></a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/05/19/变量的声明和定义/">变量的声明和定义</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我们在程序设计中，时时刻刻都用到变量的定义和变量的声明，可有些时候我们对这个概念不是很清楚，知道它是怎么用，但却不知是怎么一会事，下面我就简单的把他们的区别介绍如下：(望我的指点对你受益)</p>
+<p>变量的声明有两种情况：</p>
+<p>1、一种是需要建立存储空间的。例如：int a 在声明的时候就已经建立了存储空间。</p>
+<p>2、另一种是不需要建立存储空间的。 例如：extern int a 其中变量a是在别的文件中定义的。</p>
+<p>前者是“定义性声明（defining declaration）”或者称为“定义（definition）”，而后者是“引用性声明（referncing declaration）”，从广义的角度来讲声明中包含着定义，即定义是声明的一个特例，所以并非所有的声明都是定义，例如：int a 它既是声明，同时又是定义。然而对于 extern a 来讲它只是声明不是定义。一般的情况下我们常常这样叙述，把建立空间的声明称之为“定义”，而把不需要建立存储空间的声明称之为“声明”。很明显我们在这里指的声明是范围比较窄的，即狭义上的声明，也就是说非定义性质的声明，例如：在主函数中：</p>
+<p>int main() {<br>extern int A;<br>//这是个声明而不是定义，声明A是一个已经定义了的外部变量<br>//注意：声明外部变量时可以把变量类型去掉如：extern A;<br>dosth(); //执行函数<br>}<br>int A; //是定义，定义了A为整型的外部变量<br>外部变量的“定义”与外部变量的“声明”是不相同的,外部变量的定义只能有一次，它的位置是在所有函数之外，而同一个文件中的外部变量声明可以是多次的，它可以在函数之内(哪个函数要用就在那个函数中声明)也可以在函数之外(在外部变量的定义点之前)。系统会根据外部变量的定义(而不是根据外部变量的声明)分配存储空间的。<br>对于外部变量来讲，初始化只能是在“定义”中进行,而不是在“声明”中。所谓的“声明”，其作用，是声明该变量是一个已在后面定义过的外部变量，仅仅是为了“提前”引用该变量而作的“声明”而已。extern 只作声明，不作任何定义。</p>
+<p>（我们声明的最终目的是为了提前使用，即在定义之前使用，如果不需要提前使用就没有单独声明的必要，变量是如此，函数也是如此，所以声明不会分配存储空间，只有定义时才会分配存储空间。）</p>
+<p>用static来声明一个变量的作用有二：</p>
+<p>(1)对于局部变量用static声明，则是为该变量分配的空间在整个程序的执行期内都始终存在。</p>
+<p>(2)外部变量用static来声明，则该变量的作用只限于本文件模块。</p>
+<p>我的几点理解：</p>
+<p>1.关于变量名，变量名只是一个语法上的概念，编译之后就不存在这个概念了，如果是全局变量，直接编译时就分配内存，变量名直接用地址代替了，如果是局部变量，是在运行时分配内存，堆栈，变量名可以用当前分配的地址代替。总之，想的太深会涉及很多 编译原理的知识。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://leocui.github.io/2015/05/19/变量的声明和定义/" data-id="cj6lq4lc4001pi86ippz6ujch" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c-c/">c/c++</a><span class="article-tag-list-count">4</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/声明和定义/">声明和定义</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/外部变量/">外部变量</a><span class="article-tag-list-count">1</span></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/page/3/"> 上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+  </nav>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vim/">Vim</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/c-c/">c/c++</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/其他/">其他</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/实习/">实习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机网络/">计算机网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/面试题/">面试题</a><span class="category-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AE/" style="font-size: 10px;">AE</a> <a href="/tags/CR/" style="font-size: 10px;">CR</a> <a href="/tags/GB2312/" style="font-size: 10px;">GB2312</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/arp/" style="font-size: 10px;">arp</a> <a href="/tags/c-c/" style="font-size: 20px;">c/c++</a> <a href="/tags/cpu位数/" style="font-size: 10px;">cpu位数</a> <a href="/tags/c语言/" style="font-size: 16.67px;">c语言</a> <a href="/tags/gdb命令/" style="font-size: 10px;">gdb命令</a> <a href="/tags/gets/" style="font-size: 10px;">gets</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hello-hexo/" style="font-size: 10px;">hello hexo</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/linux命令/" style="font-size: 10px;">linux命令</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/scanf/" style="font-size: 10px;">scanf</a> <a href="/tags/stl/" style="font-size: 10px;">stl</a> <a href="/tags/unicode/" style="font-size: 10px;">unicode</a> <a href="/tags/utf-8/" style="font-size: 10px;">utf-8</a> <a href="/tags/像素/" style="font-size: 10px;">像素</a> <a href="/tags/内容生态质量部/" style="font-size: 10px;">内容生态质量部</a> <a href="/tags/分辨率/" style="font-size: 10px;">分辨率</a> <a href="/tags/声明和定义/" style="font-size: 10px;">声明和定义</a> <a href="/tags/外部变量/" style="font-size: 10px;">外部变量</a> <a href="/tags/多线程/" style="font-size: 10px;">多线程</a> <a href="/tags/实习/" style="font-size: 13.33px;">实习</a> <a href="/tags/并发/" style="font-size: 10px;">并发</a> <a href="/tags/总线/" style="font-size: 10px;">总线</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/操作系统/" style="font-size: 10px;">操作系统</a> <a href="/tags/教训/" style="font-size: 10px;">教训</a> <a href="/tags/时间函数/" style="font-size: 10px;">时间函数</a> <a href="/tags/服务器/" style="font-size: 10px;">服务器</a> <a href="/tags/测试开发/" style="font-size: 10px;">测试开发</a> <a href="/tags/环境变量/" style="font-size: 10px;">环境变量</a> <a href="/tags/百度/" style="font-size: 13.33px;">百度</a> <a href="/tags/百度地图-实习生-面试/" style="font-size: 10px;">百度地图  实习生  面试</a> <a href="/tags/编码/" style="font-size: 10px;">编码</a> <a href="/tags/编程题/" style="font-size: 10px;">编程题</a> <a href="/tags/编译原理/" style="font-size: 10px;">编译原理</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a> <a href="/tags/计算机组成原理/" style="font-size: 10px;">计算机组成原理</a> <a href="/tags/进程控制/" style="font-size: 10px;">进程控制</a> <a href="/tags/锁/" style="font-size: 10px;">锁</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/08/21/入组培训code-review总结/">入组培训code review总结</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/10/百度实习体验/">百度实习体验</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/29/mysql数据导入导出/">mysql数据导入导出</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/03/百度地图交通路线部门实习面试/">百度地图交通路线部门实习面试</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/01/百度内容生态质量部测试实习面试/">百度内容生态质量部测试实习面试</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 LeoCui<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">Aboat</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

@@ -64,6 +64,96 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-c语言基础，长期更新" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/20/c语言基础，长期更新/" class="article-date">
+  <time datetime="2016-10-20T12:27:11.000Z" itemprop="datePublished">2016-10-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/c-c/">c/c++<span class="article-category-count">8</span></a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/20/c语言基础，长期更新/">c语言基础，长期更新</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>include”    “ 的话编译器环境首先会在你当前所在的目录来找寻头文件，当所在目录没有的话，它就会到标准头文件库来找，找不到就报错，<br>&lt;&gt;的话它一开始就到标准头文件库来找，找不到就报错！</p>
+</li>
+<li><p>典型错误</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">if(ret=fun()!=0) </div><div class="line">//典型的错误做法，因为赋值优先级最低，正确写法是</div><div class="line">if((ret=fun())!=0)</div></pre></td></tr></table></figure>
+<ul>
+<li>strlen和sizeof区别     </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">char str[16]=&quot;abcd&quot;</div><div class="line">sizeof(str)=16;    //运算符</div><div class="line">strlen(str)=4;     //函数</div></pre></td></tr></table></figure>
+<ul>
+<li><p>static 和extern的用法</p>
+<ul>
+<li>static<ul>
+<li>位置在内存的全局变量区</li>
+<li>static + 全局变量表示该变量只能在该文件中用，其他文件中即使加了extern也不好使。</li>
+<li>static + 函数表示该函数只能在该文件中用</li>
+<li>static + 局部变量，变量作用域不变，但是生存周期直到程序结束，所以变量实际只有一份。</li>
+</ul>
+</li>
+<li><p>extern</p>
+<ul>
+<li>extern + 全局变量，该变量在该文件中并没有定义，只是告诉编译器链接的时候去其他文件中去找。</li>
+<li><p>举个例子:    errno的原理就是这样</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">extern int errno; //只是声明, 在&lt;errno.h&gt;中</div><div class="line">strerror(errno);// errno在其他文件中定义</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>int main(int argc,char** argv),其中argv[0]是程序完整路径，所以argc总是比实际输入的参数多1</p>
+</li>
+<li><p>多个if特别容易出错，要注意。加个else养成习惯</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">if(temp&gt;min)&#123;</div><div class="line">	min=temp;</div><div class="line">&#125;</div><div class="line">if(temp==min)&#123;  //典型错误，第二个if不该执行</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>#progama once 一般自己写头文件的时候用，这个保证了编译的时候该头文件只会被打开一次。</li>
+<li>关于相对路径的问题：<ul>
+<li>一般情况：当前路径指的是该程序所在的路径，如 fragroute a.txt. 那么如果txt文件中有打开其他文件，用的是相对路径，那么当前路径就是fragroute所在的路径</li>
+<li>编译头文件的时候：头文件经常包含其他头文件，用的是相对路径，那么当前路径指的就是该头文件所在的路径。</li>
+</ul>
+</li>
+<li>在网络编程中经常遇到字节序和网络序的问题（大端，小端），有些还有位域的问题。<br>从程序员的角度来说：其实不用管具体的原理，对于多字节来说，发送和接收用htonl(),nltoh()就行，位域的问题，只要定义了大小端之后就按照正常的结构体成员来用就行。<br>具体的原理可以参考：<br><a href="http://m.blog.csdn.net/article/details?id=45420455" target="_blank" rel="external">点我查看原理</a></li>
+<li>C 语言文件操作写入文件时，有时程序意外终止，文件并没有写入，这是因为读写缓冲区的存在。解决方法：每次fprintf之后，fflush清空缓冲区，立即写入。</li>
+<li>linux下经常遇到很多格式的数不知道输出格式，如u_int32_t这种，可以用IntTypes.h这个头文件。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://leocui.github.io/2016/10/20/c语言基础，长期更新/" data-id="cj6qa4x5y000fwv6inufpa17d" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c-c/">c/c++</a><span class="article-tag-list-count">4</span></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-并行，并发和锁" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/10/20/并行，并发和锁/" class="article-date">
@@ -102,7 +192,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2016/10/20/并行，并发和锁/" data-id="cj6lq4lcb001yi86ia3acawpc" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2016/10/20/并行，并发和锁/" data-id="cj6qa4x7a001vwv6iuseo5ywy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/多线程/">多线程</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/并发/">并发</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/锁/">锁</a><span class="article-tag-list-count">1</span></li></ul>
@@ -173,10 +263,54 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2016/10/20/c++基础-长期更新/" data-id="cj6lq4lau000di86in4eda1d6" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2016/10/20/c++基础-长期更新/" data-id="cj6qa4x5s0009wv6iptgwekxf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c-c/">c/c++</a><span class="article-tag-list-count">4</span></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-c语言的指针易错点" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/19/c语言的指针易错点/" class="article-date">
+  <time datetime="2016-10-19T08:33:06.000Z" itemprop="datePublished">2016-10-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/c-c/">c/c++<span class="article-category-count">8</span></a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/19/c语言的指针易错点/">c语言的指针易错点</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.今天在做项目的时候被c语言的指针坑了很久。现在总结一下：<br>**：划重点，c语言中没有引用，所有的参数传递都是值传递。<br>这一点在函数传出值(改变函数外的变量)的时候特别明显，想传出一个值就要传入一个指针(它的地址)，然后通过这个它的地址来改变它的值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">void a;  //传出一个值</div><div class="line">func(&amp;a);</div><div class="line">void func(void * ptr)&#123;</div><div class="line">	*ptr=value;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void * a;  // 传出一个值(指针类型)</div><div class="line">func(&amp;a);</div><div class="line">void func(void** ptr)&#123;</div><div class="line">	*ptr=value;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://leocui.github.io/2016/10/19/c语言的指针易错点/" data-id="cj6qa4x63000jwv6i5bjcfq6i" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c语言/">c语言</a><span class="article-tag-list-count">3</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/指针/">指针</a><span class="article-tag-list-count">1</span></li></ul>
 
     </footer>
   </div>
@@ -226,54 +360,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2016/10/19/Hello-hexo/" data-id="cj6lq4la90002i86ir3021knk" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2016/10/19/Hello-hexo/" data-id="cj6qa4x580002wv6innrjswlx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hello-hexo/">hello hexo</a><span class="article-tag-list-count">1</span></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-c语言的指针易错点" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/10/19/c语言的指针易错点/" class="article-date">
-  <time datetime="2016-10-19T08:33:06.000Z" itemprop="datePublished">2016-10-19</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/c-c/">c/c++<span class="article-category-count">8</span></a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/19/c语言的指针易错点/">c语言的指针易错点</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1.今天在做项目的时候被c语言的指针坑了很久。现在总结一下：<br>**：划重点，c语言中没有引用，所有的参数传递都是值传递。<br>这一点在函数传出值(改变函数外的变量)的时候特别明显，想传出一个值就要传入一个指针(它的地址)，然后通过这个它的地址来改变它的值。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">void a;  //传出一个值</div><div class="line">func(&amp;a);</div><div class="line">void func(void * ptr)&#123;</div><div class="line">	*ptr=value;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void * a;  // 传出一个值(指针类型)</div><div class="line">func(&amp;a);</div><div class="line">void func(void** ptr)&#123;</div><div class="line">	*ptr=value;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2016/10/19/c语言的指针易错点/" data-id="cj6lq4lb8000oi86in0wxbg0i" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c语言/">c语言</a><span class="article-tag-list-count">3</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/指针/">指针</a><span class="article-tag-list-count">1</span></li></ul>
 
     </footer>
   </div>
@@ -317,7 +407,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2016/04/11/Linux-Windows环境变量那些事/" data-id="cj6lq4lam0007i86i2h3kwkui" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2016/04/11/Linux-Windows环境变量那些事/" data-id="cj6qa4x5e0004wv6izj6xuq2r" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a><span class="article-tag-list-count">4</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/环境变量/">环境变量</a><span class="article-tag-list-count">1</span></li></ul>
@@ -371,7 +461,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2016/04/11/Windows-Linux进程控制实验/" data-id="cj6lq4lar0009i86izd07hqes" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2016/04/11/Windows-Linux进程控制实验/" data-id="cj6qa4x6e000vwv6iv1a0t7g4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a><span class="article-tag-list-count">4</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/操作系统/">操作系统</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/进程控制/">进程控制</a><span class="article-tag-list-count">1</span></li></ul>
@@ -438,7 +528,7 @@ windows下：
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2016/04/10/c语言时间函数全攻略/" data-id="cj6lq4lb4000ki86i4dwqyykb" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2016/04/10/c语言时间函数全攻略/" data-id="cj6qa4x60000iwv6i77hnjn2s" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a><span class="article-tag-list-count">4</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c语言/">c语言</a><span class="article-tag-list-count">3</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/时间函数/">时间函数</a><span class="article-tag-list-count">1</span></li></ul>
@@ -501,7 +591,7 @@ windows下：
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2015/11/03/计算机组成原理基础/" data-id="cj6lq4ld2002ii86im0ntj0r2" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2015/11/03/计算机组成原理基础/" data-id="cj6qa4x7l0029wv6ijf12ot8w" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cpu位数/">cpu位数</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/总线/">总线</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计算机组成原理/">计算机组成原理</a><span class="article-tag-list-count">1</span></li></ul>
@@ -549,60 +639,10 @@ windows下：
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2015/10/15/中文编码那些事/" data-id="cj6lq4lbw001fi86irkiiyal1" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2015/10/15/中文编码那些事/" data-id="cj6qa4x6v001ewv6io2ygh1mt" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GB2312/">GB2312</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/unicode/">unicode</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/utf-8/">utf-8</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编码/">编码</a><span class="article-tag-list-count">1</span></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-编译过程" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/10/10/编译过程/" class="article-date">
-  <time datetime="2015-10-10T12:39:51.000Z" itemprop="datePublished">2015-10-10</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/计算机基础/">计算机基础<span class="article-category-count">4</span></a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/10/编译过程/">编译过程</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>我的理解：</p>
-<p>预处理：处理带#的，如将include的文件内容全部包含进来，处理end if 等.</p>
-<p>编译：词法分析，生成汇编代码，编译后没有变量名概念，编译同时对代码进行优化。</p>
-<p>汇编：将汇编代码生成机器代码。</p>
-<p>连接：现在一个工程比如有很多文件，分开编译后会形成很多个机器代码文件，链接就是就是将这些文件组合起来。分为静态，动态。<br>静态链接(库)：比如把函数调用部分换成对应的机器代码，将很多的机器代码直接拼在一起形成一个exe文件。<br>动态链接（库）：比如把函数调用部分换成对应的机器代码的地址，运行的时候在去加载对应的机器代码。这些机器代码都存在.dll 文件中。</p>
-<p>机器代码：    Cpu能够直接执行的指令。与机器有关，理论上机器换了，可能机器代码就不能执行了。但是现在 的cpu，intel,AMD,都用的是相同的指令集。所以由于硬件的<br>原因基本不存在了。剩下的就是操作系统的问题。</p>
-<p>c,c++等都不是跨平台的，exe 文件不能在linux 下运行：<br>原因：  1.文件格式不同, exe文件不止有机器指令等信息，还有其他内容<br>             2.可能要加载系统的dll文件。</p>
-<p>但是可以说c.c++是源代码跨平台的，因为不同平台，不同的编译器之后，是同样的结果。（使用标准库的情况下），如果使用MFC等windows  api的话，代码移植到linux下就不行了。因为缺少对应的系统类库的支持。<br>但是也可以说c++ 不是跨平台的，比如不同的操作系统，int 的字节长度就不同。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2015/10/10/编译过程/" data-id="cj6lq4lcp002fi86iunyuvpbl" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编译原理/">编译原理</a><span class="article-tag-list-count">1</span></li></ul>
 
     </footer>
   </div>
@@ -624,7 +664,7 @@ windows下：
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vim/">Vim</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/c-c/">c/c++</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/其他/">其他</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/实习/">实习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机网络/">计算机网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/面试题/">面试题</a><span class="category-list-count">3</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vim/">Vim</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/c-c/">c/c++</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息安全/">信息安全</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/其他/">其他</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/实习/">实习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机网络/">计算机网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/面试题/">面试题</a><span class="category-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -634,7 +674,7 @@ windows下：
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/AE/" style="font-size: 10px;">AE</a> <a href="/tags/CR/" style="font-size: 10px;">CR</a> <a href="/tags/GB2312/" style="font-size: 10px;">GB2312</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/arp/" style="font-size: 10px;">arp</a> <a href="/tags/c-c/" style="font-size: 20px;">c/c++</a> <a href="/tags/cpu位数/" style="font-size: 10px;">cpu位数</a> <a href="/tags/c语言/" style="font-size: 16.67px;">c语言</a> <a href="/tags/gdb命令/" style="font-size: 10px;">gdb命令</a> <a href="/tags/gets/" style="font-size: 10px;">gets</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hello-hexo/" style="font-size: 10px;">hello hexo</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/linux命令/" style="font-size: 10px;">linux命令</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/scanf/" style="font-size: 10px;">scanf</a> <a href="/tags/stl/" style="font-size: 10px;">stl</a> <a href="/tags/unicode/" style="font-size: 10px;">unicode</a> <a href="/tags/utf-8/" style="font-size: 10px;">utf-8</a> <a href="/tags/像素/" style="font-size: 10px;">像素</a> <a href="/tags/内容生态质量部/" style="font-size: 10px;">内容生态质量部</a> <a href="/tags/分辨率/" style="font-size: 10px;">分辨率</a> <a href="/tags/声明和定义/" style="font-size: 10px;">声明和定义</a> <a href="/tags/外部变量/" style="font-size: 10px;">外部变量</a> <a href="/tags/多线程/" style="font-size: 10px;">多线程</a> <a href="/tags/实习/" style="font-size: 13.33px;">实习</a> <a href="/tags/并发/" style="font-size: 10px;">并发</a> <a href="/tags/总线/" style="font-size: 10px;">总线</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/操作系统/" style="font-size: 10px;">操作系统</a> <a href="/tags/教训/" style="font-size: 10px;">教训</a> <a href="/tags/时间函数/" style="font-size: 10px;">时间函数</a> <a href="/tags/服务器/" style="font-size: 10px;">服务器</a> <a href="/tags/测试开发/" style="font-size: 10px;">测试开发</a> <a href="/tags/环境变量/" style="font-size: 10px;">环境变量</a> <a href="/tags/百度/" style="font-size: 13.33px;">百度</a> <a href="/tags/百度地图-实习生-面试/" style="font-size: 10px;">百度地图  实习生  面试</a> <a href="/tags/编码/" style="font-size: 10px;">编码</a> <a href="/tags/编程题/" style="font-size: 10px;">编程题</a> <a href="/tags/编译原理/" style="font-size: 10px;">编译原理</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a> <a href="/tags/计算机组成原理/" style="font-size: 10px;">计算机组成原理</a> <a href="/tags/进程控制/" style="font-size: 10px;">进程控制</a> <a href="/tags/锁/" style="font-size: 10px;">锁</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+      <a href="/tags/AE/" style="font-size: 10px;">AE</a> <a href="/tags/CR/" style="font-size: 10px;">CR</a> <a href="/tags/GB2312/" style="font-size: 10px;">GB2312</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/arp/" style="font-size: 10px;">arp</a> <a href="/tags/c-c/" style="font-size: 20px;">c/c++</a> <a href="/tags/cpu位数/" style="font-size: 10px;">cpu位数</a> <a href="/tags/c语言/" style="font-size: 16.67px;">c语言</a> <a href="/tags/gdb命令/" style="font-size: 10px;">gdb命令</a> <a href="/tags/gets/" style="font-size: 10px;">gets</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hello-hexo/" style="font-size: 10px;">hello hexo</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/linux命令/" style="font-size: 10px;">linux命令</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/scanf/" style="font-size: 10px;">scanf</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/stl/" style="font-size: 10px;">stl</a> <a href="/tags/unicode/" style="font-size: 10px;">unicode</a> <a href="/tags/utf-8/" style="font-size: 10px;">utf-8</a> <a href="/tags/信息安全/" style="font-size: 10px;">信息安全</a> <a href="/tags/像素/" style="font-size: 10px;">像素</a> <a href="/tags/内容生态质量部/" style="font-size: 10px;">内容生态质量部</a> <a href="/tags/分辨率/" style="font-size: 10px;">分辨率</a> <a href="/tags/声明和定义/" style="font-size: 10px;">声明和定义</a> <a href="/tags/外部变量/" style="font-size: 10px;">外部变量</a> <a href="/tags/多线程/" style="font-size: 10px;">多线程</a> <a href="/tags/实习/" style="font-size: 13.33px;">实习</a> <a href="/tags/并发/" style="font-size: 10px;">并发</a> <a href="/tags/总线/" style="font-size: 10px;">总线</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/操作系统/" style="font-size: 10px;">操作系统</a> <a href="/tags/教训/" style="font-size: 10px;">教训</a> <a href="/tags/时间函数/" style="font-size: 10px;">时间函数</a> <a href="/tags/服务器/" style="font-size: 10px;">服务器</a> <a href="/tags/测试开发/" style="font-size: 10px;">测试开发</a> <a href="/tags/环境变量/" style="font-size: 10px;">环境变量</a> <a href="/tags/百度/" style="font-size: 13.33px;">百度</a> <a href="/tags/百度地图-实习生-面试/" style="font-size: 10px;">百度地图  实习生  面试</a> <a href="/tags/编码/" style="font-size: 10px;">编码</a> <a href="/tags/编程题/" style="font-size: 10px;">编程题</a> <a href="/tags/编译原理/" style="font-size: 10px;">编译原理</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a> <a href="/tags/计算机组成原理/" style="font-size: 10px;">计算机组成原理</a> <a href="/tags/进程控制/" style="font-size: 10px;">进程控制</a> <a href="/tags/锁/" style="font-size: 10px;">锁</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
     </div>
   </div>
 
@@ -643,7 +683,7 @@ windows下：
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -654,6 +694,10 @@ windows下：
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/08/24/信息安全的一些问题/">信息安全的一些问题</a>
+          </li>
         
           <li>
             <a href="/2017/08/21/入组培训code-review总结/">入组培训code review总结</a>
@@ -669,10 +713,6 @@ windows下：
         
           <li>
             <a href="/2017/03/03/百度地图交通路线部门实习面试/">百度地图交通路线部门实习面试</a>
-          </li>
-        
-          <li>
-            <a href="/2017/03/01/百度内容生态质量部测试实习面试/">百度内容生态质量部测试实习面试</a>
           </li>
         
       </ul>

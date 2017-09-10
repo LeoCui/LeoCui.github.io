@@ -485,6 +485,7 @@
       
         <ul>
 <li>return NULL和return 一个空的数组不是一回事</li>
+<li>unordered_set 和unordered_map和map,set的区别在于前者内部实现是hash，后者是红黑树</li>
 <li>earse的删除操作:</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">for(iter=vector.begin();iter!=vector.end();)&#123;</div><div class="line">	if(*iter==val)&#123;</div><div class="line">		iter=iter.erase();</div><div class="line">		//erase返回被删除元素后一个或者vector.end()</div><div class="line">	&#125;</div><div class="line">	else&#123;</div><div class="line">		iter++;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>

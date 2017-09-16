@@ -6,24 +6,30 @@
   <title>Leetcode常用技巧 | 仰望星空</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="return NULL和return 一个空的数组不是一回事
-earse的删除操作:
-
-123456789for(iter=vector.begin();iter!=vector.end();)&amp;#123;	if(*iter==val)&amp;#123;		iter=iter.erase();		//erase返回被删除元素后一个或者vector.end()	&amp;#125;	else&amp;#123;		it">
+unordered_set 和unordered_map和map,set的区别在于前者内部实现是hash，后者是红黑树
+常见STL：
+string: push_back()，pop_back()，+，length()，empty()
+vector: push_back()，pop_back()，size()，empty()，
+vect">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Leetcode常用技巧">
 <meta property="og:url" content="http://leocui.github.io/2016/11/03/Leetcode常见技巧/index.html">
 <meta property="og:site_name" content="仰望星空">
 <meta property="og:description" content="return NULL和return 一个空的数组不是一回事
-earse的删除操作:
-
-123456789for(iter=vector.begin();iter!=vector.end();)&amp;#123;	if(*iter==val)&amp;#123;		iter=iter.erase();		//erase返回被删除元素后一个或者vector.end()	&amp;#125;	else&amp;#123;		it">
-<meta property="og:updated_time" content="2017-09-10T14:06:03.000Z">
+unordered_set 和unordered_map和map,set的区别在于前者内部实现是hash，后者是红黑树
+常见STL：
+string: push_back()，pop_back()，+，length()，empty()
+vector: push_back()，pop_back()，size()，empty()，
+vect">
+<meta property="og:updated_time" content="2017-09-16T08:43:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode常用技巧">
 <meta name="twitter:description" content="return NULL和return 一个空的数组不是一回事
-earse的删除操作:
-
-123456789for(iter=vector.begin();iter!=vector.end();)&amp;#123;	if(*iter==val)&amp;#123;		iter=iter.erase();		//erase返回被删除元素后一个或者vector.end()	&amp;#125;	else&amp;#123;		it">
+unordered_set 和unordered_map和map,set的区别在于前者内部实现是hash，后者是红黑树
+常见STL：
+string: push_back()，pop_back()，+，length()，empty()
+vector: push_back()，pop_back()，size()，empty()，
+vect">
   
   
     <link rel="icon" href="/favicon.png">
@@ -103,6 +109,22 @@ earse的删除操作:
       
         <ul>
 <li>return NULL和return 一个空的数组不是一回事</li>
+<li>unordered_set 和unordered_map和map,set的区别在于前者内部实现是hash，后者是红黑树</li>
+<li>常见STL：<ul>
+<li>string: push_back()，pop_back()，+，length()，empty()</li>
+<li>vector: push_back()，pop_back()，size()，empty()，<ul>
+<li>vector<int> vector1;</int></li>
+<li>vector<int> vector1(n);//包含n个默认初始化的值</int></li>
+<li>vector<int> vector1(n,val); //包含n个数，默认值val</int></li>
+<li>vector<int> vector1(vector2);</int></li>
+<li>vector<int> vector1=vector2;</int></li>
+<li>vector<int> vector1{1,2,3,4,5};</int></li>
+<li>vector<int> vector1={1,2,3,4,5};</int></li>
+</ul>
+</li>
+<li>queue: pop，front，size()，empty()，</li>
+</ul>
+</li>
 <li>earse的删除操作:</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">for(iter=vector.begin();iter!=vector.end();)&#123;</div><div class="line">	if(*iter==val)&#123;</div><div class="line">		iter=iter.erase();</div><div class="line">		//erase返回被删除元素后一个或者vector.end()</div><div class="line">	&#125;</div><div class="line">	else&#123;</div><div class="line">		iter++;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>

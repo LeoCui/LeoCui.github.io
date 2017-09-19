@@ -25,7 +25,7 @@ grep: golbal search regular expression and print
 /表示根目录，~表示HOME目录
 复制文件夹  ： copy -r
 查看端口占用情况 ： nets">
-<meta property="og:updated_time" content="2017-08-24T13:31:24.000Z">
+<meta property="og:updated_time" content="2017-09-19T06:40:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux命令">
 <meta name="twitter:description" content="查用法： man+命令(man中搜索用/,vim同)
@@ -148,7 +148,15 @@ grep: golbal search regular expression and print
 <li>sed: 批量替换文件</li>
 <li>git diff file1 file2:diff两个文件</li>
 <li>awk: 强大的文件处理工具,会将文件按照分行，并且每一行按照空格分开，如awk ‘{print $14; print $4}’ data.20170516 | less.表示分行输出每一行的第4个和第14个变量。</li>
-<li></li>
+<li>chown:change owner,改变文件的所有者。 <ul>
+<li>sudo chown -R $(whoami) ./ 将当前目录的所有文件(递归) 的拥有者都改成当前用户</li>
+</ul>
+</li>
+<li>chmod: change mode，改变文件的属性(可读，可写，可执行)<ul>
+<li>chmod u+x,g+x,o+x file1，将file1增加可执行权限，u:拥有者，g:用户组，o:其他用户，a:所有用户</li>
+<li>chmod 777 file2</li>
+</ul>
+</li>
 </ul>
 
       

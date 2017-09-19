@@ -3,6 +3,26 @@
 
 
     
+  <url>
+    <loc>http://leocui.github.io/2016/10/24/linux%E5%91%BD%E4%BB%A4/</loc>
+    <lastmod>2017-09-19T06:40:40.000Z</lastmod>
+    <data>
+        <display>
+        <title>linux命令</title>
+        <pubTime>2016-10-24T06:26:22.000Z</pubTime>
+        
+        <tag>linux命令</tag>
+         
+         
+           
+             
+              <breadCrumb title="Linux" url="http://leocui.github.io/categories/Linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>http://leocui.github.io/2016/11/25/%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%85%B8%E7%BC%96%E7%A8%8B%E9%A2%98/</loc>
@@ -250,26 +270,6 @@
            
              
               <breadCrumb title="计算机基础" url="http://leocui.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://leocui.github.io/2016/10/24/linux%E5%91%BD%E4%BB%A4/</loc>
-    <lastmod>2017-08-24T13:31:24.000Z</lastmod>
-    <data>
-        <display>
-        <title>linux命令</title>
-        <pubTime>2016-10-24T06:26:22.000Z</pubTime>
-        
-        <tag>linux命令</tag>
-         
-         
-           
-             
-              <breadCrumb title="Linux" url="http://leocui.github.io/categories/Linux/"/>
           
         </display>
     </data>

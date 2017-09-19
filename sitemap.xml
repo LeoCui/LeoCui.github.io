@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://leocui.github.io/2016/10/24/linux%E5%91%BD%E4%BB%A4/</loc>
+    
+    <lastmod>2017-09-19T06:40:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://leocui.github.io/about/index.html</loc>
     
     <lastmod>2017-09-18T15:53:06.000Z</lastmod>
@@ -89,13 +96,6 @@
     <loc>http://leocui.github.io/2016/10/24/git%E6%95%99%E7%A8%8B/</loc>
     
     <lastmod>2017-08-24T14:13:37.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://leocui.github.io/2016/10/24/linux%E5%91%BD%E4%BB%A4/</loc>
-    
-    <lastmod>2017-08-24T13:31:24.000Z</lastmod>
     
   </url>
   

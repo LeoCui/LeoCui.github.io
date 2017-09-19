@@ -3,14 +3,36 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2015 | 仰望星空</title>
+  <title>python,pip多个版本共存混乱的解决 | 仰望星空</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="仰望星空">
-<meta property="og:url" content="http://leocui.github.io/archives/2015/index.html">
+  <meta name="description" content="今天在搞django的时候又被各种python版本共存的问题坑了。记录一下：
+首先区分两个概念: usr:unix system resource
+/usr/bin,/usr/lib/,usr/lib64,一般unix系统的软件和lib都在这个里面，yum安装的一般都在这个目录下
+/usr/local/bin,/usr/local/lib，这个一般非yum安装的软件会放到这个目录下
+
+
+多个版本">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python,pip多个版本共存混乱的解决">
+<meta property="og:url" content="http://leocui.github.io/2017/09/19/python-pip多个版本共存混乱的解决/index.html">
 <meta property="og:site_name" content="仰望星空">
+<meta property="og:description" content="今天在搞django的时候又被各种python版本共存的问题坑了。记录一下：
+首先区分两个概念: usr:unix system resource
+/usr/bin,/usr/lib/,usr/lib64,一般unix系统的软件和lib都在这个里面，yum安装的一般都在这个目录下
+/usr/local/bin,/usr/local/lib，这个一般非yum安装的软件会放到这个目录下
+
+
+多个版本">
+<meta property="og:updated_time" content="2017-09-19T10:22:01.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="仰望星空">
+<meta name="twitter:title" content="python,pip多个版本共存混乱的解决">
+<meta name="twitter:description" content="今天在搞django的时候又被各种python版本共存的问题坑了。记录一下：
+首先区分两个概念: usr:unix system resource
+/usr/bin,/usr/lib/,usr/lib64,一般unix系统的软件和lib都在这个里面，yum安装的一般都在这个目录下
+/usr/local/bin,/usr/local/lib，这个一般非yum安装的软件会放到这个目录下
+
+
+多个版本">
   
   
     <link rel="icon" href="/favicon.png">
@@ -62,96 +84,70 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/11/03/计算机组成原理基础/" class="archive-article-date">
-  <time datetime="2015-11-03T12:37:11.000Z" itemprop="datePublished">Nov 3</time>
+        <section id="main"><article id="post-python-pip多个版本共存混乱的解决" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/19/python-pip多个版本共存混乱的解决/" class="article-date">
+  <time datetime="2017-09-19T09:39:15.000Z" itemprop="datePublished">2017-09-19</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux<span class="article-category-count">6</span></a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/11/03/计算机组成原理基础/">计算机组成原理基础</a>
+    <h1 class="article-title" itemprop="name">
+      python,pip多个版本共存混乱的解决
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/10/15/中文编码那些事/" class="archive-article-date">
-  <time datetime="2015-10-15T12:32:36.000Z" itemprop="datePublished">Oct 15</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/10/15/中文编码那些事/">中文编码那些事</a>
-    </h1>
-  
+        <ul>
+<li>今天在搞django的时候又被各种python版本共存的问题坑了。记录一下：</li>
+<li>首先区分两个概念: usr:unix system resource<ul>
+<li>/usr/bin,/usr/lib/,usr/lib64,一般unix系统的软件和lib都在这个里面，yum安装的一般都在这个目录下</li>
+<li>/usr/local/bin,/usr/local/lib，这个一般非yum安装的软件会放到这个目录下</li>
+</ul>
+</li>
+<li>多个版本的python其实比较好解决，用那个设一下软连接就可以了，pip是2的，pip3是3的</li>
+<li>今天我遇到的这个问题是python3和pip3不匹配，现在我的Python3在/usr/bin下，所以它的模块默认搜索路径是/usr/lib/,/usr/lib64，但是pip3是在/usr/local/bin下的，所以pip3安装的模块都在/usr/local/python3.4/site-packages下，所以就找不到模块<ul>
+<li>解决办法：yum安装pip3(/usr/bin)下，然后设置pip的软连接到/usr/pip3,这样pip安装的模块就在/usr/lib64/site-packages下了。</li>
+</ul>
+</li>
+</ul>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/10/10/编译过程/" class="archive-article-date">
-  <time datetime="2015-10-10T12:39:51.000Z" itemprop="datePublished">Oct 10</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/10/10/编译过程/">编译过程</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/05/19/变量的声明和定义/" class="archive-article-date">
-  <time datetime="2015-05-19T12:42:58.000Z" itemprop="datePublished">May 19</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://leocui.github.io/2017/09/19/python-pip多个版本共存混乱的解决/" data-id="cj7rgak70001k2x64b7bxzvl5" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/05/19/变量的声明和定义/">变量的声明和定义</a>
-    </h1>
-  
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a><span class="article-tag-list-count">1</span></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/09/10/BFS的一般写法/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">BFS的一般写法</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         

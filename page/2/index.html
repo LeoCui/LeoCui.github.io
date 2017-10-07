@@ -375,6 +375,14 @@
     cout&lt;&lt;count&lt;&lt;endl;
 </code></pre><p>  }<br>  ```</p>
 </li>
+<li><p>数组右移k位:(就是把数组后面的k个挪到前面来)</p>
+<p>  1,2,3,4,5,6 -&gt; 5,6,1,2,3,4</p>
+<ul>
+<li>时间o(n)，空间o(n): 先把后面的k个存起来temp，然后再赋值给a的前面</li>
+<li>时间o(n*n)，空间o(1)：每次右移一个</li>
+<li>时间o(n),空间o(1): 整体reverse,前k个reverse,剩下的reverse</li>
+</ul>
+</li>
 </ul>
 
       

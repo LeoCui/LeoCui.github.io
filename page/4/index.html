@@ -64,14 +64,14 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-Hello-hexo" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-c语言的指针易错点" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/10/19/Hello-hexo/" class="article-date">
+    <a href="/2016/10/19/c语言的指针易错点/" class="article-date">
   <time datetime="2016-10-19T08:33:06.000Z" itemprop="datePublished">2016-10-19</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/hexo/">hexo<span class="article-category-count">2</span></a>
+    <a class="article-category-link" href="/categories/c-c/">c/c++<span class="article-category-count">10</span></a>
   </div>
 
   </div>
@@ -82,7 +82,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/19/Hello-hexo/">Hello,hexo</a>
+      <a class="article-title" href="/2016/10/19/c语言的指针易错点/">c语言的指针易错点</a>
     </h1>
   
 
@@ -90,25 +90,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>听实验室的师兄说，面试的时候如果有自己的博客或者github，是很好的加分项。我想起了被我丢弃很久的csdn博客，可是csdn还是太乱了，加上自己一直就想自己搭建个自己的博客，然后这几天也没有什么事情，所以就花了一天的时间来利用hexo+github弄了个自己的博客。<br>以后要坚持写博客，恩，一定。</p>
-<p>几个坑：</p>
-<ul>
-<li>hexo new 等命令要在hexo_blog目录下进行    </li>
-<li>文件命名的时候要加上后缀，否则引用文件的时候找不到  </li>
-<li>public是你部署到网站上的东西</li>
-<li>有时候修改完了之后并没有改变，可能需要删掉public相应的模块重新生成</li>
-<li>有时候图片加载不出来，右键查看链接，将图片加到对应的目录中即可</li>
-</ul>
-<p>参考的博客：<a href="http://maoxiangyu.com/Hexo/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97-Next/" target="_blank" rel="external">http://maoxiangyu.com/Hexo/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97-Next/</a></p>
-<p>hexo官网：<a href="https://hexo.io/zh-cn/docs/writing.html" target="_blank" rel="external">https://hexo.io/zh-cn/docs/writing.html</a></p>
+        <p>1.今天在做项目的时候被c语言的指针坑了很久。现在总结一下：<br>**：划重点，c语言中没有引用，所有的参数传递都是值传递。<br>这一点在函数传出值(改变函数外的变量)的时候特别明显，想传出一个值就要传入一个指针(它的地址)，然后通过这个它的地址来改变它的值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">void a;  //传出一个值</div><div class="line">func(&amp;a);</div><div class="line">void func(void * ptr)&#123;</div><div class="line">	*ptr=value;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void * a;  // 传出一个值(指针类型)</div><div class="line">func(&amp;a);</div><div class="line">void func(void** ptr)&#123;</div><div class="line">	*ptr=value;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2016/10/19/Hello-hexo/" data-id="cj9v6x8jv0004o0583qfvtj9m" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2016/10/19/c语言的指针易错点/" data-id="cja18hp9t000qjw58kckguo1k" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hello-hexo/">hello hexo</a><span class="article-tag-list-count">1</span></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c语言/">c语言</a><span class="article-tag-list-count">3</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/指针/">指针</a><span class="article-tag-list-count">1</span></li></ul>
 
     </footer>
   </div>
@@ -152,7 +143,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2016/04/11/Linux-Windows环境变量那些事/" data-id="cj9v6x8k40008o05845hfkm11" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2016/04/11/Linux-Windows环境变量那些事/" data-id="cja18hp970008jw58gsjjqzsr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a><span class="article-tag-list-count">4</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/环境变量/">环境变量</a><span class="article-tag-list-count">1</span></li></ul>
@@ -206,7 +197,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2016/04/11/Windows-Linux进程控制实验/" data-id="cj9v6x8kg000co058wpiw0qpx" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2016/04/11/Windows-Linux进程控制实验/" data-id="cja18hp9e000djw5807dp8dc9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a><span class="article-tag-list-count">4</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/操作系统/">操作系统</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/进程控制/">进程控制</a><span class="article-tag-list-count">1</span></li></ul>
@@ -273,7 +264,7 @@ windows下：
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2016/04/10/c语言时间函数全攻略/" data-id="cj9v6x8kw000oo058ytt0umup" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2016/04/10/c语言时间函数全攻略/" data-id="cja18hp9q000njw588op37jsy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a><span class="article-tag-list-count">4</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c语言/">c语言</a><span class="article-tag-list-count">3</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/时间函数/">时间函数</a><span class="article-tag-list-count">1</span></li></ul>
@@ -336,7 +327,7 @@ windows下：
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2015/11/03/计算机组成原理基础/" data-id="cj9v6x8nf002vo0581jfhxd9h" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2015/11/03/计算机组成原理基础/" data-id="cja18hpcm002yjw5895xto5uv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cpu位数/">cpu位数</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/总线/">总线</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计算机组成原理/">计算机组成原理</a><span class="article-tag-list-count">1</span></li></ul>
@@ -384,7 +375,7 @@ windows下：
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2015/10/15/中文编码那些事/" data-id="cj9v6x8m1001so058git5t23q" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2015/10/15/中文编码那些事/" data-id="cja18hpau001sjw588dvrx23r" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GB2312/">GB2312</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/unicode/">unicode</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/utf-8/">utf-8</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编码/">编码</a><span class="article-tag-list-count">1</span></li></ul>
@@ -434,7 +425,7 @@ windows下：
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2015/10/10/编译过程/" data-id="cj9v6x8na002qo058685kuh3v" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2015/10/10/编译过程/" data-id="cja18hpck002wjw585vz3p3ea" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编译原理/">编译原理</a><span class="article-tag-list-count">1</span></li></ul>
@@ -488,7 +479,7 @@ windows下：
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2015/05/19/变量的声明和定义/" data-id="cj9v6x8mi0024o058huin2p21" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2015/05/19/变量的声明和定义/" data-id="cja18hpb70024jw58wxknwpgd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c-c/">c/c++</a><span class="article-tag-list-count">6</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/声明和定义/">声明和定义</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/外部变量/">外部变量</a><span class="article-tag-list-count">1</span></li></ul>

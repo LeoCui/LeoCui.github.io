@@ -10,7 +10,8 @@
 暂存区：git add之后将改动存到暂存区
 本地版本库： 分支信息
 关于暂存区： git commit 之前都是不与具体分支关联的，举个例子，master与dev都是最新的，在dev分支修改某文件，添加到暂存区，然后切换到master分支去提交，这个提交算master分支的。
-git checkout branch: git checkout">
+git checkout branch: 
+git checkout">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git教程">
 <meta property="og:url" content="http://leocui.github.io/2016/10/24/git教程/index.html">
@@ -20,10 +21,11 @@ git checkout branch: git checkout">
 暂存区：git add之后将改动存到暂存区
 本地版本库： 分支信息
 关于暂存区： git commit 之前都是不与具体分支关联的，举个例子，master与dev都是最新的，在dev分支修改某文件，添加到暂存区，然后切换到master分支去提交，这个提交算master分支的。
-git checkout branch: git checkout">
+git checkout branch: 
+git checkout">
 <meta property="og:image" content="http://leocui.github.io/../pictures/git教程1.jpg">
 <meta property="og:image" content="http://leocui.github.io/../pictures/git教程2.jpg">
-<meta property="og:updated_time" content="2017-12-18T05:08:33.000Z">
+<meta property="og:updated_time" content="2018-01-07T08:53:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git教程">
 <meta name="twitter:description" content="git 的结构：
@@ -31,7 +33,8 @@ git checkout branch: git checkout">
 暂存区：git add之后将改动存到暂存区
 本地版本库： 分支信息
 关于暂存区： git commit 之前都是不与具体分支关联的，举个例子，master与dev都是最新的，在dev分支修改某文件，添加到暂存区，然后切换到master分支去提交，这个提交算master分支的。
-git checkout branch: git checkout">
+git checkout branch: 
+git checkout">
 <meta name="twitter:image" content="http://leocui.github.io/../pictures/git教程1.jpg">
   
   
@@ -116,8 +119,19 @@ git checkout branch: git checkout">
 <li>暂存区：git add之后将改动存到暂存区</li>
 <li>本地版本库： 分支信息</li>
 <li>关于暂存区： git commit 之前都是不与具体分支关联的，举个例子，master与dev都是最新的，在dev分支修改某文件，添加到暂存区，然后切换到master分支去提交，这个提交算master分支的。</li>
-<li>git checkout branch: git checkout 会用本地版本库中的分支替换工作区的内容。具体来说，当你执行git checkout 时，git 会判断切换分支和当前分支的关系，如果都是最新的，则工作区不变，就如上面的例子，没提交之前dev和master是一样的，所以checkout master时工作区不变。但是如果dev和master不同，就会用master来替换dev，但是这时候dev有没提交的文件，就会提示在dev修改的内容可能会被覆盖。</li>
-<li>git add,git add是将修改提交到暂存区，最好养成习惯，git add ,git commit -m ‘’,不要直接git commit -a -m ‘’。因为git add可以分批次提交到暂存区。</li>
+<li>git checkout branch: <ul>
+<li>git checkout 会用本地版本库中的分支替换工作区的内容。具体来说，当你执行git checkout 时，git 会判断切换分支和当前分支的关系，如果都是最新的，则工作区不变，暂存区也不变。就如上面的例子，没提交之前dev和master是一样的，所以checkout master时工作区不变。</li>
+<li>checkout master时，如果dev和master不同，就会用master来替换工作区，同时清空暂存区，如果暂存区有在dev分支修改的文件，系统就会提示暂存区会清空，dev分支的修改无效，可以选择commit 或者stash。</li>
+</ul>
+</li>
+<li>git add<ul>
+<li>git add是将工作区的文件保存到暂存区，最好养成习惯，git add ,git commit -m ‘’,不要直接git commit -a -m ‘’。因为git add可以分批次添加到暂存区。</li>
+</ul>
+</li>
+<li>git merge: <ul>
+<li>merge冲突： 冲突原因：开始master和dev相同，后来master修改了A文件的第n行，dev修改了A文件的第</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -154,7 +168,7 @@ git checkout branch: git checkout">
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2016/10/24/git教程/" data-id="cja18omar000xl3580zw0cfnm" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2016/10/24/git教程/" data-id="cjc8snew9000q1s58t20xutpx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a><span class="article-tag-list-count">1</span></li></ul>
@@ -256,7 +270,7 @@ git checkout branch: git checkout">
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2017 LeoCui<br>
+      &copy; 2018 LeoCui<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

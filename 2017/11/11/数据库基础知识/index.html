@@ -23,7 +23,7 @@ alter table tablename add index (columnList)
 show create table tableName
 desc tableNamed
 1234567891011	CREATE TABLE animals (     id int(20) NOT NULL AUTO_INCREMENT">
-<meta property="og:updated_time" content="2017-11-11T09:11:34.000Z">
+<meta property="og:updated_time" content="2018-01-05T13:39:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库基础知识">
 <meta name="twitter:description" content="基本语句：\G
@@ -130,12 +130,19 @@ desc tableNamed
 <li>事务提交： 当一组操作都成功完成时，就可以提交事务。</li>
 </ul>
 </li>
+<li>数据库索引：<ul>
+<li>数据库索引内部包括B+树索引，hash索引，大部分是B+树索引。查询时间是o(logn)的。B+树索引支持多种比较，如&gt;,&lt;,like，hash索引只支持=。</li>
+<li>B+树对中文的索引，之前一直想不清楚，其实中文也是按照utf8编码存储的，本质上也可以看做是一个字符串。</li>
+<li>索引的类型包括主键索引，唯一索引，聚集索引。</li>
+<li>索引提高了查询速度，但是增加了空间，同时也提高了增删改的时间，因为需要改索引。</li>
+</ul>
+</li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2017/11/11/数据库基础知识/" data-id="cja18omcq002il3588yhmxnba" class="article-share-link">Share</a>
+      <a data-url="http://leocui.github.io/2017/11/11/数据库基础知识/" data-id="cjc8sneyh002g1s58ypq4gq1b" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a><span class="article-tag-list-count">1</span></li></ul>
@@ -237,7 +244,7 @@ desc tableNamed
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2017 LeoCui<br>
+      &copy; 2018 LeoCui<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

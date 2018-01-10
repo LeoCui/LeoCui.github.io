@@ -64,6 +64,83 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-python基本用法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/06/python基本用法/" class="article-date">
+  <time datetime="2018-01-06T07:23:01.000Z" itemprop="datePublished">2018-01-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python/">python<span class="article-category-count">1</span></a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/06/python基本用法/">python基本用法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>import<ul>
+<li>module和package:<ul>
+<li>module是一个.py文件，导入一个module就是把这个python文件加载进内存</li>
+<li>package是一个文件夹，必须有_ _init_ _.py文件,导入一个package就是将_ _init_ _.py加载进内存，并且import package的时候自动执行_ _init_ _.py文件</li>
+</ul>
+</li>
+<li>import 机制<ul>
+<li>import导入的所有包都在sys.modules中</li>
+<li>from A import B，导入一个包或者模块中的部分文件或者函数</li>
+</ul>
+</li>
+<li>绝对导入和相对导入：<ul>
+<li>绝对导入：<ul>
+<li>搜索路径： sys.path()</li>
+<li>如果直接python test.py,那么test.py的路径是在sys.path中的</li>
+<li>如果想搜索某个module或者package，只需将其所在文件夹的路径加入sys.path即可：sys.path.append()</li>
+<li>获取当前python文件路径：<ul>
+<li>pwd = os.getcwd()</li>
+<li>pwd = os.path.dirname(pwd)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>相对导入：<ul>
+<li>形如from .. import x</li>
+<li>在python3中，找到当前目录是通过_name_，特别地，如果直接python执行某个python文件，那么_name_就是_main_,那么当前目录就是顶层目录</li>
+<li>如果_name_是A.B.C说明当前目录为B,那么from .. 的路径就是A，from . 就是B </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://leocui.github.io/2018/01/06/python基本用法/" data-id="cjc8su08100008q588kf33yf1" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a><span class="article-tag-list-count">2</span></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-几种web服务器" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/11/16/几种web服务器/" class="article-date">
@@ -298,7 +375,7 @@
       <a data-url="http://leocui.github.io/2017/09/19/python-pip多个版本共存混乱的解决/" data-id="cjc8snewz001i1s58rsd8u3bl" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a><span class="article-tag-list-count">1</span></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a><span class="article-tag-list-count">2</span></li></ul>
 
     </footer>
   </div>
@@ -655,89 +732,6 @@
 
 
   
-    <article id="post-百度实习体验" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/07/10/百度实习体验/" class="article-date">
-  <time datetime="2017-07-10T07:27:58.000Z" itemprop="datePublished">2017-07-10</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/实习/">实习<span class="article-category-count">1</span></a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/10/百度实习体验/">百度实习体验</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>今天是在百度的最后一天了，4个月的实习经历一眨眼就要过去了。回头看一下，发现自己竟然已经走了那么远，看看当时面试时候的博客，觉得自己当时那么傻逼，除了会做点算法题什么都不会,虽然现在仍然很菜。</li>
-<li>总体来说，这段实习经历还是非常值得的。虽然每天都很累，从来没有10前下过班，但是也成长了许多。从刚开始的啥都不懂到现在独立负责一个项目，我觉得自己可以hold住，并不比正式的差。</li>
-<li><p>简单说下自己的几点感悟吧：</p>
-<ul>
-<li>进入BAT并没有那么难（老大一直劝我转正，被我拒绝了）。但是同样都是BAT的码农，差别却大了去了。有的只能做一些基础的业务开发（比如我所在的百家号），每天用php写一些简单的逻辑，实在是没有意思，写10个项目和写1个项目没有什么区别。在我实习的这段时间内，没有见过任何的算法，但凡涉及到算法的，都是调用IDL或者大搜的服务。但是同时百度也有IDL这样的高端部门。这也是我读研的原因，如果研究生毕业还是以进入BAT为目标，那么说明研究生白读了，还不如直接转正留下来呢。读完研后的目标应该是进入BAT的核心部门，做算法工程师。不要写没有技术含量的业务代码，否则很容易被替代，要做一点有门槛的工作，才能避免吃青春饭。</li>
-<li>关于百度的工程师文化，具体的体现就是技术人员的话语权很大，RD&gt;FE&gt;QA&gt;PM&gt;BD&gt;外包。由于QA和PM大部分都是女生，所以很多时候需要一些沟通技巧（比如撒娇卖萌哄着RD）。参与过几次评审，基本上是RD占据主动，PM只能妥协（不好意思，这个需求做不了）。QA基本打酱油。这样的好处和坏处都很明显，好处就是百度出去的技术都不是很水，但是百度的产品很弱就是了，我见到的PM每天就是研究竞品，然后想着怎么抄袭就行了，奇怪的是，高层竟然认同这种行为，美名其曰：人类共同的财富。</li>
-<li>关于业务和算法，2017年，百度押宝内容分发，我所在的百家号也属于疯狂扩张之中，不停的来新人，我3月份来的，走的时候已经是老人了。特别是来了很多糯米的人（糯米倒闭了）。但是可能由于技术没有什么难度，招进来不少水货RD（有的还要我这个实习生教他写代码）高T很少，T6都不多。大部分都是T3，T4，T5.听说策略那边有很多高T（T8，T9）。所以还是不要做业务，尽量做算法方向或者分布式系统方向，有点难度的。做业务真的没有意思，我来的时候一点都不会php，但是没关系，就算你不会，你照猫画虎，照着别人的抄都能把功能实现。因为大部分都是一些逻辑判断，数据库操作，ral调用，拼一下就行了。</li>
-<li><p>关于QA和RD，反正在百度，基本QA都是白盒测试，QA也是按照RD的标准招的。不存在只是点点点的情况（外包的活）。有些RD比QA的技术还菜。但是QA和RD的技能点不一样倒是真的。根据我的观察：</p>
-<ul>
-<li>QA重要的技能点：</li>
-<li>linux知识（特别是像awk,sed等命令的用法熟练，还有vim的操作）。</li>
-<li>熟练掌握一门脚本语言如python/shell/php（因为QA经常需要写一些脚本来统计一些东西或者搭建环境，这是基础技能）。</li>
-<li>技术的广度（你需要什么都了解一些，大到机器学习，spark,nmq，小到一个框架的原理，如Bingo框架的路由分发原理）。</li>
-<li>基本的测试技能（如怎么压测）。</li>
-<li>追查问题能力，这个特别重要，因为很多时候，比如线上出了问题和用户报了case.是QA在第一时间定位到问题然后给对应的RD去修复。这也是QA的优势，因为RD大多只是负责自己的那个模块，对其他模块都不太熟悉，但是QA因为各个模块都要测试，所以对各个模块都比较了解，比较容易定位到问题。</li>
-<li><p>自动化测试框架的搭建。怎么搭建环境，放在持续集成平台（agile）。怎么编写自动化case,覆盖到所有分支，上线之前跑一遍自动化case.</p>
-</li>
-<li><p>RD重要的技能点：</p>
-</li>
-<li>跟职位有关，技能可能相对来说比较单一，但是必须精通，比如你php开发，那你必须精通php和相关的框架，和nginx服务器原理等。但是你如果是一个算法工程师，那你只要知道相关的机器学习算法即可。比如我们这有一个博士，只会用python，但这就够了。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>简单说下自己的收获吧：</p>
-<ul>
-<li>首先是在一个成熟的大公司待了4个月，学了很多流程和规范。就像正规军一样。比如一个项目从开始到结束：首先要PM立项, 然后编写MRD，然后确定排期，然后需求评审，PM，QA，RD都要参加，在这里确定需求，什么能做，什么不能做，然后技术评审，确定技术方案。在这里确定RD和QA的排期。然后RD开始介入开发，同时QA开始编写测试case和准入case.RD过了准入case后开始提测（项目比较大可能需要分步提测）。如果项目质量太差QA可以提测直接打回。然后QA开始测试，RD修bug，测试可能需要几轮，不停回归。测试通过后就要上线了，首先需要确定上线方案，上线一般是先上预览机（小流量，设置cookie可以打到预览机）。在预览机上线上回归，然后上单台，然后上单边，然后全量。上线之后还需要线上继续回归。最后需要加上监控和报警。如果上线之后出了问题，先回滚，止损然后再追查问题。必要时需要服务降级。事故之后要做一个case study，大家一起总结问题，吸取经验。还有一些其他的规范比如提交代码必须经过code review(机器审核，代码风格检查+人工审核)。比如分支开发，分支发布，上线之前不能合入主干。上线之后删除分支。</li>
-<li>然后学到了一些线上问题的处理方案：我记得刚来的时候就出了一次比较严重的事故，我们线上的一个非核心服务挂掉了，这个服务是通过nmq调用的，导致nmq不停重试。但是核心服务和这个服务共用一个nmq，一个topic，导致nmq队列严重积压。影响了核心服务的处理。当时这个问题的解决方案是紧急下掉那个非核心服务，然后跳过nmq的命令点，先止损，不能影响核心的发文服务。事后总结的结论是架构不合理，核心服务依赖于非核心服务，需要做服务拆分，不能放在一个消息队列里面。</li>
-<li>还有一次是我们被盗链，别人利用百家号上传视频，但是并不发文，然后将mediaID拼出播放链接。相当于利用我们的流量来获取利润。当时上传的是泄露出的人民的名义，流量巨大，造成了很大的损失。当时的紧急方案是连夜加班，对mediaID 进行加密。</li>
-<li>还有就是学会了一门语言，php,上手简单，框架方便，开发起来无脑。不愧为最好的语言。但是写的时间长了可能会变得退化。</li>
-<li>还有就是了解了一些常用的技术，如nmq（百度内部的消息队列），redis（k-v型的nosql数据库）。nginx反向代理用来做负载均衡，spark用来做大数据流处理计算，我们主要用来统计日志。bns百度内部的域名解析服务，bfe百度内部的统一外部接入层。</li>
-<li>参加了3个比较大的项目，用户等级权益，父子账号，马甲号视频。</li>
-<li>还有就是参与了组里自动化测试框架的开发，当时我刚来的时候完全没有任何自动化测试，后来在一个高工的带领下，我开始编写自动化测试框架，框架主要基于phpunit单元测试，编写自动化测试case.我走的时候已经覆盖了80%的接口测试并且接入了我们的持续集成平台，上线之前必须跑一遍自动化测试。收益很大。</li>
-<li>然后就是写了很多的脚本，和一些接口，用来做一些统计，并且接入百度内部的统一前端展示平台showx（包含折线图，表格等）进行展示。给老大看，主要包括每日发文量统计，发文成功率统计，作者分润统计等。</li>
-<li>然后给RD提供了很多有价值的建议，我记得有一次，有一个数据库的事务，3个数据库必须同时修改成功才成功，然后需要发送短信，但是rd把发送短信放在了3个修改数据库操作的中间，这样如果失败的话，数据库操作会回滚，但是发送短信又不能回滚，我建议他把发送短信放在最后面。</li>
-</ul>
-</li>
-<li><p>最后，感谢这段忙碌但是每天都能感受到自己的成长的日子，感谢我的老大，对我特别好，感谢我的师傅，教了我很多。感谢一起工作的一群靠谱的百度同学，感谢一起实习的小伙伴。这段经历对我来说很难忘。PS： 百度的PM同学真的都特别漂亮，百度科技园的饭真的特别好吃。</p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://leocui.github.io/2017/07/10/百度实习体验/" data-id="cjc8snez000321s58qx1d45uo" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/实习/">实习</a><span class="article-tag-list-count">2</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/百度/">百度</a><span class="article-tag-list-count">2</span></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
@@ -751,7 +745,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vim/">Vim</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/c-c/">c/c++</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息安全/">信息安全</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/其他/">其他</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/实习/">实习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机网络/">计算机网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/面试题/">面试题</a><span class="category-list-count">4</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vim/">Vim</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/c-c/">c/c++</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息安全/">信息安全</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/其他/">其他</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/实习/">实习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机网络/">计算机网络</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/面试题/">面试题</a><span class="category-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -761,7 +755,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/AE/" style="font-size: 10px;">AE</a> <a href="/tags/BFS/" style="font-size: 10px;">BFS</a> <a href="/tags/CR/" style="font-size: 10px;">CR</a> <a href="/tags/GB2312/" style="font-size: 10px;">GB2312</a> <a href="/tags/Linux/" style="font-size: 17.5px;">Linux</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/apache/" style="font-size: 10px;">apache</a> <a href="/tags/arp/" style="font-size: 10px;">arp</a> <a href="/tags/c-c/" style="font-size: 20px;">c/c++</a> <a href="/tags/cpu位数/" style="font-size: 10px;">cpu位数</a> <a href="/tags/c语言/" style="font-size: 15px;">c语言</a> <a href="/tags/gdb命令/" style="font-size: 10px;">gdb命令</a> <a href="/tags/gets/" style="font-size: 10px;">gets</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hello-hexo/" style="font-size: 10px;">hello hexo</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/jvm/" style="font-size: 10px;">jvm</a> <a href="/tags/leetcode/" style="font-size: 12.5px;">leetcode</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/linux命令/" style="font-size: 10px;">linux命令</a> <a href="/tags/makefile/" style="font-size: 10px;">makefile</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/scanf/" style="font-size: 10px;">scanf</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/stl/" style="font-size: 10px;">stl</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/unicode/" style="font-size: 10px;">unicode</a> <a href="/tags/utf-8/" style="font-size: 10px;">utf-8</a> <a href="/tags/代理/" style="font-size: 10px;">代理</a> <a href="/tags/信息安全/" style="font-size: 10px;">信息安全</a> <a href="/tags/像素/" style="font-size: 10px;">像素</a> <a href="/tags/内容生态质量部/" style="font-size: 10px;">内容生态质量部</a> <a href="/tags/分辨率/" style="font-size: 10px;">分辨率</a> <a href="/tags/声明和定义/" style="font-size: 10px;">声明和定义</a> <a href="/tags/外部变量/" style="font-size: 10px;">外部变量</a> <a href="/tags/多线程/" style="font-size: 10px;">多线程</a> <a href="/tags/实习/" style="font-size: 12.5px;">实习</a> <a href="/tags/并发/" style="font-size: 10px;">并发</a> <a href="/tags/总线/" style="font-size: 10px;">总线</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/操作系统/" style="font-size: 10px;">操作系统</a> <a href="/tags/教训/" style="font-size: 10px;">教训</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/时间函数/" style="font-size: 10px;">时间函数</a> <a href="/tags/服务器/" style="font-size: 10px;">服务器</a> <a href="/tags/测试开发/" style="font-size: 10px;">测试开发</a> <a href="/tags/环境变量/" style="font-size: 10px;">环境变量</a> <a href="/tags/百度/" style="font-size: 12.5px;">百度</a> <a href="/tags/百度地图-实习生-面试/" style="font-size: 10px;">百度地图  实习生  面试</a> <a href="/tags/编码/" style="font-size: 10px;">编码</a> <a href="/tags/编程题/" style="font-size: 10px;">编程题</a> <a href="/tags/编译原理/" style="font-size: 10px;">编译原理</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a> <a href="/tags/计算机组成原理/" style="font-size: 10px;">计算机组成原理</a> <a href="/tags/进程控制/" style="font-size: 10px;">进程控制</a> <a href="/tags/锁/" style="font-size: 10px;">锁</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+      <a href="/tags/AE/" style="font-size: 10px;">AE</a> <a href="/tags/BFS/" style="font-size: 10px;">BFS</a> <a href="/tags/CR/" style="font-size: 10px;">CR</a> <a href="/tags/GB2312/" style="font-size: 10px;">GB2312</a> <a href="/tags/Linux/" style="font-size: 17.5px;">Linux</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/apache/" style="font-size: 10px;">apache</a> <a href="/tags/arp/" style="font-size: 10px;">arp</a> <a href="/tags/c-c/" style="font-size: 20px;">c/c++</a> <a href="/tags/cpu位数/" style="font-size: 10px;">cpu位数</a> <a href="/tags/c语言/" style="font-size: 15px;">c语言</a> <a href="/tags/gdb命令/" style="font-size: 10px;">gdb命令</a> <a href="/tags/gets/" style="font-size: 10px;">gets</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hello-hexo/" style="font-size: 10px;">hello hexo</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/jvm/" style="font-size: 10px;">jvm</a> <a href="/tags/leetcode/" style="font-size: 12.5px;">leetcode</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/linux命令/" style="font-size: 10px;">linux命令</a> <a href="/tags/makefile/" style="font-size: 10px;">makefile</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/python/" style="font-size: 12.5px;">python</a> <a href="/tags/scanf/" style="font-size: 10px;">scanf</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/stl/" style="font-size: 10px;">stl</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/unicode/" style="font-size: 10px;">unicode</a> <a href="/tags/utf-8/" style="font-size: 10px;">utf-8</a> <a href="/tags/代理/" style="font-size: 10px;">代理</a> <a href="/tags/信息安全/" style="font-size: 10px;">信息安全</a> <a href="/tags/像素/" style="font-size: 10px;">像素</a> <a href="/tags/内容生态质量部/" style="font-size: 10px;">内容生态质量部</a> <a href="/tags/分辨率/" style="font-size: 10px;">分辨率</a> <a href="/tags/声明和定义/" style="font-size: 10px;">声明和定义</a> <a href="/tags/外部变量/" style="font-size: 10px;">外部变量</a> <a href="/tags/多线程/" style="font-size: 10px;">多线程</a> <a href="/tags/实习/" style="font-size: 12.5px;">实习</a> <a href="/tags/并发/" style="font-size: 10px;">并发</a> <a href="/tags/总线/" style="font-size: 10px;">总线</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/操作系统/" style="font-size: 10px;">操作系统</a> <a href="/tags/教训/" style="font-size: 10px;">教训</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/时间函数/" style="font-size: 10px;">时间函数</a> <a href="/tags/服务器/" style="font-size: 10px;">服务器</a> <a href="/tags/测试开发/" style="font-size: 10px;">测试开发</a> <a href="/tags/环境变量/" style="font-size: 10px;">环境变量</a> <a href="/tags/百度/" style="font-size: 12.5px;">百度</a> <a href="/tags/百度地图-实习生-面试/" style="font-size: 10px;">百度地图  实习生  面试</a> <a href="/tags/编码/" style="font-size: 10px;">编码</a> <a href="/tags/编程题/" style="font-size: 10px;">编程题</a> <a href="/tags/编译原理/" style="font-size: 10px;">编译原理</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a> <a href="/tags/计算机组成原理/" style="font-size: 10px;">计算机组成原理</a> <a href="/tags/进程控制/" style="font-size: 10px;">进程控制</a> <a href="/tags/锁/" style="font-size: 10px;">锁</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
     </div>
   </div>
 
@@ -770,7 +764,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -781,6 +775,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/01/06/python基本用法/">python基本用法</a>
+          </li>
         
           <li>
             <a href="/2017/11/16/几种web服务器/">几种web服务器</a>
@@ -796,10 +794,6 @@
         
           <li>
             <a href="/2017/09/19/python-pip多个版本共存混乱的解决/">python,pip多个版本共存混乱的解决</a>
-          </li>
-        
-          <li>
-            <a href="/2017/09/10/BFS的一般写法/">BFS的一般写法</a>
           </li>
         
       </ul>

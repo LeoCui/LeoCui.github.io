@@ -388,43 +388,19 @@
       
         
           
-            <ul>
-<li>import<ul>
-<li>module和package:<ul>
-<li>module是一个.py文件，导入一个module就是把这个python文件加载进内存</li>
-<li>package是一个文件夹，必须有_ _init_ _.py文件,导入一个package就是将_ _init_ _.py加载进内存，并且import package的时候自动执行_ _init_ _.py文件</li>
-</ul>
-</li>
-<li>import 机制<ul>
-<li>import导入的所有包都在sys.modules中</li>
-<li>from A import B，导入一个包或者模块中的部分文件或者函数</li>
-</ul>
-</li>
-<li>绝对导入和相对导入：<ul>
-<li>绝对导入：<ul>
-<li>搜索路径： sys.path()</li>
-<li>如果直接python test.py,那么test.py的路径是在sys.path中的</li>
-<li>如果想搜索某个module或者package，只需将其所在文件夹的路径加入sys.path即可：sys.path.append()</li>
-<li>获取当前python文件路径：<ul>
-<li>pwd = os.getcwd()</li>
-<li>pwd = os.path.dirname(pwd)</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>相对导入：<ul>
-<li>形如from .. import x</li>
-<li>在python3中，找到当前目录是通过_name_，特别地，如果直接python执行某个python文件，那么_name_就是_main_,那么当前目录就是顶层目录</li>
-<li>如果_name_是A.B.C说明当前目录为B,那么from .. 的路径就是A，from . 就是B </li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
           
+import
+module和package:
+module是一个.py文件，导入一个module就是把这个python文件加载进内存
+package是一个文件夹，必须有_ _init_ _.py文件,导入一个package就是将_ _init_ _.py加载进内存，并且import package
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/06/python基本用法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -564,31 +540,17 @@
       
         
           
-            <ul>
-<li>之前也算做过一点web开发，一直对nginx,apache,tomcat在高并发，多进程下的原理不太了解，现在终于搞清楚一些了。<ul>
-<li>nginx,apahe属于一类，都属于静态服务器，适合展示静态资源。对于动态请求，通常要靠php，python等cgi程序。真正处理用户请求的是cgi程序。一个用户请求就会开一个php进程（类似php index.php这样）。</li>
-<li>tomcat是动态服务器，tomcat本身就是一个java程序，一个java程序对应一个jvm,一个jvm就是一个进程。所以tomcat只有一个进程，每个请求会在jvm开一个线程来处理。</li>
-<li>nginx,apache的区别：<ul>
-<li>nginx本身有1个master进程，4个worker进程（cpu核数），nginx内部用了epoll，一个进程处理多个socket连接，实现高并发。(当该进程在等待某个cgi程序的处理结果时，不能让它阻塞在这里，而是注册一个回调函数，然后去接收新的socket连接)一般用来做反向代理，负载均衡。</li>
-<li>apache给每个连接都开一个进程。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>epoll是实现io复用的一种方法，目的是在一个进程中处理多个socket连接。玩法：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">while(1)&#123;</div><div class="line">	events=epoll_wait();    //内核去轮询</div><div class="line">	for(event: events)&#123;</div><div class="line">		if(事件被触发)&#123;</div><div class="line">			event.callback()</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	accept();  // epoll中加入新的socket</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li><p>mq消息队列</p>
-<ul>
-<li>典型用法：用于进程或者服务间通信，还可以共享消息，一个生产者可以对应多个消费者。比如有多个service,service1,service2,service3。service1对数据库的某个改动影响到了service2,3。不用消息队列的话，service2，3需要提供一个接口，当service1改动的时候调用这2个接口，但是这样很不优雅而且耦合太大。用了消息队列的话就可以将这个改动push到消息队列，谁用谁自己去取。</li>
-</ul>
-</li>
-<li><p>test</p>
-</li>
-</ul>
-
           
+之前也算做过一点web开发，一直对nginx,apache,tomcat在高并发，多进程下的原理不太了解，现在终于搞清楚一些了。
+nginx,apahe属于一类，都属于静态服务器，适合展示静态资源。对于动态请求，通常要靠php，python等cgi程序。真正处理用户请求的是cgi程序。一个用户请求
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/16/几种web服务器/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -728,36 +690,22 @@
       
         
           
-            <ul>
-<li><p>基本语句：\G</p>
-<ul>
-<li>show index from tableName</li>
-<li>alter table tablename add index (columnList)</li>
-<li>show create table tableName</li>
-<li><p>desc tableNamed</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">	CREATE TABLE animals (</div><div class="line">     id int(20) NOT NULL AUTO_INCREMENT,</div><div class="line">     title vchar(255)  NOT NULL DEFAULT  ‘’,</div><div class="line">     url vchar(255) 	NOT NULL DEFAULT ‘’,</div><div class="line">     pv int(20) NOT NULL DEFAULT 0,</div><div class="line">     comment_number int(20) NOT NULL DEFAULT 0,</div><div class="line">     publish_time timestamp NOT NULL DEFAULT ‘0000-00-00 00:00:00’,</div><div class="line">     create_time timestamp NOT NULL DEFAULT ‘0000-00-00 00:00:00’,</div><div class="line">     update_time timestamp NOT NULL DEFAULT ‘0000-00-00 00:00:00’,</div><div class="line">     PRIMARY KEY (id)</div><div class="line">);</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>事务四大特性：ACID</p>
-<ul>
-<li>Atomicity: 原子性，一个事务里面的所有操作要么全部成功，要么全部失败回滚。</li>
-<li>Consistency: 一致性，一致性是指事务必须使数据库从一个一致性状态变换到另一个一致性状态，也就是说一个事务执行之前和执行之后都必须处于一致性状态。拿转账来说，假设用户A和用户B两者的钱加起来一共是5000，那么不管A和B之间如何转账，转几次账，事务结束后两个用户的钱相加起来应该还得是5000，这就是事务的一致性。</li>
-<li>Isolation: 隔离性，隔离性是当多个用户并发访问数据库时，比如操作同一张表时，数据库为每一个用户开启的事务，不能被其他事务的操作所干扰，多个并发事务之间要相互隔离。即要达到这么一种效果：对于任意两个并发的事务T1和T2，在事务T1看来，T2要么在T1开始之前就已经结束，要么在T1结束之后才开始，这样每个事务都感觉不到有其他事务在并发地执行。</li>
-<li>Durability: 持久性是指一个事务一旦被提交了，那么对数据库中的数据的改变就是永久性的，即便是在数据库系统遇到故障的情况下也不会丢失提交事务的操作。</li>
-<li>事务提交： 当一组操作都成功完成时，就可以提交事务。</li>
-</ul>
-</li>
-<li>数据库索引：<ul>
-<li>数据库索引内部包括B+树索引，hash索引，大部分是B+树索引。查询时间是o(logn)的。B+树索引支持多种比较，如&gt;,&lt;,like，hash索引只支持=。</li>
-<li>B+树对中文的索引，之前一直想不清楚，其实中文也是按照utf8编码存储的，本质上也可以看做是一个字符串。</li>
-<li>索引的类型包括主键索引，唯一索引，聚集索引。</li>
-<li>索引提高了查询速度，但是增加了空间，同时也提高了增删改的时间，因为需要改索引。</li>
-</ul>
-</li>
-</ul>
-
           
+基本语句：\G
+
+show index from tableName
+alter table tablename add index (columnList)
+show create table tableName
+desc tableNamed
+1234567891011	CREATE TABL
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/11/数据库基础知识/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -875,23 +823,18 @@
       
         
           
-            <p>超哥让我调研网络代理情况，网络代理大致分为以下几种：</p>
-<ul>
-<li>socks代理：会话层，不管上层协议是什么，只是负责盲转发。应用层内容不解析。</li>
-<li><p>http/https代理： 又称网页代理，是一个应用层的代理，典型的如fidder,charles,这种代理可以解析https的内容。这里以charles为例简单说一下它的原理：</p>
-<ul>
-<li>charles打开之后，浏览器所有的请求都会被转发到charles来处理。手机抓包的时候需要保证手机和电脑在一台局域网内并且在手机上设置代理到电脑的8888端口，这是charles的默认端口，可以改，这样手机上的所有请求都会被转发到charles来处理</li>
-<li>默认情况下，charles只能解析http包，这样对https的包就会乱码，解决这个问题需要开启charles的ssl代理，然后443的端口也会被解析。charles解析https协议的原理如下：<ul>
-<li>对ssl的握手信息，伪造一份目标网站的证书，这样就相当于一个中间人攻击，charles在客户端和服务端分别建立了2条https链接，2套不同的密钥。这样的问题就是怎么让证书通过认证，所以需要安装charles的一个根证书颁发机构rootCA,rootCA对每个域名动态签发一个证书。由于rootCA被客户端信任(手动),所以rootCA颁发的证书也都被信任。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>建立多个网站的镜像，这也是http/https的代理，比如zmirror</p>
-</li>
-</ul>
+          超哥让我调研网络代理情况，网络代理大致分为以下几种：
 
-          
+socks代理：会话层，不管上层协议是什么，只是负责盲转发。应用层内容不解析。
+http/https代理： 又称网页代理，是一个应用层的代理，典型的如fidder,charles,这种代理可以解析https的内容。这里以charles为例简单说
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/11/网络代理调研/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1031,21 +974,19 @@
       
         
           
-            <ul>
-<li>今天在搞django的时候又被各种python版本共存的问题坑了。记录一下：</li>
-<li>首先区分两个概念: usr:unix system resource<ul>
-<li>/usr/bin,/usr/lib/,usr/lib64,一般unix系统的软件和lib都在这个里面，yum安装的一般都在这个目录下</li>
-<li>/usr/local/bin,/usr/local/lib，这个一般非yum安装的软件会放到这个目录下</li>
-</ul>
-</li>
-<li>多个版本的python其实比较好解决，用那个设一下软连接就可以了，pip是2的，pip3是3的</li>
-<li>今天我遇到的这个问题是python3和pip3不匹配，现在我的Python3在/usr/bin下，所以它的模块默认搜索路径是/usr/lib/,/usr/lib64，但是pip3是在/usr/local/bin下的，所以pip3安装的模块都在/usr/local/python3.4/site-packages下，所以就找不到模块<ul>
-<li>解决办法：yum安装pip3(/usr/bin)下，然后设置pip的软连接到/usr/pip3,这样pip安装的模块就在/usr/lib64/site-packages下了。</li>
-</ul>
-</li>
-</ul>
-
           
+今天在搞django的时候又被各种python版本共存的问题坑了。记录一下：
+首先区分两个概念: usr:unix system resource
+/usr/bin,/usr/lib/,usr/lib64,一般unix系统的软件和lib都在这个里面，yum安装的一般都在这个目录下
+/usr/loc
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/19/python-pip多个版本共存混乱的解决/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1185,20 +1126,20 @@
       
         
           
-            <ul>
-<li><p>因为我自己对BFS一直不是很6，帮柳华做笔试题的时候很简单的一个bfs都没有写对，现在总结一下。</p>
-<ul>
-<li>BFS一般用队列来实现，现在以二叉树的层次遍历为例，这是一个典型的BFS。</li>
-<li><p>队列的写法：    </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">	class Solution &#123;</div><div class="line">public:</div><div class="line">    vector&lt;vector&lt;int&gt;&gt; levelOrder(TreeNode* root) &#123;</div><div class="line">        vector&lt;vector&lt;int&gt;&gt; result;</div><div class="line">        if(root==NULL)&#123;</div><div class="line">            return result;</div><div class="line">        &#125;</div><div class="line">        queue&lt;TreeNode*&gt; que;</div><div class="line">        que.push(root);</div><div class="line">        while(!que.empty())&#123;</div><div class="line">            int len=que.size();</div><div class="line">            vector&lt;int&gt; temp;</div><div class="line">            //遍历每一层的节点</div><div class="line">            for(int i=0;i&lt;len;i++)&#123;</div><div class="line">                TreeNode* node=que.front();</div><div class="line">                que.pop();</div><div class="line">                temp.push_back(node-&gt;val);</div><div class="line">                if(node-&gt;left)&#123;</div><div class="line">                    que.push(node-&gt;left);</div><div class="line">                &#125;</div><div class="line">                if(node-&gt;right)&#123;</div><div class="line">                    que.push(node-&gt;right);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            result.push_back(temp);</div><div class="line">        &#125;</div><div class="line">        return result;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-</li>
-<li><p>在编程之美上还有没有用到stl的队列，用vector去模拟的队列，这里代码也放上。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">	class Solution &#123;</div><div class="line">public:</div><div class="line">    vector&lt;vector&lt;int&gt;&gt; levelOrder(TreeNode* root) &#123;</div><div class="line">        vector&lt;vector&lt;int&gt;&gt; result;</div><div class="line">        if(root==NULL)&#123;</div><div class="line">            return result;</div><div class="line">        &#125;</div><div class="line">        vector&lt;TreeNode*&gt; vec;</div><div class="line">        vec.push_back(root);</div><div class="line">        int cur=0,last;</div><div class="line">        //cur表示当前遍历的节点，last表示下一层的节点</div><div class="line">        while(cur&lt;vec.size())&#123;</div><div class="line">            int last=vec.size();</div><div class="line">            vector&lt;int&gt; temp;</div><div class="line">            while(cur&lt;last)&#123;</div><div class="line">                temp.push_back(vec[cur]-&gt;val);</div><div class="line">                if(vec[cur]-&gt;left)&#123;</div><div class="line">                    vec.push_back(vec[cur]-&gt;left);</div><div class="line">                &#125;</div><div class="line">                if(vec[cur]-&gt;right)&#123;</div><div class="line">                    vec.push_back(vec[cur]-&gt;right);</div><div class="line">                &#125;</div><div class="line">                cur++;</div><div class="line">            &#125;</div><div class="line">            result.push_back(temp);</div><div class="line">        &#125;</div><div class="line">        return result;</div><div class="line">    &#125;</div><div class="line">    &#125;;</div></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-
           
+因为我自己对BFS一直不是很6，帮柳华做笔试题的时候很简单的一个bfs都没有写对，现在总结一下。
+
+BFS一般用队列来实现，现在以二叉树的层次遍历为例，这是一个典型的BFS。
+队列的写法：    
+1234567891011121314151617181920212223242526272829	
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/10/BFS的一般写法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1338,65 +1279,26 @@
       
         
           
-            <ul>
-<li>c语言中虽然没有c++中那么多字符串处理函数，但是其实有很多都不用我们重复造轮子。</li>
-<li>strtol:  <ul>
-<li>字符串转整数</li>
-</ul>
-</li>
-<li>sprintf()<ul>
-<li>格式化读入数据到字符串中，用好了很神奇，比如：</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sprintf(str,&quot;%02x-%02x&quot;,sum1,sum2);</div><div class="line">//将sum1,sum2转换成16进制并且存入str</div></pre></td></tr></table></figure>
-<ul>
-<li>snprintf()<ul>
-<li>同sprintf,加了长度防止越界</li>
-</ul>
-</li>
-<li>fprintf()<ul>
-<li>格式话读入数据到文件流中</li>
-</ul>
-</li>
-<li>strncpy()<ul>
-<li>复制n个字符，不够n个后面填充0</li>
-</ul>
-</li>
-<li><p>strstr:</p>
-<ul>
-<li><p>求是否包含子串，用来处理经常遇到的abc=123,将abc和123分别存入两个字符串中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">char str[]=&quot;abc=123&quot;;</div><div class="line">char str1[10],str2[10];</div><div class="line">char* p=strstr(str,&quot;=&quot;);</div><div class="line">if(p==NULL)&#123;</div><div class="line">	return;</div><div class="line">&#125;</div><div class="line">int len1=p-str;</div><div class="line">strncpy(str1,str,len1);</div><div class="line">str1[len1]=&apos;\0&apos;;</div><div class="line">strncpy(str2,len1+1,10);</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>sscanf:</p>
-<ul>
-<li>scanf,sscanf,fscanf中，空格都是分割符，%s,%d后面匹配的时候遇到空格都会停止。%后面是正则却不会停止。</li>
-<li>一个非常强大的函数，作用是从一个字符串中提取想要的子串，支持正则表达式，用好了的话非常强大。<a href="http://blog.csdn.net/jackyvan/article/details/5349724" target="_blank" rel="external">参考资料</a></li>
-<li><p>读取配置文件(以空格为分割符): “abc  123”</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">char str[]=&quot;abc 123&quot;;</div><div class="line">char str1[10],str2[10]; </div><div class="line">sscanf(str,&quot;%s%s&quot;,str1,str2); </div><div class="line">//%s可以换成%d,自动完成str to int的转换</div></pre></td></tr></table></figure>
-</li>
-<li><p>读取配置文件(不以空格为分割符): “abc=123”</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">char str[]=&quot;abc=123&quot;;</div><div class="line">char str1[10],str2[10];</div><div class="line">// %[^=]表示遇到=就停止写入</div><div class="line">sscanf(str,&quot;%[^=]=%s&quot;,str1,str2);</div></pre></td></tr></table></figure>
-</li>
-<li><p>提取某个子串:  “abcd/1345@789”,提取/和@之间的部分</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">char str[]=&quot;abcd/1345@789&quot;;</div><div class="line">char str1[10],str2[10];</div><div class="line">sscanf(str,&quot;%*[^/]/%[^@]&quot;,str1);</div><div class="line">//%*[^@]表示遇到@就停止但是不写入</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>fscanf:</p>
-<ul>
-<li>用于从文件中解析有规律的字符串，和sscanf类似，只不过来源变成了文件流。</li>
-</ul>
-</li>
-<li>scanf:<ul>
-<li>和sscanf类似，只不过第一个参数来源变成了用户的输入</li>
-</ul>
-</li>
-</ul>
-
           
+c语言中虽然没有c++中那么多字符串处理函数，但是其实有很多都不用我们重复造轮子。
+strtol:  
+字符串转整数
+
+
+sprintf()
+格式化读入数据到字符串中，用好了很神奇，比如：
+
+
+
+12sprintf(str,&quot;%02x-%02x&quot;,sum1,sum2);//将s
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/24/c语言字符串处理函数/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1536,17 +1438,15 @@
       
         
           
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">CC = gcc</div><div class="line">TARGET_DIR = ../../mysapp/plug/business/live_monitor</div><div class="line">TARGET_CONF_DIR = ../../mysapp/conf/live_monitor</div><div class="line">TARGET = live_monitor.so</div><div class="line">INF = ../bin/live_monitor.inf</div><div class="line">CONF = ../conf/live_list.csv</div><div class="line">CFLAGS = -g -Wall -fPIC</div><div class="line">LIB = -lpthread</div><div class="line">LIB += -lMESA_handle_logger</div><div class="line">LIB += -lMESA_prof_load</div><div class="line">LIB+= -lMESA_htable</div><div class="line">INCLUDES = -I./inc/</div><div class="line">INCLUDES += -I/usr/include/MESA</div><div class="line">SOURCES = $(wildcard *.c)</div><div class="line">OBJECTS = $(SOURCES:.c=.o)</div><div class="line">DEPS = $(SOURCES:.c=.d)</div><div class="line">.PHONY : clean all install</div><div class="line">all : $(TARGET)</div><div class="line">$(TARGET) : $(OBJECTS)</div><div class="line">	$(CC) $(CFLAGS) -shared -o $(TARGET) $(LIB) $(OBJECTS)</div><div class="line">%.o : %.c </div><div class="line">	$(CC) $(CFLAGS) -c $&lt; -o $@</div><div class="line">%.d : %.c</div><div class="line">	$(CC) $&lt; -MM $(INCLUDES) &gt; $@ </div><div class="line">-include $(DEPS)</div><div class="line">clean : </div><div class="line">	-rm $(TARGET) $(OBJECTS) $(DEPS) ../bin/$(TARGET)</div><div class="line">	-rm -rf $(TARGET_DIR)</div><div class="line">	-rm -rf $(TARGET_CONF_DIR)</div><div class="line">install : </div><div class="line">	-mkdir $(TARGET_DIR)</div><div class="line">	-cp $(TARGET) $(TARGET_DIR)</div><div class="line">	-cp $(TARGET) ../bin</div><div class="line">	-cp $(INF) $(TARGET_DIR)</div><div class="line">	-mkdir $(TARGET_CONF_DIR)</div><div class="line">	-cp $(CONF) $(TARGET_CONF_DIR)</div></pre></td></tr></table></figure>
-<ul>
-<li>makefile的执行过程：其实make clean,make install都是我们定义的，make x,makefile就会去找x，然后根据依赖文件一步步找下去。</li>
-<li>wildcard *.c:当前文件夹中所有的.c文件</li>
-<li>$(SOURCES: .c=.o):将.c都变成.o</li>
-<li>.d文件存的是每个.c文件依赖的.c文件,-include $(DEPS)不能少</li>
-<li>$&lt;和$@都是临时变量</li>
-<li>.PHONY的作用：定义一个伪目标，保证这条命令一定会被执行。如果不加的话，比如make clean,由于clean没有依赖文件，如果当前目录中存在一个文件叫clean，那么clean后面的语句就不会执行。</li>
-</ul>
-
-          
+          123456789101112131415161718192021222324252627282930313233343536CC = gccTARGET_DIR = ../../mysapp/plug/business/live_monitorTARGET_CONF_DIR = ../../mys
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/24/makefile示例/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1686,37 +1586,19 @@
       
         
           
-            <ul>
-<li>ssh的原理：<ul>
-<li>ssh 是用来保证安全登录的，保证密码不被别人截获，默认端口为22</li>
-<li>ssh登录时，服务器先发给你一个公钥，然后用户把密码用公钥加密后发给服务器，服务器用私钥解密。</li>
-<li>known hosts: 但是这种方法容易被中间人攻击，即有人伪造服务器。所以在登录时服务器会把自己的公钥发给你，问你是否同意连接。当你同意的时候就会存到known_hosts文件中，里面是受信任的服务器的公钥。</li>
-<li>密钥登录：但是这样还是需要每次都输入密码。密钥登录就是用户在本地用rsa生成密钥对。公钥放在服务器上，登录时，服务器先发来一个随机的字符串，用户用私钥加密后传给服务器，服务器用公钥解密，如果解密成功，就说明登录成功。私钥加密，公钥解密，就是所谓的签名了。github的ssh登录就是这样做的。</li>
-<li>authorized_keys: 里面存的是一些公钥，公钥对应的用户可以直接通过密钥登录。类似于github让你放公钥的地方。authorized_keys的权限是600，.ssh的权限是700，否则失败。</li>
-<li>参考资料：<a href="http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html" target="_blank" rel="external">阮一峰博客</a></li>
-</ul>
-</li>
-<li>https原理：<ul>
-<li>https=http+ssl。tls可以看做是ssl 3.0</li>
-<li>ssl首先三次握手协商出一个密钥A，协商的过程是非对称加密，目的是为了让双方都知道A，但是密钥传输加密，防止中间人攻击。协商出密钥之后就是对称加密了。</li>
-<li>协商密钥的过程，首先客户端先请求服务器拿到服务器的公钥，然后生成密钥A，用公钥加密A传给服务器，然后服务器用私钥解密拿到A。这个过程非常类似ssh的登录过程。</li>
-<li>同理，为了防止有人伪造服务器，浏览器需要确认从服务器拿到的公钥是正确的,这时候就需要证书了。有了证书之后，服务器发给客户端的就不是公钥，而是证书。</li>
-<li>证书内包含网站的公钥和证书颁发机构，消息摘要算法等信息，这些信息通过生成一个摘要(如md5)，然后用CA（受信任的证书颁发机构）的私钥对这个摘要加密(签名)。这样的证书是没有办法伪造的，因为你没有CA的私钥，你的客户端用CA的公钥解出来的签名肯定是不对的。</li>
-<li>关于CA的公钥，当客户端收到信息时，CA的公钥一般装系统时都在电脑里了。</li>
-<li>类似12306这种网站，没有去CA买证书，而是需要自己去官网下根证书。这样是不安全的，因为没有上面的验证过程，你必须信任从根证书上拿到的公钥，但是如果根证书被伪造，就很容易被中间人攻击了。</li>
-<li>关于CA的证书链，CA分为多级，最高的证书颁发机构成为根证书颁发机构，这个一般内置在操作系统中，证书的认证过程是这样的：rootCA – CA1 – CA2。CA2给google颁发了证书。那么证书验证过程中，rootCA信任CA1,CA1信任CA2,CA2信任google,那么这个证书链就打通了，就是说这个证书是受信任的。所谓的信任就是通过用公钥去解密摘要，看和证书里面的是否一致。</li>
-<li>参考资料：<a href="http://blog.csdn.net/u013424496/article/details/51161370" target="_blank" rel="external">数字证书原理</a></li>
-</ul>
-</li>
-<li>关于签名：<ul>
-<li>摘要：摘要是对正文信息的md5,本身没有防止攻击的能力</li>
-<li>签名：签名是对摘要进行私钥加密，然后验证时用公钥。</li>
-<li>签名只能保证信息不被伪造，但是不能保证不被截获，因为消息中大部分内容是不加密的，只要摘要加密。</li>
-</ul>
-</li>
-</ul>
-
           
+ssh的原理：
+ssh 是用来保证安全登录的，保证密码不被别人截获，默认端口为22
+ssh登录时，服务器先发给你一个公钥，然后用户把密码用公钥加密后发给服务器，服务器用私钥解密。
+known hosts: 但是这种方法容易被中间人攻击，即有人伪造服务器。所以在登录时服务器会把自己的公钥发给你，问你
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/24/信息安全的一些问题/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1856,39 +1738,21 @@
       
         
           
-            <ul>
-<li>今天入组培训又被超哥吊打了，code review给我挑了很多毛病，对此我是服气的，感谢超哥和佳哥。下面具体说说：<ul>
-<li>文件的组织：<ul>
-<li>src: .c makefile</li>
-<li>bin: .so .inf makefile</li>
-<li>conf: .conf</li>
-<li>值得一提的是，bin中的makefile是假的makefile，他的作用就是cd到src目录，然后执行src中的makefile,文件的组织和makefile可以看gitlab上live_monitor的项目,比较规范。</li>
-</ul>
-</li>
-<li>当一个函数需要返回多个值的时候，这个时候就要想到传入指针或者引用来解决。切记，百度面试string to int也是这个问题。</li>
-<li>考虑不全面，比如ip监控的时候有个合法的ip,我们判断的时候要判断src ip || dst ip在列表中的时候就放行，否则合法的ip只能出去回不来了。</li>
-<li>不要重复造轮子，读配置文件可以用MESA load prof这个公共库。写日志可以用MEx’x’x’x’x’x’x’x’x’xSA handle logger这个库(下划线打不出来)。</li>
-<li>用CJSON,比较专业。</li>
-<li>另外，自己写读配置文件的时候，要写的优雅一点，每需要一个配置就去扫描整个配置文件一遍，这样虽然效率低，但是很整齐。</li>
-<li>不要随便拆成两个文件，完全不相关的函数才拆成两个文件。</li>
-<li>超过20行的字符串处理就要考虑glic中自带的库。具体见<a href="https://leocui.github.io/2016/10/20/c%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80%EF%BC%8C%E9%95%BF%E6%9C%9F%E6%9B%B4%E6%96%B0/">c语言基础,长期更新</a></li>
-<li>输出错误信息时要输出具体的系统的错误(errno, strerror(errno))</li>
-<li>malloc和free最好成对出现，即在同一个函数中</li>
-<li>每个.c都对应一个头文件，不是所有的声明都要放到头文件中。放到头文件中是要给别人用的，也就是说如果某个函数只有本文件用，那么就不用放到头文件中。</li>
-<li>cpp代码要给c用的时候，用extern ‘C’，具体见<a href="https://leocui.github.io/2016/10/20/c%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80%EF%BC%8C%E9%95%BF%E6%9C%9F%E6%9B%B4%E6%96%B0/">c语言基础,长期更新</a></li>
-<li>多用assert，表示你很确定这个情况不会发生，出现就死。</li>
-<li>free后要把指针置为NULL,养成习惯。</li>
-<li>同一个全局变量不用在两个文件中重复声明，加一个extern就行了。具体见<a href="https://leocui.github.io/2016/10/20/c%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80%EF%BC%8C%E9%95%BF%E6%9C%9F%E6%9B%B4%E6%96%B0/">c语言基础,长期更新</a></li>
-<li>比如声明一块空间来存一个结构体，最好用sizeof来代替宏</li>
-<li>struct conflist conflist；这种写法不推荐，相当于面包牌面包，可以换成如struct conflist myconflist;</li>
-<li>usleep最小的精度就是10,比如usleep(1)，也是10us</li>
-<li>变量名前面加下划线表示该变量只有我自己用，你们千万别用</li>
-<li>我有一个get_port的函数，需要调用两次得到src_port和dst_port，为了区分还设了一个flag，完全可以传入src_port和dst_port的指针一次返回。</li>
-</ul>
-</li>
-</ul>
-
           
+今天入组培训又被超哥吊打了，code review给我挑了很多毛病，对此我是服气的，感谢超哥和佳哥。下面具体说说：
+文件的组织：
+src: .c makefile
+bin: .so .inf makefile
+conf: .conf
+值得一提的是，bin中的makefile是假的makefile，
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/21/入组培训code-review总结/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

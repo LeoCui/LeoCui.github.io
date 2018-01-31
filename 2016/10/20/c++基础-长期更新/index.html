@@ -89,7 +89,7 @@
 <meta property="og:description" content="今天在写操作系统的作业，发现c++的很多基本语法都忘了，现在自己把基本语法总结一遍。方便以后复习。
    1.构造函数：     父类构造函数 -&amp;gt; 类成员的构造函数 -&amp;gt; 自己的构造函数
    2.初始化列表：     这里有个博客挺好       http://www.cnblogs.com/graphics/archive/2010/07/04/1770900.html">
-<meta property="og:updated_time" content="2017-11-15T15:55:18.000Z">
+<meta property="og:updated_time" content="2018-01-31T12:01:05.746Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="c++基础,长期更新">
 <meta name="twitter:description" content="今天在写操作系统的作业，发现c++的很多基本语法都忘了，现在自己把基本语法总结一遍。方便以后复习。
@@ -404,8 +404,8 @@
 <p>   1.构造函数：<br>     父类构造函数 -&gt; 类成员的构造函数 -&gt; 自己的构造函数</p>
 <p>   2.初始化列表：<br>     这里有个博客挺好       <a href="http://www.cnblogs.com/graphics/archive/2010/07/04/1770900.html" target="_blank" rel="external">http://www.cnblogs.com/graphics/archive/2010/07/04/1770900.html</a></p>
 <p>   我的总结：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Test1 test1 ;</div><div class="line">    Test2(Test1 &amp;t1):test1(t1)&#123;&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Test1 test1 ;</div><div class="line">   Test2(Test1 &amp;t1)</div><div class="line">   &#123;</div><div class="line">       test1 = t1 ;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Test1 test1 ;</div><div class="line">    Test2(Test1 &amp;t1):test1(t1)&#123;&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Test1 test1 ;</div><div class="line">   Test2(Test1 &amp;t1)</div><div class="line">   &#123;</div><div class="line">       test1 = t1 ;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
 <p>第2种test1需要执行一次默认构造函数+一次赋值操作<br>第1种test1只需要执行一次拷贝构造函数</p>
 <p>特别的：下面情况只能用初始化列表</p>
 <ul>
@@ -423,7 +423,7 @@
 <ul>
 <li>关于默认构造函数(没有参数)，如果类中未定义任何构造函数，编译器会提供一个默认的构造函数，**如果类中定义了任何了构造函数，编译器不会提供默认构造函数。</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">class Test&#123;                                                                           </div><div class="line">	int a;               </div><div class="line">	int b;     </div><div class="line">	Test(int a,int b)&#123;</div><div class="line">	</div><div class="line">	&#125; </div><div class="line">	Test()&#123;</div><div class="line">	</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Test&#123;                                                                           </div><div class="line">	<span class="keyword">int</span> a;               </div><div class="line">	<span class="keyword">int</span> b;     </div><div class="line">	Test(<span class="keyword">int</span> a,<span class="keyword">int</span> b)&#123;</div><div class="line">	</div><div class="line">	&#125; </div><div class="line">	Test()&#123;</div><div class="line">	</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <ul>
 <li>局部变量： Test  a1; Test a2(1,2);<br>如果调用默认构造函数，不用加括号；</li>
 <li>new 对象：Test<em> p1=new Test(), </em>p2=new Test(10,20);<br>必须加括号，调用默认构造函数也要加括号</li>
@@ -437,7 +437,7 @@
 </ul>
 </li>
 <li><p>例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sort(vector1.begin(),vector1.end(),[](int a,int b)-&gt;bool&#123;return a&gt;b&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sort(vector1.begin(),vector1.end(),[](<span class="keyword">int</span> a,<span class="keyword">int</span> b)-&gt;<span class="keyword">bool</span>&#123;<span class="keyword">return</span> a&gt;b&#125;)</div></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>

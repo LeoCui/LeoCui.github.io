@@ -93,7 +93,7 @@ unordered_set 和unordered_map和map,set的区别在于前者内部实现是hash
 常见STL：
 string: push_back()，pop_back()，+，length()，empty()，s.append(n,c);
 vector: push_back()，pop_back()，size(">
-<meta property="og:updated_time" content="2017-09-16T15:04:28.000Z">
+<meta property="og:updated_time" content="2018-01-31T12:01:36.996Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode常用技巧">
 <meta name="twitter:description" content="return NULL和return 一个空的数组不是一回事
@@ -431,11 +431,11 @@ vector: push_back()，pop_back()，size(">
 </li>
 <li>earse的删除操作:</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">for(iter=vector.begin();iter!=vector.end();)&#123;</div><div class="line">	if(*iter==val)&#123;</div><div class="line">		iter=iter.erase();</div><div class="line">		//erase返回被删除元素后一个或者vector.end()</div><div class="line">	&#125;</div><div class="line">	else&#123;</div><div class="line">		iter++;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(iter=<span class="built_in">vector</span>.begin();iter!=<span class="built_in">vector</span>.end();)&#123;</div><div class="line">	<span class="keyword">if</span>(*iter==val)&#123;</div><div class="line">		iter=iter.erase();</div><div class="line">		<span class="comment">//erase返回被删除元素后一个或者vector.end()</span></div><div class="line">	&#125;</div><div class="line">	<span class="keyword">else</span>&#123;</div><div class="line">		iter++;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <ul>
 <li>erase的sort()</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sort(vector.begin(),vertor.end(),cmp);</div><div class="line">bool cmp(type a,type b)&#123;</div><div class="line">	</div><div class="line">&#125; //cmp函数的意义：如果返回true,就保持a,b这样的顺序</div></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sort(<span class="built_in">vector</span>.begin(),vertor.end(),cmp);</div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(type a,type b)</span></span>&#123;</div><div class="line">	</div><div class="line">&#125; <span class="comment">//cmp函数的意义：如果返回true,就保持a,b这样的顺序</span></div></pre></td></tr></table></figure>
 <ul>
 <li>在处理一些边界条件不好处理时，比如处理矩阵时要看四周，这时对于边界情况就不好处理，常见的方法是在周围加一圈，但是现在有更好的办法。   <ul>
 <li>在边界时不成立： （j不在边界）&amp;&amp;（）—-在边界为0，后面不用算</li>
@@ -446,7 +446,7 @@ vector: push_back()，pop_back()，size(">
 <li>INT_MIN,INT_MAX</li>
 <li>二分法的时候：常用mid=left+(right-left)/2,我之前一直以为和mid=(left+right)/2一样。今天才发现不是这样的：   </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">left=1;</div><div class="line">right=INT_MAX;</div><div class="line">while(left&lt;=right)&#123;</div><div class="line">	mid=(left+right)/2;  //错误，整数溢出了，mid算成负数了</div><div class="line">	mid=left+(right-left)/2;  //正确</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">left=<span class="number">1</span>;</div><div class="line">right=INT_MAX;</div><div class="line"><span class="keyword">while</span>(left&lt;=right)&#123;</div><div class="line">	mid=(left+right)/<span class="number">2</span>;  <span class="comment">//错误，整数溢出了，mid算成负数了</span></div><div class="line">	mid=left+(right-left)/<span class="number">2</span>;  <span class="comment">//正确</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <ul>
 <li>子串：必须连续<br>子序列：不必连续</li>
 </ul>
